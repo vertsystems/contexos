@@ -1,6 +1,6 @@
 # Estrutura do workspace
 
-Referência única de onde cada coisa é salva. O `/instalar` escolhe uma das duas convenções conforme o perfil (empreendedor solo, freelancer, agência, empresa, comércio local, profissional liberal ou projeto) e registra a escolha no `CLAUDE.md` do workspace. Toda skill consulta esse arquivo (ou o `CLAUDE.md`) antes de criar pasta.
+Referência única de onde cada coisa é salva. O `/instalar` escolhe uma das duas convenções conforme o perfil (empreendedor solo, freelancer, agência, empresa, comércio local, profissional liberal, projeto ou uso livre) e registra a escolha no `CLAUDE.md` do workspace. Toda skill consulta esse arquivo (ou o `CLAUDE.md`) antes de criar pasta.
 
 ## Princípio
 
@@ -12,7 +12,7 @@ As pastas do sistema (`.claude/skills/`, `templates/`, `scripts/`) convivem na m
 
 ## Convenção A — por tipo de entrega
 
-Aplicada aos perfis **empreendedor solo**, **empresa**, **comércio local**, **profissional liberal** e **projeto**. Um negócio (ou um projeto) só, várias frentes. O que muda entre eles é o centro de gravidade, não a árvore: no comércio local e no profissional liberal é `vendas/` (WhatsApp, pós-venda) mais `avaliacoes-google/` e `financeiro/`; no projeto é `sistemas/` (escopo, decisões, código). O resto nasce conforme o negócio precisa de marca, página ou anúncio.
+Aplicada aos perfis **empreendedor solo**, **empresa**, **comércio local**, **profissional liberal** e **projeto**, e de forma **provisória** ao **uso livre**: ali o sistema começa por tipo de entrega e propõe a convenção B uma vez, se um segundo cliente aparecer com trabalho próprio. Um negócio (ou um projeto) só, várias frentes. O que muda entre eles é o centro de gravidade, não a árvore: no comércio local e no profissional liberal é `vendas/` (WhatsApp, pós-venda) mais `avaliacoes-google/` e `financeiro/`; no projeto é `sistemas/` (escopo, decisões, código). O resto nasce conforme o negócio precisa de marca, página ou anúncio.
 
 ```
 MeuNegocio/

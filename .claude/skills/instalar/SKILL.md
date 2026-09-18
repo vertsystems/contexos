@@ -56,7 +56,7 @@ seletor:
 > "Qual IA você está usando aqui?
 >
 > 1. Claude Code
-> 2. Codex"
+> 2. GPT Codex"
 
 Com a resposta, rodar:
 
@@ -119,7 +119,7 @@ Se der erro (ele baixou o zip em vez de clonar), tudo bem: seguir. O `/atualizar
 
 ## Fase 1 — Escolha do perfil
 
-Perguntar qual perfil combina com o que ele vai fazer aqui. São sete, então a
+Perguntar qual perfil combina com o que ele vai fazer aqui. São oito, então a
 pergunta vai **em texto, como lista numerada** (o seletor de opções que alguns
 clientes têm só cabe quatro, e cortar perfil pra caber é pior que ele digitar um número):
 
@@ -130,15 +130,17 @@ clientes têm só cabe quatro, e cortar perfil pra caber é pior que ele digitar
 5. **Comércio / negócio local** — loja, restaurante, clínica, salão, oficina: tem endereço, horário e cliente que passa na porta ou chama no WhatsApp
 6. **Profissional liberal** — médico, advogado, contador, psicólogo, arquiteto, personal: vende a própria hora, vive de agenda e indicação, tem conselho de classe
 7. **Projeto** — uma coisa só sendo construída: um sistema, um app, um site, uma ideia pra validar. Ainda não é empresa, ou é uma frente isolada dentro de uma
+8. **Uso livre** — sem entrevista. Você começa pedindo o que precisa e o sistema se monta em volta do que você faz: aprende pelo uso, pergunta pouco e organiza a pasta conforme o trabalho aparece
 
 A resposta define três coisas:
 - Qual template de `CLAUDE.md` aplicar (`templates/perfis/claude-md-<perfil>.md`):
   `empreendedor-solo`, `freelancer`, `agencia`, `empresa`, `comercio-local`,
-  `profissional-liberal`, `projeto`
+  `profissional-liberal`, `projeto`, `uso-livre`
 - **Qual convenção de pastas** vale (ver `templates/estrutura.md`):
   - Freelancer e Agência → **por cliente** (`clientes/<Nome>/conteudo/`)
   - Todos os outros → **por tipo de entrega** (`conteudo/`, `site/`, `vendas/`, `sistemas/`)
-- **Qual entrevista** roda na Fase 2: a padrão (1 a 4) ou a própria do perfil (5, 6 e 7)
+  - Uso livre → por tipo de entrega, **provisória**: o próprio uso pode mudar pra por cliente
+- **Qual entrevista** roda na Fase 2: a padrão (1 a 4), a própria do perfil (5, 6 e 7), ou nenhuma (8)
 
 Explicar a escolha em uma linha, sem jargão:
 
@@ -154,6 +156,9 @@ perfil mais provável, dizer qual foi em uma linha e seguir. Casos de fronteira:
   fixa de clientes mensais → Profissional liberal
 - Loja que também vende online pelo Instagram → Comércio local. Loja só online,
   sem endereço físico → Empreendedor solo
+- "Não sei", "depende", "quero só testar", "vou usar pra várias coisas", ou ele
+  já veio com um pedido na primeira mensagem e não quer parar pra responder →
+  Uso livre. Dizer em uma linha que o sistema vai se montar pelo uso e seguir
 
 ---
 
@@ -161,7 +166,7 @@ perfil mais provável, dizer qual foi em uma linha e seguir. Casos de fronteira:
 
 Perguntas em ordem, esperando a resposta de cada uma. Resposta vaga: repetir uma vez pedindo concretude e seguir com o que vier.
 
-**Comércio local, Profissional liberal e Projeto têm entrevista própria** (abaixo). Os outros quatro seguem esta:
+**Comércio local, Profissional liberal e Projeto têm entrevista própria** (abaixo). **Uso livre não tem entrevista** (ver o bloco no fim desta fase). Os outros quatro seguem esta:
 
 **Sobre o negócio:**
 1. "Como você chama o que você faz? (nome da empresa, ou seu nome se for marca pessoal)"
@@ -275,7 +280,35 @@ O projeto ainda não tem canal, equipe nem voz de marca na maioria dos casos. Pe
 
 Mapeamento pra memória: 1-5 e 6-7 → `empresa.md` (o campo **Perfil** recebe "Projeto"; canais que não existem ficam vazios); 8-9 → `estrategia.md` (a 8 vira **Prioridade principal** com prazo em data absoluta, a 9 vira **Gargalo atual**); 10 → `identidade/` só se houver material; 11 → `preferencias.md`.
 
+### Uso livre — não é entrevista
+
+Aqui o pedido é a entrevista. Nenhuma das perguntas acima é feita, nem o nome.
+Uma frase só, e a conversa vira trabalho:
+
+> "Fechado. Então me conta o que você quer fazer primeiro, que eu vou me
+> montando em volta disso."
+
+Se ele já tinha pedido algo na primeira mensagem (o `/instalar` disparou
+sozinho por cima de um "faz um carrossel sobre X"), nem essa frase: ir
+direto pro pedido dele assim que a Fase 3 terminar.
+
+O que rege daí em diante está no molde `templates/perfis/claude-md-uso-livre.md`,
+seção **Como eu me construo**, e passa a valer como regra do `CLAUDE.md`. Em
+resumo, pra não depender de reler: fato que ele afirma vai pra memória no
+mesmo turno, com uma linha de aviso no fim da resposta; dedução entra como
+`[a confirmar]`; no máximo uma pergunta por turno, e só se a resposta muda a
+entrega de agora; pasta nasce na primeira peça; reorganização e perfil são
+propostos uma vez quando o padrão aparece, e esquecidos se ele recusar.
+
 ## Fase 3 — Preencher a memória
+
+**Uso livre:** os três arquivos de `_memoria/` ficam com os moldes de
+`templates/memoria/` e os campos vazios, mais **Perfil:** "Uso livre (em
+descoberta)" no `empresa.md` e, no `estrategia.md`, **Prioridade principal**
+com o que ele pediu primeiro, se já pediu. Campo vazio aqui não é erro: é o
+que o uso vai preencher. Não criar `identidade/`. O `CLAUDE.md` vem do molde
+`claude-md-uso-livre.md` com a lista "O que eu já sei" inteira em
+`[ainda não sei]`, e o resto desta fase não se aplica.
 
 ### `_memoria/empresa.md`
 Respostas 1-4 e 5 (bloco "Contato e canais"). Campo que ele não tem: deixar vazio, não inventar.
@@ -325,6 +358,9 @@ As outras pastas nascem conforme você for usando: fizer um carrossel, nasce
 conteudo/; fizer uma página, nasce site/.
 ```
 
+No uso livre, a terceira linha vira `✓ CLAUDE.md em uso livre: vou aprendendo
+pelo que você pede` e a quarta some.
+
 ---
 
 ## Fase 5 — Conferir a raiz
@@ -349,6 +385,8 @@ Ex: "Padaria São João" → `padaria-sao-joao`.
 ## Fase 6 — Mostrar que está funcionando
 
 Não terminar com instrução. **Demonstrar**, na mesma conversa: rodar o `/abrir` e mostrar o resumo do negócio já carregado da memória, ou, se ele mencionou dor de conteúdo, dar 3 pautas concretas do nicho dele.
+
+No uso livre não há memória pra mostrar: a demonstração é **fazer o primeiro pedido dele**, inteiro, e no fim da resposta a linha "Anotei: …" com o que aquele pedido ensinou sobre o negócio. É o sistema se montando na frente dele. Pular o parágrafo abaixo sobre "<resposta da 9>": ele não respondeu nada.
 
 Depois:
 
@@ -375,5 +413,6 @@ Mencionar também, em uma linha: guardar o trabalho no GitHub é só pedir; e qu
 - Não escrever "este arquivo será preenchido pelo /instalar" nos arquivos finais
 - 5-7 minutos no máximo. Se o usuário enrolar numa pergunta, registrar o que tem e seguir
 - **A pergunta da IA vem antes de tudo**, logo depois do banner. Fase 0 em diante já roda no formato escolhido
+- **Uso livre é uma escolha, não um atalho pra perguntar depois.** Quem escolheu 8 não recebe a entrevista em conta-gotas ao longo das sessões: recebe, no máximo, uma pergunta por turno, e só a que muda a entrega daquele turno
 - **Nunca pedir pro usuário fechar o editor**
 - Ao terminar, deixar claro que ele fala em português — sem barra, sem comando decorado

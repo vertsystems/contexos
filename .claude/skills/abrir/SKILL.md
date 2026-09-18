@@ -23,6 +23,24 @@ Curto e direto. O objetivo é carregar contexto e devolver uma síntese enxuta p
 
    E parar.
 
+   **Exceção: uso livre.** Se `empresa.md` diz **Perfil:** "Uso livre" (ou o
+   `CLAUDE.md` tem a seção "Como eu me construo"), memória em branco é o
+   esperado, não erro. Não oferecer `/instalar`. O resumo do passo 4 vira:
+
+   ```
+   O que eu já sei: [duas linhas com o que a lista "O que eu já sei" do
+   CLAUDE.md tem preenchido; se nada, "ainda nada — vou aprendendo pelo que você pede"]
+   Faria diferença saber: [até 2 itens que faltam E mudariam o trabalho
+   que ele vem pedindo; omitir a linha se não houver]
+   Pendente: [até 2 itens concretos, ou omitir]
+
+   Pronto. O que vamos fazer?
+   ```
+
+   "Faria diferença saber" não é pergunta: ele responde se quiser. Se a
+   pasta tiver coisa que a memória não cita, rodar o `/atualizar` antes de
+   responder e propor o ajuste em uma linha.
+
 3. Checagem rápida de pendências (sem narrar a busca, no máximo 2 itens):
    - `tarefas.md` — itens abertos (se o arquivo existir)
    - Calendário do mês em `conteudo/` — tem peça prevista pra hoje ou pra amanhã?
