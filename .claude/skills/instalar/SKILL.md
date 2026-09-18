@@ -24,12 +24,12 @@ pra fonte monoespaçada:
 ```
   BEM-VINDO AO
 
-  ██╗   ██╗██╗██████╗ ███████╗██████╗      ██████╗ ███████╗
-  ██║   ██║██║██╔══██╗██╔════╝██╔══██╗    ██╔═══██╗██╔════╝
-  ██║   ██║██║██████╔╝█████╗  ██████╔╝    ██║   ██║███████╗
-  ╚██╗ ██╔╝██║██╔═══╝ ██╔══╝  ██╔══██╗    ██║   ██║╚════██║
-   ╚████╔╝ ██║██║     ███████╗██║  ██║    ╚██████╔╝███████║
-    ╚═══╝  ╚═╝╚═╝     ╚══════╝╚═╝  ╚═╝     ╚═════╝ ╚══════╝
+   ██████╗  ██████╗ ███╗   ██╗████████╗███████╗██╗  ██╗    ██████╗ ███████╗
+  ██╔════╝ ██╔═══██╗████╗  ██║╚══██╔══╝██╔════╝╚██╗██╔╝   ██╔═══██╗██╔════╝
+  ██║      ██║   ██║██╔██╗ ██║   ██║   █████╗   ╚███╔╝    ██║   ██║███████╗
+  ██║      ██║   ██║██║╚██╗██║   ██║   ██╔══╝   ██╔██╗    ██║   ██║╚════██║
+  ╚██████╗ ╚██████╔╝██║ ╚████║   ██║   ███████╗██╔╝ ██╗   ╚██████╔╝███████║
+   ╚═════╝  ╚═════╝ ╚═╝  ╚═══╝   ╚═╝   ╚══════╝╚═╝  ╚═╝    ╚═════╝ ╚══════╝
 
   O sistema operacional do seu negócio — Desenv. por: Vert Systems
 
@@ -37,7 +37,7 @@ pra fonte monoespaçada:
   Leva poucos minutos, e você terá um cérebro digital funcionando.
 ```
 
-**Não mexer no desenho.** Cada linha tem largura calculada (66 colunas no total,
+**Não mexer no desenho.** Cada linha tem largura calculada (75 colunas no total,
 cabe em terminal de 80). Reindentar, "arrumar" espaço ou trocar caractere
 desalinha o traçado das letras, e desalinho de um caractere só já estraga.
 
