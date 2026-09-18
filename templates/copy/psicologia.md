@@ -4,7 +4,7 @@ Referência compartilhada. Lida por `/angulos`, `/carrossel`, `/landing`, `/ofer
 
 Por que existe: pessoa não decide comparando planilha. Decide por atalho mental. Conhecer os atalhos serve pra **remover atrito de uma decisão que já faz sentido**, não pra empurrar alguém a comprar o que não precisa.
 
-> **O limite, e ele não é negociável.** Todo mecanismo aqui funciona nas duas direções: pode facilitar uma boa decisão ou manipular uma ruim. A regra do ContexOS: usar só quando a compra realmente serve ao cliente, e nunca criar informação falsa (escassez inventada, prova social fabricada, âncora fictícia). Negócio pequeno vive de reputação — truque que funciona uma vez custa a indicação de cinco.
+> **O limite, e ele não é negociável.** Todo mecanismo aqui funciona nas duas direções: pode facilitar uma boa decisão ou manipular uma ruim. A regra do Contex OS: usar só quando a compra realmente serve ao cliente, e nunca criar informação falsa (escassez inventada, prova social fabricada, âncora fictícia). Negócio pequeno vive de reputação — truque que funciona uma vez custa a indicação de cinco.
 
 ---
 

@@ -3,7 +3,7 @@
 <!-- ia:inicio -->
 Skills de terceiros e nativas que valem conhecer. Use como referência ao criar skills novas com `/mapear-rotinas`, ou instale as que fizerem sentido pro seu negócio.
 
-> **Nada nesta página vem instalado com o ContexOS.** As 55 skills do ContexOS
+> **Nada nesta página vem instalado com o Contex OS.** As 55 skills do Contex OS
 > ficam na pasta de skills do projeto — a lista completa está no fim deste arquivo.
 > O que está aqui embaixo é catálogo externo: umas já vêm no Claude Code,
 > outras você instala por fora.
@@ -22,13 +22,13 @@ Skills de terceiros e nativas que valem conhecer. Use como referência ao criar 
 ### Schwartz Copy (resposta direta)
 **O que faz:** Escreve copy de vendas usando a metodologia de Eugene Schwartz (Breakthrough Advertising). Diagnostica o nível de consciência e sofisticação do mercado antes de gerar qualquer texto.
 **Bom pra:** Landing pages, e-mails de venda, VSLs, cartas de venda, páginas de captura
-**Como instalar:** não vem no ContexOS — instalar como skill global (caminho no topo). Depois: `/schwartz-copy`
+**Como instalar:** não vem no Contex OS — instalar como skill global (caminho no topo). Depois: `/schwartz-copy`
 **Fonte:** skill de terceiros, testada em produção
 
 ### Ogilvy Copy (marca e posicionamento)
 **O que faz:** Gera copy institucional usando a metodologia de David Ogilvy. Pesquisa profunda, big idea, headlines informativas.
 **Bom pra:** Manifestos de marca, campanhas institucionais, taglines, brand voice, posicionamento
-**Como instalar:** não vem no ContexOS — instalar como skill global (caminho no topo). Depois: `/ogilvy-copy`
+**Como instalar:** não vem no Contex OS — instalar como skill global (caminho no topo). Depois: `/ogilvy-copy`
 **Fonte:** skill de terceiros, testada em produção
 
 ---
@@ -97,7 +97,7 @@ Skills de terceiros e nativas que valem conhecer. Use como referência ao criar 
 **O que faz:** Extrai transcrições de vídeos do YouTube usando yt-dlp. Suporta vários idiomas.
 **Bom pra:** Criar conteúdo a partir de vídeos (carrosséis, newsletters, posts)
 **Precisa de:** yt-dlp instalado (`brew install yt-dlp`)
-**Como instalar:** não vem no ContexOS — instalar como skill global (caminho no topo). Depois: `/yt-transcript`
+**Como instalar:** não vem no Contex OS — instalar como skill global (caminho no topo). Depois: `/yt-transcript`
 **Fonte:** skill de terceiros, testada em produção
 
 ---
@@ -124,7 +124,7 @@ Skills de terceiros e nativas que valem conhecer. Use como referência ao criar 
 
 <!-- ia:fim -->
 
-## O que o ContexOS já resolve (não precisa de skill nova)
+## O que o Contex OS já resolve (não precisa de skill nova)
 
 Antes de criar skill, conferir se um desses já cobre:
 
@@ -185,14 +185,14 @@ Antes de criar skill, conferir se um desses já cobre:
 
 ## As skills do próprio sistema
 
-Não resolvem trabalho do negócio: cuidam do ContexOS em si:
+Não resolvem trabalho do negócio: cuidam do Contex OS em si:
 
 | Tarefa | Skill |
 |---|---|
 | Primeira configuração: entrevista, memória, perfil de pastas | `/instalar` |
 | Abrir a sessão de trabalho carregando a memória do negócio | `/abrir` |
 | Reconciliar a memória com o que mudou no projeto | `/atualizar` |
-| Puxar versão nova do ContexOS sem tocar no seu trabalho | `/atualizar-sistema` |
+| Puxar versão nova do Contex OS sem tocar no seu trabalho | `/atualizar-sistema` |
 | Salvar o trabalho no GitHub (commit + push) | `/salvar` |
 
 ---

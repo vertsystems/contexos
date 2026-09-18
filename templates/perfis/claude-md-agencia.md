@@ -1,4 +1,4 @@
-# [Nome da Agência] — ContexOS
+# [Nome da Agência] — Contex OS
 
 > Molde do CLAUDE.md aplicado a **agência** — equipe pequena entregando
 > pra múltiplos clientes ao mesmo tempo. O sistema gira em torno de
@@ -52,7 +52,7 @@ Em dúvida de quem é a peça, perguntar antes de criar. Quando um prospect
 virar cliente, mover a proposta pra `clientes/<Nome>/`.
 
 As pastas do sistema (`.claude/skills/`, `templates/`, `scripts/`) convivem na
-raiz e são substituídas quando sai versão nova do ContexOS. Não guarde trabalho
+raiz e são substituídas quando sai versão nova do Contex OS. Não guarde trabalho
 dentro delas: o resto da raiz é seu.
 
 ## Sobre a agência

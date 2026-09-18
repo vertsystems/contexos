@@ -31,7 +31,7 @@ Números levantados com `node scripts/verificar.js texto` em quatro tipos de tex
 | Texto de blog gerado | **0,13** | **0%** |
 | Texto promocional gerado | **0,26** | **10%** |
 | Texto com voz de dono | 0,64 | 40% |
-| Prosa do ContexOS (75 arquivos) | 0,45 a 1,29 | 17% a 61% |
+| Prosa do Contex OS (75 arquivos) | 0,45 a 1,29 | 17% a 61% |
 
 Daí saem as duas réguas do comando: **variação acima de 0,45** e **pelo menos 15% de
 frases curtas**. A separação é limpa: o que sai de máquina fica entre 0,13 e 0,26, o

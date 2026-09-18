@@ -1,4 +1,4 @@
-# [Nome da Empresa] — ContexOS
+# [Nome da Empresa] — Contex OS
 
 > Molde do CLAUDE.md aplicado a **empresa estruturada** — setores,
 > processos, várias frentes rodando juntas. O sistema gira em torno
@@ -42,7 +42,7 @@ e registrar aqui a regra. Projeto que cruza setores vai em `projetos/<nome>/`
 (via `/novo-projeto`).
 
 As pastas do sistema (`.claude/skills/`, `templates/`, `scripts/`) convivem na
-raiz e são substituídas quando sai versão nova do ContexOS. Não guarde trabalho
+raiz e são substituídas quando sai versão nova do Contex OS. Não guarde trabalho
 dentro delas: o resto da raiz é seu.
 
 ## Sobre a empresa

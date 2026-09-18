@@ -6,12 +6,12 @@ description: >
   Exige token da Meta e site com deploy automático já configurados. Use SOMENTE quando o usuário
   pedir automação explicitamente ("publica automático", "posta no Insta pela API", "/aprovar-post").
   NÃO use quando ele disser apenas "publicar", "aprovar" ou "postar": nesses casos o padrão do
-  ContexOS é entregar os arquivos prontos pra ele programar na mão.
+  Contex OS é entregar os arquivos prontos pra ele programar na mão.
 ---
 
 # /aprovar-post — Publicação automática (avançado, opcional)
 
-> **Esse não é o caminho padrão do ContexOS.** O fluxo normal termina com os
+> **Esse não é o caminho padrão do Contex OS.** O fluxo normal termina com os
 > arquivos prontos na pasta do conteúdo — legenda pra copiar e PNGs numerados —
 > e você programa no Meta Business Suite, no app ou onde preferir. É mais
 > simples, não depende de token nenhum e te deixa escolher o horário.

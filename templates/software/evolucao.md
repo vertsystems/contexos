@@ -316,7 +316,7 @@ os termos que as pessoas digitaram na busca do sistema. A busca vazia é a lista
 ## O que não trazer para negócio de uma a três pessoas
 
 O material de gestão de produto foi escrito para empresa com time de produto, e boa parte
-dele não sobrevive à escala do comprador do ContexOS:
+dele não sobrevive à escala do comprador do Contex OS:
 
 - **Teste A/B** — exige volume que o site do negócio pequeno não tem, e sem ele o resultado é ruído. Antes de confiar em qualquer teste, seria preciso rodar duas versões idênticas para medir a variação natural
 - **Painel de métricas de assinatura** (funil completo, retenção por coorte, valor do cliente contra custo de aquisição) — o dinheiro do negócio se acompanha no `/caixa`, com o dado que ele já tem

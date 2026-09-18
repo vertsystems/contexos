@@ -41,7 +41,7 @@ do topo, um vídeo de fundo ou o título grande. Otimizar outra coisa não move 
   600px é o desperdício mais frequente
 - Fonte: `font-display: swap` e `<link rel="preload">` só na fonte do título. Precarregar
   seis arquivos de fonte atrasa a própria imagem
-- Nada de CSS externo bloqueando a primeira tela — para peça do ContexOS, o estilo vai
+- Nada de CSS externo bloqueando a primeira tela — para peça do Contex OS, o estilo vai
   inline no arquivo, o que já resolve
 
 ```bash

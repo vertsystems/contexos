@@ -1,13 +1,13 @@
 ---
 name: instalar
 description: >
-  Instalação inicial do ContexOS: entrevista o dono do negócio sobre empresa, canais de contato, tom de
+  Instalação inicial do Contex OS: entrevista o dono do negócio sobre empresa, canais de contato, tom de
   voz, foco atual e identidade, preenche a memória e adapta o CLAUDE.md ao perfil. Use quando o usuário
   acabou de clonar o repositório, ou disser "instalar", "rodar o instalar", "primeiro setup",
   "configurar o sistema", "acabei de baixar", ou /instalar.
 ---
 
-# /instalar — Instalação inicial do ContexOS
+# /instalar — Instalação inicial do Contex OS
 
 Primeira coisa depois de clonar, e ela começa sozinha: se `_memoria/` não existe, o arquivo de regras da raiz manda executar esta skill na primeira mensagem do usuário, seja ela qual for. Não pode falhar e não pode soar burocrático. Trata como conversa de descoberta: uma pergunta por vez, escuta de verdade, sem enfileirar tudo.
 
@@ -48,7 +48,7 @@ Depois de imprimir, seguir direto pra pergunta da IA, sem comentar o banner.
 <!-- ia:inicio -->
 ## Qual IA — antes da Fase 0
 
-O ContexOS roda no Claude Code e no Codex, e o workspace fica **inteiro** no
+O Contex OS roda no Claude Code e no Codex, e o workspace fica **inteiro** no
 formato de um dos dois: arquivo de regras, pasta de skills, moldes e cada
 referência no texto. Quem decide é o usuário, agora. Perguntar em texto, sem
 seletor:
@@ -76,7 +76,7 @@ entrada mínimo (visita), pra ela poder abrir a pasta depois sem mudar a base.
   da Fase 0 em diante. Não fazer nada de memória: o texto reescrito é o que vale
 
 Se ele responder outra coisa ("Cursor", "Gemini", "não sei"): dizer em uma linha
-que o ContexOS hoje roda no Claude Code e no Codex, e que outro cliente que leia
+que o Contex OS hoje roda no Claude Code e no Codex, e que outro cliente que leia
 `AGENTS.md` funciona no formato do Codex. Na dúvida, Claude Code, que é o formato
 em que o sistema é publicado.
 
@@ -105,7 +105,7 @@ Se `_memoria/` já existir preenchido, é reinstalação: perguntar se refaz do 
 
 **Não criar** `conteudo/`, `site/`, `propostas/`, `identidade/`, `dados/` nem qualquer outra. Elas nascem quando a primeira peça daquele tipo for feita.
 
-### 3. Separar o repositório dele do repositório do ContexOS
+### 3. Separar o repositório dele do repositório do Contex OS
 
 O clone veio apontando pro repositório do produto. Renomear esse endereço, pra ele poder ter o repositório dele depois **e** continuar recebendo atualização:
 
@@ -361,7 +361,7 @@ Depois:
 > Você mencionou que repete '<resposta da 9>' toda semana. Quando quiser tirar isso
 > das costas, é só falar que eu transformo numa skill sua."
 
-Mencionar também, em uma linha: guardar o trabalho no GitHub é só pedir; e quando sair versão nova do ContexOS, falar "atualiza o sistema".
+Mencionar também, em uma linha: guardar o trabalho no GitHub é só pedir; e quando sair versão nova do Contex OS, falar "atualiza o sistema".
 
 ---
 

@@ -160,7 +160,7 @@ Sistema no ar sem log é caixa preta. O mínimo que resolve a maior parte dos ca
 
 ## Medir, nunca supor (obrigatório)
 
-O ContexOS não estima número, calcula. Em backend a regra é a mesma, com outros comandos:
+O Contex OS não estima número, calcula. Em backend a regra é a mesma, com outros comandos:
 desempenho não se avalia lendo o código.
 
 ```bash
@@ -184,7 +184,7 @@ npm test
 sem número antes e depois é chute com trabalho junto, e costuma piorar a legibilidade em
 troca de nada.
 
-O `scripts/verificar.js` do ContexOS cobre peça e número (CSV, tabela, data, contraste, HTML,
+O `scripts/verificar.js` do Contex OS cobre peça e número (CSV, tabela, data, contraste, HTML,
 peso). Backend se verifica rodando: teste, `EXPLAIN`, `curl`, `audit`.
 
 ---

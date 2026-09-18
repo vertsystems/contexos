@@ -46,7 +46,7 @@ npx playwright screenshot --viewport-size=1080,1350 --full-page "file:///caminho
 **Precisa de conta:** Sim — App na Meta for Developers, Página FB e conta Instagram Business conectada
 **Configurar:** `META_PAGE_ACCESS_TOKEN`, `META_PAGE_ID`, `META_IG_USER_ID` no `.env`
 **Atenção:** a API busca as imagens por **URL pública** — os PNGs precisam estar no ar antes de publicar
-**Quando usar:** só se você for publicar em volume e quiser montar a automação por conta. O ContexOS não publica sozinho — a skill opcional em `templates/opcional/aprovar-post/` depende de scripts que não vêm no produto
+**Quando usar:** só se você for publicar em volume e quiser montar a automação por conta. O Contex OS não publica sozinho — a skill opcional em `templates/opcional/aprovar-post/` depende de scripts que não vêm no produto
 
 ### Post for Me API
 **O que faz:** Publica posts no Instagram e TikTok direto do Claude Code (alternativa mais simples à Meta API)
@@ -111,7 +111,7 @@ O provedor é detectado pela chave que existir. Opções: `--formato retrato|qua
 **Integração:** não há, e não vale montar
 **Como usar na prática:** gere a imagem no painel que você já usa e passe o arquivo — o `/carrossel` aceita foto pronta igual à gerada aqui
 
-> **Regra do ContexOS:** não gerar imagem de pessoa com rosto identificável, e não
+> **Regra do Contex OS:** não gerar imagem de pessoa com rosto identificável, e não
 > usar foto de IA como se fosse foto real do negócio (produto, equipe, fachada).
 
 ---

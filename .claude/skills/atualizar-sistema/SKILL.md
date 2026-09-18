@@ -1,9 +1,9 @@
 ---
 name: atualizar-sistema
 description: >
-  Atualiza o ContexOS pra versão nova sem tocar no trabalho do usuário: traz skills, templates e
+  Atualiza o Contex OS pra versão nova sem tocar no trabalho do usuário: traz skills, templates e
   scripts novos, preservando memória, marca, conteúdo e as skills que ele criou. Use quando o usuário
-  disser "atualiza o ContexOS", "atualiza o sistema", "saiu versão nova", "tem atualização",
+  disser "atualiza o Contex OS", "atualiza o sistema", "saiu versão nova", "tem atualização",
   "sincronizar skills", ou /atualizar-sistema. Não confundir com /atualizar, que cuida da memória do negócio.
 ---
 
@@ -12,7 +12,7 @@ description: >
 Diferença que importa:
 
 - **`/atualizar`** → atualiza a memória do **seu negócio** (clientes, foco, estrutura)
-- **`/atualizar-sistema`** → atualiza o **ContexOS** (skills, templates, correções)
+- **`/atualizar-sistema`** → atualiza o **Contex OS** (skills, templates, correções)
 
 O que é do sistema e pode ser substituído: `.claude/skills/` (só as que vieram do produto), `templates/`, `scripts/`, `.env.example`, `LICENSE`, `README.md`.
 
@@ -21,7 +21,7 @@ O que é do usuário e **nunca** se toca: `_memoria/`, `identidade/`, `CLAUDE.md
 <!-- ia:inicio -->
 **A versão nova chega sempre no formato do Claude Code** (`.claude/skills/`,
 `templates/perfis/claude-md-*`, texto falando em `CLAUDE.md`). É assim que o
-ContexOS é publicado, independente da IA da base. Numa base Codex, o passo 2 traz
+Contex OS é publicado, independente da IA da base. Numa base Codex, o passo 2 traz
 essas pastas como estão e o passo 2b converte o que chegou com
 `node scripts/ia.js codex`. Numa base Claude Code, rodar `node scripts/ia.js claude`
 no mesmo ponto só regenera o `AGENTS.md` de visita, e não custa nada.
@@ -34,7 +34,7 @@ no mesmo ponto só regenera o `AGENTS.md` de visita, e não custa nada.
 
 ### Passo 1 — Ver o que mudou, antes de mexer
 
-**Se o repositório do ContexOS está configurado** (o `/instalar` deixa como `contexos`):
+**Se o repositório do Contex OS está configurado** (o `/instalar` deixa como `contexos`):
 
 Quem instalou quando o sistema ainda se chamava ViperOS tem o remote com o nome
 antigo. Antes de buscar, renomear e reapontar, sem perguntar (é só o endereço

@@ -38,7 +38,7 @@ Três alturas resolvem uma interface inteira (Fluent 2, `useButtonStyles.styles.
 
 ### Densidade compacta é proibida por padrão
 
-O piso do ContexOS é **34px de alvo clicável no desktop e 44px no celular**: mesmo
+O piso do Contex OS é **34px de alvo clicável no desktop e 44px no celular**: mesmo
 quando o controle desenhado tem 24px de altura visual. A diferença se resolve com
 `padding` ou com área de toque invisível, não encolhendo o botão:
 
@@ -51,7 +51,7 @@ quando o controle desenhado tem 24px de altura visual. A diferença se resolve c
 @media (pointer: coarse) { .acao-linha { min-height: 44px; min-width: 44px; } }
 ```
 
-Por quê: o público do ContexOS é negócio real, com gente de 50, 60, 70 anos usando no
+Por quê: o público do Contex OS é negócio real, com gente de 50, 60, 70 anos usando no
 celular apoiado numa bancada. **Restrição vence estética**: a mesma regra do
 `briefing-visual.md`. Interface de 24px é confortável para quem desenha, não para quem
 usa oito horas por dia com o dedo.

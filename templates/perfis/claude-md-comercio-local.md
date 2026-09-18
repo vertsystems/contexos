@@ -1,4 +1,4 @@
-# [Nome do Negócio] — ContexOS
+# [Nome do Negócio] — Contex OS
 
 > Molde do CLAUDE.md aplicado a **comércio / negócio local** — loja, restaurante,
 > clínica, salão, oficina, pet shop, academia. Tem endereço, horário e cliente
@@ -39,7 +39,7 @@ daquele tipo é criada: workspace não tem pasta vazia.
 | Pipeline | `tarefas.md` | `/tarefas` |
 
 As pastas do sistema (`.claude/skills/`, `templates/`, `scripts/`) convivem na
-raiz e são substituídas quando sai versão nova do ContexOS. Não guarde trabalho
+raiz e são substituídas quando sai versão nova do Contex OS. Não guarde trabalho
 dentro delas: o resto da raiz é seu.
 
 ## O negócio

@@ -6,7 +6,7 @@
  *   node scripts/ia.js codex     Codex:        AGENTS.md + .agents/skills/
  *   node scripts/ia.js status    qual formato está ativo, e se sobrou pedaço do outro
  *
- * O ContexOS é publicado no formato do Claude Code. Na instalação o usuário diz
+ * O Contex OS é publicado no formato do Claude Code. Na instalação o usuário diz
  * qual IA está usando, e este script converte tudo pro formato dela: a pasta de
  * skills, o arquivo de regras da raiz, o nome dos moldes de perfil, o bloco do
  * .gitignore e cada referência no texto das skills, dos templates e do README.
@@ -134,9 +134,9 @@ function arquivosDeTexto(raiz, ia) {
 function textoVisita(base, visita) {
   const sk = barra(base.skills);
   return `${MARCA_VISITA}
-# ContexOS — você está de visita
+# Contex OS — você está de visita
 
-Este workspace é o ContexOS no formato do **${base.nome}**: as regras estão em
+Este workspace é o Contex OS no formato do **${base.nome}**: as regras estão em
 \`${base.entrada}\` e as skills em \`${sk}/\`. A base é dele e continua assim.
 Você (${visita.nome}) trabalha aqui como apoio, com tudo que a base oferece, sem
 mudar a base.
@@ -191,7 +191,7 @@ function converter(raiz, alvoId) {
   const log = [];
 
   if (!est.skills.claude && !est.skills.codex)
-    throw new Error(`nem ${IAS.claude.skills}/ nem ${IAS.codex.skills}/ existem — isso não parece um workspace ContexOS`);
+    throw new Error(`nem ${IAS.claude.skills}/ nem ${IAS.codex.skills}/ existem — isso não parece um workspace Contex OS`);
 
   // ── 1. skills: o que está na pasta da outra IA vem pra cá, convertido ──
   const deSkills = path.join(raiz, outra.skills);
@@ -280,7 +280,7 @@ function listar(dir) {
 function status(raiz) {
   const est = detectar(raiz);
   console.log(`\nIA: ${path.resolve(raiz)}`);
-  if (!est.ativa) return console.log("  ✗ nenhuma pasta de skills encontrada — isso não parece um workspace ContexOS");
+  if (!est.ativa) return console.log("  ✗ nenhuma pasta de skills encontrada — isso não parece um workspace Contex OS");
   if (est.ativa === "ambas") {
     console.log(`  ✗ ${IAS.claude.skills}/ e ${IAS.codex.skills}/ existem ao mesmo tempo — rode \`node scripts/ia.js claude\` ou \`codex\` pra unificar`);
     return;

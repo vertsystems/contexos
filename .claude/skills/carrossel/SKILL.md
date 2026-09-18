@@ -83,7 +83,7 @@ Se o tipo não estiver claro, perguntar:
 
 ## Estilo visual base
 
-O ContexOS tem um estilo próprio, editorial, calmo, premium. Sem clip-art, sem emoji decorativo, sem gradiente arco-íris, sem template genérico de IA. `identidade/tokens.css` e `identidade/design-guide.md` sobrescrevem esses padrões; quando os dois forem vagos ou vazios, usar o que tá aqui (não parar pra pedir `/instalar`, o `/carrossel` funciona com defaults bons).
+O Contex OS tem um estilo próprio, editorial, calmo, premium. Sem clip-art, sem emoji decorativo, sem gradiente arco-íris, sem template genérico de IA. `identidade/tokens.css` e `identidade/design-guide.md` sobrescrevem esses padrões; quando os dois forem vagos ou vazios, usar o que tá aqui (não parar pra pedir `/instalar`, o `/carrossel` funciona com defaults bons).
 
 Os padrões abaixo são o piso. O teto está em `templates/design/qualidade-visual.md`, e o que **nunca** fazer está em `templates/design/anti-generico.md`: conferir os dois antes de entregar.
 

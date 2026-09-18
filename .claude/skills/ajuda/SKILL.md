@@ -9,7 +9,7 @@ description: >
 
 # /ajuda — Qual skill usar agora
 
-O ContexOS tem 55 skills. Ninguém decora isso, e ninguém precisa: o usuário fala o que quer em português e a skill certa roda sozinha. Essa aqui responde a outra pergunta: **o que faz sentido fazer agora.**
+O Contex OS tem 55 skills. Ninguém decora isso, e ninguém precisa: o usuário fala o que quer em português e a skill certa roda sozinha. Essa aqui responde a outra pergunta: **o que faz sentido fazer agora.**
 
 Ao recomendar, falar pelo resultado, não pelo comando: "eu monto o banco de pautas" em vez de "roda /ideias". O nome da skill entra entre parênteses, no máximo, nunca como exigência.
 
@@ -151,7 +151,7 @@ peça com tipografia, que funciona bem.
 **"Faço a mesma coisa toda semana"**
 `/mapear-rotinas`: transforma a rotina em skill própria
 
-**"Saiu versão nova do ContexOS" / "quero atualizar o sistema"**
+**"Saiu versão nova do Contex OS" / "quero atualizar o sistema"**
 `/atualizar-sistema`: puxa a versão nova e sincroniza as skills sem tocar no seu trabalho
 
 ### Passo 4 — Responder curto
@@ -179,6 +179,6 @@ Só listar tudo se o usuário pedir explicitamente.
 - Se a memória não foi preenchida, a resposta é `/instalar` e nada mais
 - Nunca recomendar skill que depende de coisa que não existe (não sugerir `/calendario` sem banco de pautas — sugerir `/ideias` primeiro)
 - Dizer quanto tempo custa cada caminho, quando for curto. Isso decide mais que a descrição
-- **O ContexOS não publica por conta própria.** As skills entregam os arquivos prontos e o usuário posta onde já trabalha. Se ele pedir publicação automática, dizer que existe uma skill opcional em `templates/opcional/` que exige App da Meta e dois scripts que não vêm no produto
+- **O Contex OS não publica por conta própria.** As skills entregam os arquivos prontos e o usuário posta onde já trabalha. Se ele pedir publicação automática, dizer que existe uma skill opcional em `templates/opcional/` que exige App da Meta e dois scripts que não vêm no produto
 - **Falar pelo resultado, não pelo comando.** O usuário não precisa saber o nome das skills pra usar o sistema
 - Se o usuário pergunta como uma skill específica funciona, explicar o fluxo dela em 3-4 linhas em vez de mandar ele ler o SKILL.md

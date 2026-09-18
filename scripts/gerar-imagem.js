@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * ContexOS — gerar-imagem.js
+ * Contex OS — gerar-imagem.js
  * Gera imagem por IA e salva em arquivo. Funciona com mais de um provedor.
  *
  * Uso:

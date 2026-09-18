@@ -1,4 +1,4 @@
-# ContexOS
+# Contex OS
 
 > O sistema operacional do seu negócio dentro da sua IA de código.
 
@@ -30,7 +30,7 @@ ex: `varefy`) e cola:
 
 ```
 Clona o conteúdo de https://github.com/vertsystems/contexos.git direto nesta
-pasta (sem criar subpasta) e começa a instalação do ContexOS.
+pasta (sem criar subpasta) e começa a instalação do Contex OS.
 ```
 
 Ele clona, mostra o banner, pergunta qual IA você está usando, e dispara a
@@ -88,7 +88,7 @@ workspace e te diz o próximo passo.
 Carrega o contexto antes de cada sessão · faz commit + push no GitHub · varre o
 projeto e atualiza a memória · cria pasta isolada pra cada cliente · mantém o
 pipeline do que tá em jogo · fecha a semana e alimenta a próxima · transforma o
-que você repete em skill própria · traz a versão nova do ContexOS sem tocar no
+que você repete em skill própria · traz a versão nova do Contex OS sem tocar no
 teu trabalho.
 
 **Vender** — o que decide o faturamento
@@ -183,14 +183,14 @@ roda.
 
 A diferença não é velocidade. É capacidade nova: uma pessoa com IA constrói o
 que antes exigia time inteiro. Cada processo crítico que hoje roda em open loop
-(decide → executa → não mede → repete cego) vira closed loop dentro do ContexOS
+(decide → executa → não mede → repete cego) vira closed loop dentro do Contex OS
 (decide → executa → captura → realimenta → ajusta sozinho).
 
 O sistema não substitui você. Vira parte da sua empresa.
 
 ---
 
-## Como o ContexOS pensa
+## Como o Contex OS pensa
 
 `_memoria/` é o cérebro. Tudo que importa do seu negócio mora aqui: quem é a
 empresa, como ela fala, o que tá em foco, quem compra e o que você vende. O
@@ -221,7 +221,7 @@ diz o que travou → volta pra oferta com informação nova.
 
 ## Atualizar
 
-Saiu versão nova? Fala "atualiza o ContexOS". Ele baixa o que mudou e sincroniza
+Saiu versão nova? Fala "atualiza o Contex OS". Ele baixa o que mudou e sincroniza
 as skills **sem tocar no seu trabalho**: memória, marca, conteúdo e propostas
 ficam intactos, e as skills que você criou por conta própria também.
 
@@ -236,7 +236,7 @@ arquivo `LICENSE`.
 
 ## Quando precisar
 
-ContexOS é um produto **Vert Systems**.
+Contex OS é um produto **Vert Systems**.
 
 **Bruno Santana**
 WhatsApp: [13 99728-7738](https://wa.me/5513997287738)

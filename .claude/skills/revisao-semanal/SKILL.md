@@ -9,7 +9,7 @@ description: >
 
 # /revisao-semanal — Fechamento de semana
 
-O ciclo que fecha o loop: produzir sem revisar é o que a tese do ContexOS chama de open loop, decide, executa, não mede, repete cego. Dez minutos aqui alimentam as decisões da semana seguinte.
+O ciclo que fecha o loop: produzir sem revisar é o que a tese do Contex OS chama de open loop, decide, executa, não mede, repete cego. Dez minutos aqui alimentam as decisões da semana seguinte.
 
 ## Dependências
 

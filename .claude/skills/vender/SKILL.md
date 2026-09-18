@@ -166,5 +166,5 @@ Follow-up sem novidade é cobrança. Todo retorno leva algo: um dado, um case pa
 - Nunca falar mal de concorrente. Investigar o que falta, sem atacar
 - Objeção repetida três vezes é "não" — respeitar e liberar o tempo
 - Continuação não é avanço. Registrar como o que é
-- Nada de técnica de pressão, escassez falsa ou "última chance". O ContexOS não vende assim
+- Nada de técnica de pressão, escassez falsa ou "última chance". O Contex OS não vende assim
 - Se o negócio for regulado (saúde, jurídico, financeiro), conferir o que o conselho de classe permite prometer numa conversa comercial

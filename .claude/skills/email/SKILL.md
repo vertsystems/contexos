@@ -127,5 +127,5 @@ Antes de disparar: envia um teste pra você mesmo e abre no celular.
 - **Nada de `<script>`, `<form>` ou CSS externo** — removidos ou marcados como spam
 - Abaixo de 102 KB de HTML
 - Versão em texto puro sempre, e conferida
-- **O ContexOS entrega o arquivo; quem dispara é o usuário**, na ferramenta dele. A skill não envia nada
+- **O Contex OS entrega o arquivo; quem dispara é o usuário**, na ferramenta dele. A skill não envia nada
 - Se o pedido é um e-mail para **uma** pessoa, a skill é `/email-profissional`

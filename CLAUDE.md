@@ -1,6 +1,6 @@
-# ContexOS — Sistema operacional do negócio
+# Contex OS — Sistema operacional do negócio
 
-Regras de operação do ContexOS: como o assistente lê o contexto, aprende com
+Regras de operação do Contex OS: como o assistente lê o contexto, aprende com
 correções, mantém tudo atualizado e cria skills novas conforme a operação
 evolui.
 
@@ -27,7 +27,7 @@ não sabe que isso existe.
 ## Duas IAs, uma base
 
 <!-- ia:inicio -->
-O ContexOS roda no Claude Code e no Codex. O workspace fica no formato de **uma**
+O Contex OS roda no Claude Code e no Codex. O workspace fica no formato de **uma**
 delas (a que o usuário escolheu na instalação), e a outra pode abrir a pasta
 como visita, pelo arquivo de entrada mínimo que o `scripts/ia.js` gera. Visita
 trabalha com tudo que a base oferece e não muda a base: não move skill, não
@@ -268,7 +268,7 @@ node scripts/verificar.js segredo [pasta]        # chave e senha em arquivo vers
 node scripts/verificar.js migracao [pasta]       # ordem, volta atrás e DROP na migração
 node scripts/verificar.js contraste "#123" "#fff"
 node scripts/gerar-pdf.js <arquivo.html>              # HTML → PDF, com verificação
-node scripts/verificar.js sistema                     # integridade do próprio ContexOS
+node scripts/verificar.js sistema                     # integridade do próprio Contex OS
 ```
 
 O `sistema` é o único que não olha o trabalho, e sim o sistema: skill que não

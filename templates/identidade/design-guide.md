@@ -1,6 +1,6 @@
 # Identidade visual
 
-> Como a marca aparece em tudo que o ContexOS gera.
+> Como a marca aparece em tudo que o Contex OS gera.
 > As skills de carrossel, post, proposta, página e material leem esse arquivo
 > antes de criar qualquer visual. Edite quando a marca evoluir.
 >

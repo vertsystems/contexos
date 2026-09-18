@@ -13,7 +13,7 @@ description: >
 
 > **Convenção de pastas:** a saída vai em `identidade/`, junto do `tokens.css`. Na convenção **por cliente**, `clientes/<Nome>/identidade/`. Esta skill **não** cria pasta de sistema: quem constrói software é o `/backend`, e ele consome o padrão gerado aqui.
 
-O ContexOS sabia desenhar peça de marketing e sabia construir servidor. No meio ficava a
+O Contex OS sabia desenhar peça de marketing e sabia construir servidor. No meio ficava a
 tela onde o negócio passa o dia: a lista de pedidos, a ficha do cliente, o painel da
 manhã. Desenhada no improviso, com um botão diferente em cada canto.
 
