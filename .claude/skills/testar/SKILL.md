@@ -16,7 +16,7 @@ description: >
 
 # /testar — A rede embaixo do que já está no ar
 
-> **Convenção de pastas:** os testes ficam **dentro do projeto**, na pasta e no padrão de nome que ele já usa (`tests/`, `spec/`, `__tests__/`, ou o arquivo de teste ao lado do código). O `COBERTURA.md` nasce na raiz dessa pasta, junto com o primeiro teste. Esta skill não cria pasta de teste com nome do ViperOS dentro de código que já existe.
+> **Convenção de pastas:** os testes ficam **dentro do projeto**, na pasta e no padrão de nome que ele já usa (`tests/`, `spec/`, `__tests__/`, ou o arquivo de teste ao lado do código). O `COBERTURA.md` nasce na raiz dessa pasta, junto com o primeiro teste. Esta skill não cria pasta de teste com nome do ContexOS dentro de código que já existe.
 
 O caso normal do cliente pequeno não é um sistema mal testado. É um sistema sem nenhum teste,
 já em produção, com o dono conferindo tudo na mão porque não confia. Ele não precisa de uma

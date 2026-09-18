@@ -64,7 +64,7 @@ de formulário em silêncio.
 > "Movimento **3**: landing de serviço para público que decide devagar: transição só
 > onde ajuda a entender, nada que chame atenção sozinho."
 
-O padrão do ViperOS é **movimento 3**. Peça estática (carrossel, proposta, material
+O padrão do ContexOS é **movimento 3**. Peça estática (carrossel, proposta, material
 impresso) é **movimento 0**, e isso é resposta certa, não falta de capricho.
 
 **Passo B2: Escrever `identidade/movimento.css`.** Os tokens do

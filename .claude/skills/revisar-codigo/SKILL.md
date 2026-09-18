@@ -153,7 +153,7 @@ mês e volte a conversar depois. E reconstrua o pedaço, nunca o sistema.
 
 ### Passo 8 — A lista do que exigir de quem está saindo
 
-Vale para o freelancer que encerra, para a agência que perdeu a conta e para o próprio ViperOS. O
+Vale para o freelancer que encerra, para a agência que perdeu a conta e para o próprio ContexOS. O
 dono precisa terminar dono do que foi feito.
 
 - **Repositório** — a conta é dele, e o sistema sobe a partir de um clone novo em outra máquina
@@ -225,4 +225,4 @@ ler inteiro, e a régua é a mesma de qualquer peça do sistema.
 - **Excesso de arquitetura é achado.** Camada que ninguém sabe explicar custa manutenção todo mês
 - **A responsabilidade do código copiado é de quem colou.** Vale igual para trecho de fórum e para trecho gerado por IA, e é por isso que o sistema escrito por máquina passa pela mesma auditoria
 - **O laudo fala a língua do dono.** Sintoma que ele já viu na tela, custo em hora ou em real, conserto em uma frase. Termo técnico entra depois da explicação, nunca antes
-- **O ViperOS entrega arquivo, não publica.** Trocar chave, apagar branch, cancelar fatura, avisar o desenvolvedor: quem faz é o dono
+- **O ContexOS entrega arquivo, não publica.** Trocar chave, apagar branch, cancelar fatura, avisar o desenvolvedor: quem faz é o dono

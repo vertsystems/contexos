@@ -203,7 +203,7 @@ instalou. Conserto: escolha o id definitivo antes da primeira publicação, prot
 como atualização, e o aparelho trata o pacote como outro. Não tem conserto depois. Prevenção:
 arquivo e senha no cofre do dono no dia em que a chave nasce, com o lugar anotado.
 
-O ViperOS constrói e assina o arquivo. Quem publica na loja é o dono, com a conta dele.
+O ContexOS constrói e assina o arquivo. Quem publica na loja é o dono, com a conta dele.
 
 ---
 

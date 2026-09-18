@@ -1,4 +1,4 @@
-# ViperOS
+# ContexOS
 
 > O sistema operacional do seu negócio dentro da sua IA de código.
 
@@ -29,8 +29,8 @@ Abre o Claude Code ou o Codex na pasta do teu negócio (vazia, com o nome dele,
 ex: `varefy`) e cola:
 
 ```
-Clona o conteúdo de https://github.com/vertsystems/viperos.git direto nesta
-pasta (sem criar subpasta) e começa a instalação do ViperOS.
+Clona o conteúdo de https://github.com/vertsystems/contexos.git direto nesta
+pasta (sem criar subpasta) e começa a instalação do ContexOS.
 ```
 
 Ele clona, mostra o banner, pergunta qual IA você está usando, e dispara a
@@ -39,13 +39,13 @@ entrevista de setup. Você só responde.
 ### Pelo terminal (mais previsível)
 
 ```
-git clone https://github.com/vertsystems/viperos.git varefy
+git clone https://github.com/vertsystems/contexos.git varefy
 cd varefy
 code .
 ```
 
 Troca `varefy` pelo nome do teu negócio. Se a pasta já existe (e está vazia),
-entra nela e roda `git clone https://github.com/vertsystems/viperos.git .` (o
+entra nela e roda `git clone https://github.com/vertsystems/contexos.git .` (o
 ponto no final clona pra dentro dela).
 
 Na janela do VS Code que abrir: terminal integrado → `claude` ou `codex` → diz
@@ -54,7 +54,7 @@ Na janela do VS Code que abrir: terminal integrado → `claude` ou `codex` → d
 ---
 
 Nos dois caminhos o sistema chega direto na raiz do projeto, sem pasta
-`viperos/` no meio: o arquivo de regras (`CLAUDE.md` no Claude Code, `AGENTS.md`
+`contexos/` no meio: o arquivo de regras (`CLAUDE.md` no Claude Code, `AGENTS.md`
 no Codex), a pasta de skills (`.claude/skills/` ou `.agents/skills/`),
 `templates/` e `scripts/` ao lado do teu trabalho. A pasta é o teu negócio, e
 tudo que você produzir mora aqui.
@@ -88,7 +88,7 @@ workspace e te diz o próximo passo.
 Carrega o contexto antes de cada sessão · faz commit + push no GitHub · varre o
 projeto e atualiza a memória · cria pasta isolada pra cada cliente · mantém o
 pipeline do que tá em jogo · fecha a semana e alimenta a próxima · transforma o
-que você repete em skill própria · traz a versão nova do ViperOS sem tocar no
+que você repete em skill própria · traz a versão nova do ContexOS sem tocar no
 teu trabalho.
 
 **Vender** — o que decide o faturamento
@@ -183,14 +183,14 @@ roda.
 
 A diferença não é velocidade. É capacidade nova: uma pessoa com IA constrói o
 que antes exigia time inteiro. Cada processo crítico que hoje roda em open loop
-(decide → executa → não mede → repete cego) vira closed loop dentro do ViperOS
+(decide → executa → não mede → repete cego) vira closed loop dentro do ContexOS
 (decide → executa → captura → realimenta → ajusta sozinho).
 
 O sistema não substitui você. Vira parte da sua empresa.
 
 ---
 
-## Como o ViperOS pensa
+## Como o ContexOS pensa
 
 `_memoria/` é o cérebro. Tudo que importa do seu negócio mora aqui: quem é a
 empresa, como ela fala, o que tá em foco, quem compra e o que você vende. O
@@ -221,7 +221,7 @@ diz o que travou → volta pra oferta com informação nova.
 
 ## Atualizar
 
-Saiu versão nova? Fala "atualiza o ViperOS". Ele baixa o que mudou e sincroniza
+Saiu versão nova? Fala "atualiza o ContexOS". Ele baixa o que mudou e sincroniza
 as skills **sem tocar no seu trabalho**: memória, marca, conteúdo e propostas
 ficam intactos, e as skills que você criou por conta própria também.
 
@@ -236,7 +236,7 @@ arquivo `LICENSE`.
 
 ## Quando precisar
 
-ViperOS é um produto **Vert Systems**.
+ContexOS é um produto **Vert Systems**.
 
 **Bruno Santana**
 WhatsApp: [13 99728-7738](https://wa.me/5513997287738)

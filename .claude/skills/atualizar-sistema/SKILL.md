@@ -1,9 +1,9 @@
 ---
 name: atualizar-sistema
 description: >
-  Atualiza o ViperOS pra versão nova sem tocar no trabalho do usuário: traz skills, templates e
+  Atualiza o ContexOS pra versão nova sem tocar no trabalho do usuário: traz skills, templates e
   scripts novos, preservando memória, marca, conteúdo e as skills que ele criou. Use quando o usuário
-  disser "atualiza o ViperOS", "atualiza o sistema", "saiu versão nova", "tem atualização",
+  disser "atualiza o ContexOS", "atualiza o sistema", "saiu versão nova", "tem atualização",
   "sincronizar skills", ou /atualizar-sistema. Não confundir com /atualizar, que cuida da memória do negócio.
 ---
 
@@ -12,7 +12,7 @@ description: >
 Diferença que importa:
 
 - **`/atualizar`** → atualiza a memória do **seu negócio** (clientes, foco, estrutura)
-- **`/atualizar-sistema`** → atualiza o **ViperOS** (skills, templates, correções)
+- **`/atualizar-sistema`** → atualiza o **ContexOS** (skills, templates, correções)
 
 O que é do sistema e pode ser substituído: `.claude/skills/` (só as que vieram do produto), `templates/`, `scripts/`, `.env.example`, `LICENSE`, `README.md`.
 
@@ -21,7 +21,7 @@ O que é do usuário e **nunca** se toca: `_memoria/`, `identidade/`, `CLAUDE.md
 <!-- ia:inicio -->
 **A versão nova chega sempre no formato do Claude Code** (`.claude/skills/`,
 `templates/perfis/claude-md-*`, texto falando em `CLAUDE.md`). É assim que o
-ViperOS é publicado, independente da IA da base. Numa base Codex, o passo 2 traz
+ContexOS é publicado, independente da IA da base. Numa base Codex, o passo 2 traz
 essas pastas como estão e o passo 2b converte o que chegou com
 `node scripts/ia.js codex`. Numa base Claude Code, rodar `node scripts/ia.js claude`
 no mesmo ponto só regenera o `AGENTS.md` de visita, e não custa nada.
@@ -34,11 +34,22 @@ no mesmo ponto só regenera o `AGENTS.md` de visita, e não custa nada.
 
 ### Passo 1 — Ver o que mudou, antes de mexer
 
-**Se o repositório do ViperOS está configurado** (o `/instalar` deixa como `viperos`):
+**Se o repositório do ContexOS está configurado** (o `/instalar` deixa como `contexos`):
+
+Quem instalou quando o sistema ainda se chamava ViperOS tem o remote com o nome
+antigo. Antes de buscar, renomear e reapontar, sem perguntar (é só o endereço
+de origem, nada do trabalho dele muda):
 
 ```bash
-git fetch viperos main
-git log --oneline HEAD..viperos/main
+git remote get-url viperos >/dev/null 2>&1 && git remote rename viperos contexos
+git remote set-url contexos https://github.com/vertsystems/contexos.git
+```
+
+O GitHub redireciona o endereço antigo por um tempo, mas não pra sempre.
+
+```bash
+git fetch contexos main
+git log --oneline HEAD..contexos/main
 ```
 
 Se não houver nada novo: "Você já está na versão mais recente" e parar.
@@ -53,7 +64,7 @@ Essa é a parte que protege o trabalho dele. Em vez de `git pull` (que mistura t
 
 <!-- ia:inicio -->
 ```bash
-git checkout viperos/main -- .claude/skills templates scripts .env.example LICENSE README.md
+git checkout contexos/main -- .claude/skills templates scripts .env.example LICENSE README.md
 ```
 
 O caminho é `.claude/skills` mesmo numa base Codex: é o nome da pasta **no
@@ -85,15 +96,15 @@ Se uma skill do produto foi **editada pelo usuário**, o `checkout` vai substitu
 `git status` não serve pra detectar isso: depois que ele roda `/salvar`, tudo está commitado e o status vem limpo mesmo com a skill alterada. A comparação certa é contra a versão do produto:
 
 ```bash
-git diff --name-only HEAD viperos/main -- .claude/skills
+git diff --name-only HEAD contexos/main -- .claude/skills
 ```
 
 Isso lista o que diverge, misturando edição dele com novidade da versão nova. Pra separar, olhar o que mudou de cada lado desde o ponto em comum:
 
 ```bash
-base=$(git merge-base HEAD viperos/main)
+base=$(git merge-base HEAD contexos/main)
 git diff --name-only $base HEAD -- .claude/skills        # o que ELE mexeu
-git diff --name-only $base viperos/main -- .claude/skills # o que o PRODUTO mudou
+git diff --name-only $base contexos/main -- .claude/skills # o que o PRODUTO mudou
 ```
 
 Skill que aparece nas duas listas é conflito real: mostrar o que a versão nova traz e perguntar se mantém a dele ou aceita a nova. **Nunca sobrescrever em silêncio.**
@@ -105,11 +116,11 @@ Se o workspace não for repositório git (ele baixou o zip), essa detecção nã
 Se ele não clonou (baixou o zip), fazer o mesmo por download, numa pasta temporária:
 
 ```bash
-curl -L https://github.com/vertsystems/viperos/archive/refs/heads/main.tar.gz -o /tmp/viperos.tgz
-mkdir -p /tmp/viperos-novo && tar -xzf /tmp/viperos.tgz -C /tmp/viperos-novo --strip-components=1
+curl -L https://github.com/vertsystems/contexos/archive/refs/heads/main.tar.gz -o /tmp/contexos.tgz
+mkdir -p /tmp/contexos-novo && tar -xzf /tmp/contexos.tgz -C /tmp/contexos-novo --strip-components=1
 ```
 
-Depois copiar **só** `.claude/skills/`, `templates/`, `scripts/`, `.env.example`, `LICENSE` e `README.md` de `/tmp/viperos-novo/` pra cá (o nome da pasta de skills é o do repositório de origem, mesmo que a base seja outra IA), rodar o Passo 2b, e limpar a pasta temporária no fim.
+Depois copiar **só** `.claude/skills/`, `templates/`, `scripts/`, `.env.example`, `LICENSE` e `README.md` de `/tmp/contexos-novo/` pra cá (o nome da pasta de skills é o do repositório de origem, mesmo que a base seja outra IA), rodar o Passo 2b, e limpar a pasta temporária no fim.
 
 Aproveitar pra sugerir: "Da próxima vez fica mais fácil se você clonar em vez de baixar o zip, aí a atualização é automática."
 

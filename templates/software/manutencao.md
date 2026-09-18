@@ -201,7 +201,7 @@ programador sabe que existe é código com outro nome.
 ## O desenvolvedor está saindo
 
 Isso vale para o freelancer que encerra o contrato, para a agência que perdeu a conta e
-para o próprio ViperOS. O dono precisa terminar dono do que foi feito.
+para o próprio ContexOS. O dono precisa terminar dono do que foi feito.
 
 | O que exigir | Como se prova que foi entregue |
 |---|---|

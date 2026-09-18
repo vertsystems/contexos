@@ -23,7 +23,7 @@ Fazer 3 perguntas, uma por vez:
 
 ### Passo 2 — Conferir catálogo
 
-Ler `templates/skills/catalogo.md` pra ver se alguma das tarefas mencionadas já é coberta por uma skill nativa do Claude Code ou validada pelo ViperOS. Conferir também as 55 skills que já existem em `.claude/skills/`, com esse volume, a chance de a tarefa já estar coberta é alta: pode ser caso de uso do `/carrossel`, `/proposta`, `/documento`, `/reaproveitar`, `/analisar-dados`, `/escopo`, `/testar`, `/revisar-codigo` ou `/evoluir`. Se sim, sugerir a existente em vez de criar uma nova:
+Ler `templates/skills/catalogo.md` pra ver se alguma das tarefas mencionadas já é coberta por uma skill nativa do Claude Code ou validada pelo ContexOS. Conferir também as 55 skills que já existem em `.claude/skills/`, com esse volume, a chance de a tarefa já estar coberta é alta: pode ser caso de uso do `/carrossel`, `/proposta`, `/documento`, `/reaproveitar`, `/analisar-dados`, `/escopo`, `/testar`, `/revisar-codigo` ou `/evoluir`. Se sim, sugerir a existente em vez de criar uma nova:
 
 > "A tarefa X já é resolvida pela skill `/<nome>` que vem nativa. Quer ativar ela em vez de criar uma nova?"
 

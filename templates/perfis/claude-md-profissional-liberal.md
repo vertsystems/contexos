@@ -1,4 +1,4 @@
-# [Seu Nome] — ViperOS
+# [Seu Nome] — ContexOS
 
 > Molde do CLAUDE.md aplicado a **profissional liberal** — médico, dentista,
 > advogado, contador, psicólogo, nutricionista, arquiteto, personal, fisio.
@@ -44,7 +44,7 @@ daquele tipo é criada: workspace não tem pasta vazia.
 | Pipeline | `tarefas.md` | `/tarefas` |
 
 As pastas do sistema (`.claude/skills/`, `templates/`, `scripts/`) convivem na
-raiz e são substituídas quando sai versão nova do ViperOS. Não guarde trabalho
+raiz e são substituídas quando sai versão nova do ContexOS. Não guarde trabalho
 dentro delas: o resto da raiz é seu.
 
 ## Quem sou

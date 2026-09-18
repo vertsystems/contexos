@@ -1,7 +1,7 @@
-<!-- viperos:visita -->
-# ViperOS — você está de visita
+<!-- contexos:visita -->
+# ContexOS — você está de visita
 
-Este workspace é o ViperOS no formato do **Claude Code**: as regras estão em
+Este workspace é o ContexOS no formato do **Claude Code**: as regras estão em
 `CLAUDE.md` e as skills em `.claude/skills/`. A base é dele e continua assim.
 Você (Codex) trabalha aqui como apoio, com tudo que a base oferece, sem
 mudar a base.

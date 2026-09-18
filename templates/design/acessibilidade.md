@@ -52,7 +52,7 @@ Alvo menor é aceito quando:
 4. **Controle do navegador** — o tamanho é o padrão do agente e não foi alterado
 5. **Essencial** — a posição exata é essencial (pino em mapa) ou exigida por lei
 
-Fora dessas cinco, alvo pequeno reprova. E o piso do ViperOS é mais alto que o da
+Fora dessas cinco, alvo pequeno reprova. E o piso do ContexOS é mais alto que o da
 norma: **34px no desktop, 44px no celular** (ver `interface.md`).
 
 ---

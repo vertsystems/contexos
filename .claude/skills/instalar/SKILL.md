@@ -1,13 +1,13 @@
 ---
 name: instalar
 description: >
-  Instalação inicial do ViperOS: entrevista o dono do negócio sobre empresa, canais de contato, tom de
+  Instalação inicial do ContexOS: entrevista o dono do negócio sobre empresa, canais de contato, tom de
   voz, foco atual e identidade, preenche a memória e adapta o CLAUDE.md ao perfil. Use quando o usuário
   acabou de clonar o repositório, ou disser "instalar", "rodar o instalar", "primeiro setup",
   "configurar o sistema", "acabei de baixar", ou /instalar.
 ---
 
-# /instalar — Instalação inicial do ViperOS
+# /instalar — Instalação inicial do ContexOS
 
 Primeira coisa depois de clonar, e ela começa sozinha: se `_memoria/` não existe, o arquivo de regras da raiz manda executar esta skill na primeira mensagem do usuário, seja ela qual for. Não pode falhar e não pode soar burocrático. Trata como conversa de descoberta: uma pergunta por vez, escuta de verdade, sem enfileirar tudo.
 
@@ -48,7 +48,7 @@ Depois de imprimir, seguir direto pra pergunta da IA, sem comentar o banner.
 <!-- ia:inicio -->
 ## Qual IA — antes da Fase 0
 
-O ViperOS roda no Claude Code e no Codex, e o workspace fica **inteiro** no
+O ContexOS roda no Claude Code e no Codex, e o workspace fica **inteiro** no
 formato de um dos dois: arquivo de regras, pasta de skills, moldes e cada
 referência no texto. Quem decide é o usuário, agora. Perguntar em texto, sem
 seletor:
@@ -76,7 +76,7 @@ entrada mínimo (visita), pra ela poder abrir a pasta depois sem mudar a base.
   da Fase 0 em diante. Não fazer nada de memória: o texto reescrito é o que vale
 
 Se ele responder outra coisa ("Cursor", "Gemini", "não sei"): dizer em uma linha
-que o ViperOS hoje roda no Claude Code e no Codex, e que outro cliente que leia
+que o ContexOS hoje roda no Claude Code e no Codex, e que outro cliente que leia
 `AGENTS.md` funciona no formato do Codex. Na dúvida, Claude Code, que é o formato
 em que o sistema é publicado.
 
@@ -94,7 +94,7 @@ colateral de reinstalar.
 
 ### 1. Conferir onde está
 
-Rodar `pwd` e `ls`. A pasta deve ter `.claude/skills/`, `templates/` e `CLAUDE.md` **na raiz**. Se não tiver, o usuário está na pasta errada: perguntar onde ele clonou. Se existir uma subpasta `viperos/` com esses arquivos dentro, o clone criou pasta a mais: mover o conteúdo dela pra raiz (`git mv` não serve aqui, é `mv viperos/.[!.]* viperos/* .` e depois `rmdir viperos`) e seguir, avisando em uma linha.
+Rodar `pwd` e `ls`. A pasta deve ter `.claude/skills/`, `templates/` e `CLAUDE.md` **na raiz**. Se não tiver, o usuário está na pasta errada: perguntar onde ele clonou. Se existir uma subpasta `contexos/` com esses arquivos dentro, o clone criou pasta a mais: mover o conteúdo dela pra raiz (`git mv` não serve aqui, é `mv contexos/.[!.]* contexos/* .` e depois `rmdir contexos`) e seguir, avisando em uma linha.
 
 Se `_memoria/` já existir preenchido, é reinstalação: perguntar se refaz do zero, complementa o que falta, ou se ele queria atualizar o sistema (`/atualizar-sistema`).
 
@@ -105,12 +105,12 @@ Se `_memoria/` já existir preenchido, é reinstalação: perguntar se refaz do 
 
 **Não criar** `conteudo/`, `site/`, `propostas/`, `identidade/`, `dados/` nem qualquer outra. Elas nascem quando a primeira peça daquele tipo for feita.
 
-### 3. Separar o repositório dele do repositório do ViperOS
+### 3. Separar o repositório dele do repositório do ContexOS
 
 O clone veio apontando pro repositório do produto. Renomear esse endereço, pra ele poder ter o repositório dele depois **e** continuar recebendo atualização:
 
 ```bash
-git remote rename origin viperos 2>/dev/null
+git remote rename origin contexos 2>/dev/null
 ```
 
 Se der erro (ele baixou o zip em vez de clonar), tudo bem: seguir. O `/atualizar-sistema` funciona nos dois casos.
@@ -333,11 +333,11 @@ A pasta em que ele clonou é a raiz do negócio: o nome dela já é o nome do pr
 (o README manda clonar com `git clone <url> <nome>` ou `git clone <url> .`).
 Não pedir pra renomear nada nem fechar o editor.
 
-Se `pwd` mostrar que a pasta se chama `viperos` e o negócio não se chama assim, ele
+Se `pwd` mostrar que a pasta se chama `contexos` e o negócio não se chama assim, ele
 clonou do jeito antigo. Avisar em uma linha e seguir, sem transformar isso em
 tarefa:
 
-> "A pasta ficou com o nome do sistema (`viperos`). Funciona igual, mas se quiser
+> "A pasta ficou com o nome do sistema (`contexos`). Funciona igual, mas se quiser
 > que ela se chame `<slug>`, é só renomear no Finder (ou Explorer) quando fechar o
 > VS Code."
 
@@ -361,7 +361,7 @@ Depois:
 > Você mencionou que repete '<resposta da 9>' toda semana. Quando quiser tirar isso
 > das costas, é só falar que eu transformo numa skill sua."
 
-Mencionar também, em uma linha: guardar o trabalho no GitHub é só pedir; e quando sair versão nova do ViperOS, falar "atualiza o sistema".
+Mencionar também, em uma linha: guardar o trabalho no GitHub é só pedir; e quando sair versão nova do ContexOS, falar "atualiza o sistema".
 
 ---
 

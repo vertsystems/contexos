@@ -228,6 +228,6 @@ conversado. Projeto recusado por opinião volta sempre.
 ## O que não trazer
 
 - **As taxas de conversão e os custos de campanha do material de origem** — são de 2011 a 2016, em reais daquela época e em plataformas que mudaram de preço e de regra. Servem de método, não de meta
-- **Modelo de negócio de aplicativo com milhões de usuários** (rede de dois lados, subsídio de um lado pelo outro, receita por escala de audiência). O comprador do ViperOS vende para dezenas ou centenas de clientes
+- **Modelo de negócio de aplicativo com milhões de usuários** (rede de dois lados, subsídio de um lado pelo outro, receita por escala de audiência). O comprador do ContexOS vende para dezenas ou centenas de clientes
 - **A discussão de investidor, rodada e participação societária** — não é o eixo, e distorce a decisão de um negócio que se paga com o próprio caixa
 - **Teste A/B para escolher entre versões da página de validação** — sem volume, o resultado é ruído. Com uma ideia por página e a mesma verba, a comparação já responde

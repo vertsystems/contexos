@@ -1,6 +1,6 @@
 # Ligar a geração de imagem por IA
 
-Guia curto pra quem quer que o ViperOS **crie as fotos** das peças, em vez de você mandar imagem pronta.
+Guia curto pra quem quer que o ContexOS **crie as fotos** das peças, em vez de você mandar imagem pronta.
 
 É opcional. Sem isso o sistema continua fazendo carrossel, post, página e material, só que com tipografia e as fotos que você já tem, que é como a maioria das marcas boas trabalha mesmo.
 
@@ -8,7 +8,7 @@ Guia curto pra quem quer que o ViperOS **crie as fotos** das peças, em vez de v
 
 ## O que você precisa saber antes
 
-Gerar imagem por IA é um serviço pago **por imagem**, cobrado direto pela empresa que gera (não pelo ViperOS). Você usa a sua própria conta e a sua própria chave, nada passa por terceiros.
+Gerar imagem por IA é um serviço pago **por imagem**, cobrado direto pela empresa que gera (não pelo ContexOS). Você usa a sua própria conta e a sua própria chave, nada passa por terceiros.
 
 Duas opções, e as duas funcionam igual aqui:
 
@@ -92,7 +92,7 @@ Deu certo: aparece `✓ Salvo: teste.png`. Deu errado: a mensagem diz o que faze
 
 ---
 
-## O que o ViperOS não faz com imagem gerada
+## O que o ContexOS não faz com imagem gerada
 
 - **Rosto identificável, pessoa real, marca ou personagem** — recusa da API, e risco de direito de imagem
 - **Passar foto de IA como foto real do negócio** (produto, equipe, fachada). Se é pra parecer real, é foto real. Foto de IA serve pra fundo, clima, conceito e ilustração de apoio

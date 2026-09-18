@@ -210,7 +210,7 @@ Com o arquivo aceito, passe a bola: `/backend` escolhe a stack, desenha os dados
 
 ## Conferir antes de entregar (obrigatório)
 
-O ViperOS não estima número, calcula. Aqui os números são três: a soma das colunas de custo, a
+O ContexOS não estima número, calcula. Aqui os números são três: a soma das colunas de custo, a
 multiplicação por doze e a data do teto de prazo.
 
 ```bash

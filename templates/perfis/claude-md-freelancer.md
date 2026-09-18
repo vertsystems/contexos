@@ -1,4 +1,4 @@
-# [Seu Nome] — ViperOS
+# [Seu Nome] — ContexOS
 
 > Molde do CLAUDE.md aplicado a **freelancer** — você vende tempo e
 > talento pra clientes terceiros. O sistema gira em torno de captar,
@@ -45,7 +45,7 @@ Em dúvida de quem é a peça, perguntar antes de criar. Quando um prospect
 virar cliente, mover a proposta de `propostas/` pra `clientes/<Nome>/`.
 
 As pastas do sistema (`.claude/skills/`, `templates/`, `scripts/`) convivem na
-raiz e são substituídas quando sai versão nova do ViperOS. Não guarde trabalho
+raiz e são substituídas quando sai versão nova do ContexOS. Não guarde trabalho
 dentro delas: o resto da raiz é seu.
 
 ## Quem sou

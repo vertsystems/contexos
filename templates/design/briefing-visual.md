@@ -47,7 +47,7 @@ Depois da leitura, definir três valores. Eles governam layout, movimento e quan
 | **Movimento** | estático | animação e transição em tudo |
 | **Densidade** | muito respiro, pouco por tela | informação empilhada |
 
-**Padrão do ViperOS: variação 6 · movimento 3 · densidade 4.** Mais contido que o padrão de agência criativa, porque o público do sistema é negócio real: clareza vence ousadia.
+**Padrão do ContexOS: variação 6 · movimento 3 · densidade 4.** Mais contido que o padrão de agência criativa, porque o público do sistema é negócio real: clareza vence ousadia.
 
 ### Inferir pelos sinais
 

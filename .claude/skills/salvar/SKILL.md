@@ -1,7 +1,7 @@
 ---
 name: salvar
 description: >
-  Salva o trabalho do ViperOS no GitHub (commit + push). Na primeira vez configura o repositório
+  Salva o trabalho do ContexOS no GitHub (commit + push). Na primeira vez configura o repositório
   remoto. Use quando o usuário disser "salvar", "salva no github", "commit", "push", "/salvar"
   ou pedir backup do trabalho.
 ---
@@ -16,13 +16,13 @@ Tudo que é trabalho dele (memória, marca, conteúdo, propostas, materiais), ma
 
 **Não entra:** `.env` (chaves), `node_modules/` e a drop zone `dados/`. O `.gitignore` do repositório já cobre.
 
-**Detalhe do primeiro commit:** o clone veio com o endereço do ViperOS. O `/instalar` renomeia esse endereço pra `viperos`, então o `origin` fica livre pro repositório dele. Se ainda existir um `origin` apontando pro repositório do produto, renomear antes de qualquer push:
+**Detalhe do primeiro commit:** o clone veio com o endereço do ContexOS. O `/instalar` renomeia esse endereço pra `contexos`, então o `origin` fica livre pro repositório dele. Se ainda existir um `origin` apontando pro repositório do produto, renomear antes de qualquer push:
 
 ```bash
-git remote rename origin viperos 2>/dev/null
+git remote rename origin contexos 2>/dev/null
 ```
 
-**Nunca dar push no repositório do ViperOS.** Se o remote de destino contiver `vertsystems/viperos`, parar e avisar: o trabalho dele iria parar no repositório do produto.
+**Nunca dar push no repositório do ContexOS.** Se o remote de destino contiver `vertsystems/contexos`, parar e avisar: o trabalho dele iria parar no repositório do produto.
 
 ## Checagem de segurança (sempre, antes de qualquer commit)
 
@@ -40,7 +40,7 @@ Nunca comitar segredo "só essa vez".
 
 ### Primeira vez
 
-**Atenção:** o workspace já é um repositório git, ele veio do clone do ViperOS. Então `git rev-parse` **sempre** responde que sim, e a pergunta certa é outra: *já existe um `origin` que seja do usuário?*
+**Atenção:** o workspace já é um repositório git, ele veio do clone do ContexOS. Então `git rev-parse` **sempre** responde que sim, e a pergunta certa é outra: *já existe um `origin` que seja do usuário?*
 
 ```bash
 git remote -v
@@ -50,8 +50,8 @@ Três situações:
 
 | O que aparece | O que fazer |
 |---|---|
-| Nenhum `origin`, só `viperos` | É a primeira vez — seguir o fluxo abaixo pra criar o repositório dele |
-| `origin` apontando pra `vertsystems/viperos` | O `/instalar` não renomeou. Rodar `git remote rename origin viperos` **antes** de qualquer coisa, e então seguir o fluxo abaixo |
+| Nenhum `origin`, só `contexos` | É a primeira vez — seguir o fluxo abaixo pra criar o repositório dele |
+| `origin` apontando pra `vertsystems/contexos` | O `/instalar` não renomeou. Rodar `git remote rename origin contexos` **antes** de qualquer coisa, e então seguir o fluxo abaixo |
 | `origin` dele (outro endereço) | Já está configurado — pular pro "Commits seguintes" |
 
 Se for a primeira vez:
@@ -59,11 +59,11 @@ Se for a primeira vez:
 1. Perguntar:
    > "Esse é o primeiro salvamento. Você já tem um repositório criado no GitHub pra esse workspace?
    > 1. Sim, me passa a URL (ex: https://github.com/usuario/nome.git)
-   > 2. Não, vou criar agora — me dá um nome pro repositório (ex: acme-viperos)"
+   > 2. Não, vou criar agora — me dá um nome pro repositório (ex: acme-contexos)"
 
 2. Rodar a checagem de segurança acima **antes** do primeiro `git add`. O primeiro commit é o mais perigoso: ele varre a pasta inteira.
 
-3. **Se opção 1:** `git init` → `git add .` → `git commit -m "Setup inicial do ViperOS"` → `git branch -M main` → `git remote add origin <URL>` → `git push -u origin main`.
+3. **Se opção 1:** `git init` → `git add .` → `git commit -m "Setup inicial do ContexOS"` → `git branch -M main` → `git remote add origin <URL>` → `git push -u origin main`.
 
 4. **Se opção 2:** verificar se o `gh` CLI está instalado (`gh --version`).
    - Se sim: `git init`, commit inicial, e `gh repo create <nome> --private --source=. --push`.
@@ -94,5 +94,5 @@ Se for a primeira vez:
 - Se o push falhar por divergência (alguém comitou no remoto), avisar o usuário e oferecer `git pull --rebase` antes de tentar de novo
 - Se o usuário ainda não tiver `git` configurado (`user.name` / `user.email`), perguntar e configurar com `git config --global` na primeira vez
 - Não comitar `node_modules/` nem PNG duplicado gerado por render — o `.gitignore` já cobre, mas conferir se o repo não ficou pesado (>100 MB avisar)
-- **Nunca dar push no repositório do produto** (`vertsystems/viperos`). O `origin` é o repositório dele
-- Se o usuário perguntar como atualizar o ViperOS, mandar pro `/atualizar-sistema` — não é assunto de `/salvar`
+- **Nunca dar push no repositório do produto** (`vertsystems/contexos`). O `origin` é o repositório dele
+- Se o usuário perguntar como atualizar o ContexOS, mandar pro `/atualizar-sistema` — não é assunto de `/salvar`

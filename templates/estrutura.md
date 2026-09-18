@@ -106,4 +106,4 @@ Quando a peça é de cliente e a convenção é B, o caminho recebe o prefixo `c
 
 O `.gitignore` que vem no repositório ignora `.env`, `node_modules/` e a drop zone `dados/`. O resto, inclusive as skills e os templates, versiona junto com o trabalho.
 
-O `/salvar` cria o repositório **dele** (o endereço do ViperOS fica guardado como `viperos`, e é de lá que o `/atualizar-sistema` busca versão nova).
+O `/salvar` cria o repositório **dele** (o endereço do ContexOS fica guardado como `contexos`, e é de lá que o `/atualizar-sistema` busca versão nova).

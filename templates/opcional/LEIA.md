@@ -1,10 +1,10 @@
 # Skills opcionais
 
-O que está aqui **não vem ativo** no ViperOS. São skills que atendem um caso de uso
+O que está aqui **não vem ativo** no ContexOS. São skills que atendem um caso de uso
 estreito, exigem configuração externa, ou dependem de coisa que o produto não entrega —
 e que, ativas por padrão, só ocupariam espaço.
 
-O fluxo normal do ViperOS não precisa de nada daqui. Nada mesmo.
+O fluxo normal do ContexOS não precisa de nada daqui. Nada mesmo.
 
 ## Como ativar uma
 
@@ -24,7 +24,7 @@ Publica o post direto pela Graph API da Meta, em vez de entregar os arquivos pra
 postar. **Foi tirada do conjunto padrão em 20/08/2026:** quase ninguém usa, e quem cria
 material costuma publicar na própria ferramenta de agendamento.
 
-**Ela não funciona como está.** Depende de dois scripts que o ViperOS **não** inclui:
+**Ela não funciona como está.** Depende de dois scripts que o ContexOS **não** inclui:
 
 - `scripts/postar-instagram.js`
 - `scripts/postar-facebook.js`

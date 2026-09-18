@@ -1,10 +1,10 @@
 #!/usr/bin/env node
 /**
- * ViperOS — gerar-imagem.js
+ * ContexOS — gerar-imagem.js
  * Gera imagem por IA e salva em arquivo. Funciona com mais de um provedor.
  *
  * Uso:
- *   node viperos/assets/scripts/gerar-imagem.js "PROMPT EM INGLÊS" "conteudo/pasta/foto.png"
+ *   node contexos/assets/scripts/gerar-imagem.js "PROMPT EM INGLÊS" "conteudo/pasta/foto.png"
  *
  * Opções:
  *   --provedor openai|gemini    (padrão: detecta pela chave que existir no .env)
@@ -193,7 +193,7 @@ async function main() {
   if (!prompt || !saida) {
     morrer(
       "Faltou o prompt ou o caminho de saída.",
-      'Exemplo:\n  node viperos/assets/scripts/gerar-imagem.js "Professional food photography of..." "conteudo/post/foto.png"'
+      'Exemplo:\n  node contexos/assets/scripts/gerar-imagem.js "Professional food photography of..." "conteudo/post/foto.png"'
     );
   }
   if (typeof fetch !== "function") {
@@ -223,7 +223,7 @@ async function main() {
       "Escolha um dos dois e cole a chave no arquivo .env da raiz do seu negócio:\n\n" +
       "  OpenAI   →  OPENAI_API_KEY=sk-...     (platform.openai.com/api-keys)\n" +
       "  Gemini   →  GEMINI_API_KEY=...        (aistudio.google.com/apikey — tem cota gratuita)\n\n" +
-      "  Os dois funcionam igual aqui. Passo a passo em viperos/templates/imagem-ia.md"
+      "  Os dois funcionam igual aqui. Passo a passo em contexos/templates/imagem-ia.md"
     );
   }
 

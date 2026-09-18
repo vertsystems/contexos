@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * ViperOS — gerar-pdf.js
+ * ContexOS — gerar-pdf.js
  * Transforma HTML em PDF e confere o resultado.
  *
  * Existe porque o comando cru do Chrome headless falha de três formas silenciosas:

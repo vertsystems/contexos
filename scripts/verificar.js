@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * ViperOS — verificar.js
+ * ContexOS — verificar.js
  * Confere o que não pode ser estimado: contagem, soma, data, contraste, peso.
  *
  * Existe porque erro de número não se pega lendo. Toda skill que produz número
@@ -638,7 +638,7 @@ function verHTML(arquivo) {
 }
 
 // ─────────────────────────── ALVO ───────────────────────────
-// Tamanho de alvo clicável (WCAG 2.5.8 pede 24×24px; o piso do ViperOS é 34px,
+// Tamanho de alvo clicável (WCAG 2.5.8 pede 24×24px; o piso do ContexOS é 34px,
 // 44px no toque — ver templates/design/interface.md).
 //
 // A lógica é INVERTIDA de propósito. A versão ingênua — "medir o que declara e
@@ -647,7 +647,7 @@ function verHTML(arquivo) {
 // final, e este script não é navegador. Então o que se exige é a DECLARAÇÃO:
 // quem não declara min-height reprova, em vez de ser premiado pela omissão.
 
-const PISO_ALVO = 34;   // piso do ViperOS no desktop
+const PISO_ALVO = 34;   // piso do ContexOS no desktop
 const MIN_WCAG = 24;    // mínimo do critério 2.5.8
 
 function medidaPx(v) {
@@ -746,7 +746,7 @@ function verAlvo(arquivo) {
     else if (altura < PISO_ALVO) {
       const msg = altura < MIN_WCAG
         ? `${assinatura} declara ${altura}px — reprova no critério 2.5.8 (${MIN_WCAG}px)`
-        : `${assinatura} declara ${altura}px — passa na WCAG, mas abaixo do piso do ViperOS (${PISO_ALVO}px)`;
+        : `${assinatura} declara ${altura}px — passa na WCAG, mas abaixo do piso do ContexOS (${PISO_ALVO}px)`;
       pequenos.set(msg, (pequenos.get(msg) || 0) + 1);
     }
     else aprovados++;
@@ -805,7 +805,7 @@ function verTudo(pasta) {
 }
 
 // ─────────────────────────── SISTEMA ───────────────────────────
-// Confere o próprio ViperOS, não o trabalho: skill que não carrega, referência
+// Confere o próprio ContexOS, não o trabalho: skill que não carrega, referência
 // a skill ou arquivo que não existe, script prometido e ausente, contagem
 // desatualizada. É o check que se roda antes de publicar versão nova.
 //
@@ -813,7 +813,7 @@ function verTudo(pasta) {
 // frontmatter não é lido, e a skill nunca é encontrada) e uma skill mandava
 // rodar dois scripts que nunca estiveram no repositório.
 
-// Barras que aparecem no texto e NÃO são skill do ViperOS. Cada uma com o
+// Barras que aparecem no texto e NÃO são skill do ContexOS. Cada uma com o
 // motivo — a lista é curta de propósito: crescer aqui é esconder problema.
 const NAO_SAO_SKILLS = new Set([
   "health",                                       // endpoint HTTP, citado no /backend
@@ -843,7 +843,7 @@ function verSistema(raiz = ".") {
   // sabe qual. Tudo abaixo usa a pasta de skills e o arquivo de regras dessa IA.
   const ia = require("./ia.js");
   const est = ia.detectar(raiz);
-  if (!est.ativa) return erro(`nem ${ia.IAS.claude.skills}/ nem ${ia.IAS.codex.skills}/ existem — isso não parece um workspace ViperOS`);
+  if (!est.ativa) return erro(`nem ${ia.IAS.claude.skills}/ nem ${ia.IAS.codex.skills}/ existem — isso não parece um workspace ContexOS`);
   if (est.ativa === "ambas")
     return erro(`${ia.IAS.claude.skills}/ e ${ia.IAS.codex.skills}/ existem ao mesmo tempo — rode \`node scripts/ia.js claude\` ou \`codex\` pra unificar`);
   const base = ia.IAS[est.ativa];
@@ -964,7 +964,7 @@ function verSistema(raiz = ".") {
   let iaOk = true;
   if (!est.entrada[base.id]) { erro(`${base.entrada} não existe — sem ele a ${base.nome} abre a pasta sem regra nenhuma`); iaOk = false; }
   else if (est.visita[base.id]) { erro(`${base.entrada} é arquivo de visita, mas a base é ${base.nome} — rode \`node scripts/ia.js ${base.id}\``); iaOk = false; }
-  if (!est.entrada[outra.id]) { erro(`${outra.entrada} de visita não existe — a ${outra.nome} abriria a pasta sem saber que é ViperOS. Rode \`node scripts/ia.js ${base.id}\``); iaOk = false; }
+  if (!est.entrada[outra.id]) { erro(`${outra.entrada} de visita não existe — a ${outra.nome} abriria a pasta sem saber que é ContexOS. Rode \`node scripts/ia.js ${base.id}\``); iaOk = false; }
   else if (!est.visita[outra.id]) { erro(`${outra.entrada} não é arquivo de visita — a ${outra.nome} vai tratar a pasta como dela. Rode \`node scripts/ia.js ${base.id}\``); iaOk = false; }
   if (fs.existsSync(path.join(raiz, outra.raiz))) { erro(`${outra.raiz}/ existe numa base ${base.nome} — sobra da outra IA`); iaOk = false; }
   const pedacos = ia.pedacosDe(raiz, outra, ia.arquivosDeTexto(raiz, base));
@@ -989,7 +989,7 @@ function verSistema(raiz = ".") {
 // O check devolve arquivo:linha e para aí. A pergunta que ele responde é "esta
 // linha tem forma de chave?", sim ou não. Ele não pontua risco nem adivinha
 // gravidade. Pra silenciar uma linha que é exemplo, escreva
-// `viperos:segredo-ok` nela ou na linha logo acima.
+// `contexos:segredo-ok` nela ou na linha logo acima.
 //
 // Existe porque o arquivo de regras da raiz já manda conferir o stage antes de todo `git add`,
 // e hoje isso depende de alguém lembrar de olhar.
@@ -1018,7 +1018,7 @@ const PALAVRA_DE_SEGREDO =
 const RE_ATRIBUICAO = /([A-Za-z0-9_$.\-[\]]{2,60})["']?\s*[:=]\s*([^\n]*)/g;
 const RE_TERMINA_EM_SEGREDO = new RegExp(`(?:^|[^A-Za-zÀ-ÿ])(?:${PALAVRA_DE_SEGREDO})$`, "i");
 
-// Valores que aparecem nos textos do próprio ViperOS como exemplo de
+// Valores que aparecem nos textos do próprio ContexOS como exemplo de
 // preenchimento. Cada um está aqui porque é o texto do molde, não um valor de
 // verdade. A lista é curta de propósito: crescer aqui é esconder segredo. Se a
 // sua senha de produção é literalmente "senha", o problema não é este check.
@@ -1117,7 +1117,7 @@ function verSegredo(raiz = ".") {
 
     const linhas = buf.toString("utf8").split(/\r?\n/);
     const silenciada = (i) =>
-      /viperos:segredo-ok/.test(linhas[i] || "") || /viperos:segredo-ok/.test(linhas[i - 1] || "");
+      /contexos:segredo-ok/.test(linhas[i] || "") || /contexos:segredo-ok/.test(linhas[i - 1] || "");
 
     linhas.forEach((linha, i) => {
       if (linha.length > 2000 || silenciada(i)) return;
@@ -1154,7 +1154,7 @@ function verSegredo(raiz = ".") {
 
   info(`${lidos} arquivos versionados lidos${pulados ? `, ${pulados} pulados (binário ou acima de 4 MB)` : ""}`);
   if (!achados) ok("nenhuma chave, token ou senha com valor escrito nos arquivos versionados");
-  else info("    exemplo de molde acusado à toa se silencia com `viperos:segredo-ok` na linha ou na linha de cima");
+  else info("    exemplo de molde acusado à toa se silencia com `contexos:segredo-ok` na linha ou na linha de cima");
   if (achados || proibidos) {
     info("    segredo que já foi versionado continua no histórico depois de apagado: troque a chave no fornecedor");
   }
@@ -1345,18 +1345,18 @@ function verMigracao(alvo) {
 // ─────────────────────────── main ───────────────────────────
 
 const [cmd, ...args] = process.argv.slice(2);
-const AJUDA = `ViperOS — verificar.js
+const AJUDA = `ContexOS — verificar.js
 
   csv <arquivo> [--ads]     campos desalinhados e limites do Google Ads
   datas <arquivo.md>        dia da semana declarado vs data real
   tabela <arquivo.md>       soma das colunas vs total declarado, e "N× R$ X = R$ Y"
   contraste <cor1> <cor2>   razão WCAG
   html <arquivo.html>       CSS externo, var() sem fallback, @page, placeholder, link vazio
-  alvo <arquivo.html>       tamanho de alvo clicável declarado (WCAG 2.5.8 + piso do ViperOS)
+  alvo <arquivo.html>       tamanho de alvo clicável declarado (WCAG 2.5.8 + piso do ContexOS)
   texto <arquivo>           sinais de texto gerado: ritmo, clichê, travessão, formato
   peso <pasta|arquivo>      imagem acima de 2 MB
   tudo <pasta>              roda o que couber em cada arquivo
-  sistema [pasta]           integridade do próprio ViperOS: skill que não carrega, formato da IA,
+  sistema [pasta]           integridade do próprio ContexOS: skill que não carrega, formato da IA,
                             referência quebrada, script ausente, contagem errada
   segredo [pasta]           chave, token e senha em arquivo versionado (enumera pelo git)
   migracao [pasta]          ordem, desfazer, NOT NULL sem DEFAULT e DROP junto de adição`;

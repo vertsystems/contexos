@@ -103,7 +103,7 @@ NODE_PATH="../../../scripts/node_modules" node render.js
 
 Isso evita um `node_modules` de centenas de MB por carrossel criado. O `node_modules/` é ignorado pelo git.
 
-## Como o ViperOS lida com isso
+## Como o ContexOS lida com isso
 
 Quando você roda uma skill que precisa de script ausente, o assistente vai:
 

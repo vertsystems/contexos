@@ -93,7 +93,7 @@ do push, à vontade. Depois do push, a única forma de desfazer é um commit nov
 
 O que entra no histórico não sai mais. Criar o `.gitignore` custa um minuto no primeiro dia e
 resolve pra sempre. O `/salvar` já cobre `.env`, `node_modules/` e a pasta `dados/` dentro do
-workspace do ViperOS, mas todo projeto de código precisa do seu.
+workspace do ContexOS, mas todo projeto de código precisa do seu.
 
 ```gitignore
 .env
