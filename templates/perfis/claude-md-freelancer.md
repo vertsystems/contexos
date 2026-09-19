@@ -93,4 +93,4 @@ Evitar: [o que destoa do seu jeito]
 - [ ] Google Calendar
 - [ ] Stripe / cobrança
 
-*(Marcar conforme for instalando os MCPs)*
+*(o `/conectar` marca aqui, com data e nome da variável, depois do teste passar)*

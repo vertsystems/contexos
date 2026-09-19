@@ -90,6 +90,7 @@ Se for a primeira vez:
 ## Regras
 
 - Nunca usar `--force` sem o usuário pedir explicitamente
+- Outras ferramentas (chave de IA, Notion, Vercel, Supabase, Meta) são assunto do `/conectar`, não daqui
 - Nunca rodar `git reset --hard` ou outras destrutivas sem confirmação clara
 - Se o push falhar por divergência (alguém comitou no remoto), avisar o usuário e oferecer `git pull --rebase` antes de tentar de novo
 - Se o usuário ainda não tiver `git` configurado (`user.name` / `user.email`), perguntar e configurar com `git config --global` na primeira vez

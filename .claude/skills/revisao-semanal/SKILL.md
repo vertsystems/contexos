@@ -14,7 +14,8 @@ O ciclo que fecha o loop: produzir sem revisar é o que a tese do Contex OS cham
 ## Dependências
 
 - **Pipeline:** `tarefas.md`
-- **Produção da semana:** `conteudo/indice.md`, `campanhas/relatorios/`, `propostas/`
+- **Produção da semana:** `conteudo/indice.md`, `campanhas/relatorios/`, `propostas/`, `vendas/prospeccao/` (contatos e respostas da semana)
+- **Decisões com revisão marcada:** `decisoes/*.md` (tabela "Revisão", do `/decidir`)
 - **Estratégia:** `_memoria/estrategia.md`
 - **Saída:** `revisoes/<YYYY-MM-DD>.md` + atualização de `tarefas.md` e `estrategia.md`
 
@@ -30,6 +31,7 @@ Varrer o workspace pelos últimos 7 dias e montar o retrato:
 - Relatório de ads da semana, se houver
 - Itens fechados no `tarefas.md`
 - Itens que continuam abertos há mais de duas semanas — sinal de travamento
+- Decisão em `decisoes/` com marco de revisão vencendo nesta semana: cobrar o número prometido e mandar preencher a seção "Revisão feita"
 
 Chegar com o levantamento pronto. Perguntar "o que você fez essa semana?" transfere pro usuário um trabalho que o sistema já pode fazer.
 

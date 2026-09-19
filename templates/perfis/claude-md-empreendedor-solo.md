@@ -83,4 +83,4 @@ próximo criador do mesmo nicho.]
 - [ ] Meta Ads
 - [ ] Google Ads
 
-*(Marcar conforme for instalando os MCPs)*
+*(o `/conectar` marca aqui, com data e nome da variável, depois do teste passar)*

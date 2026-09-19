@@ -82,4 +82,4 @@ Evitar: [o que destoa]
 - [ ] Notion
 - [ ] Google Analytics
 
-*(Marcar conforme for instalando os MCPs)*
+*(o `/conectar` marca aqui, com data e nome da variável, depois do teste passar)*

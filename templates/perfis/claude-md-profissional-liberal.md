@@ -114,4 +114,4 @@ Evitar: [o que destoa. Quase sempre: jargão técnico sem tradução, tom de ven
 - [ ] Google Ads
 - [ ] Meta Ads
 
-*(Marcar conforme for instalando os MCPs)*
+*(o `/conectar` marca aqui, com data e nome da variável, depois do teste passar)*

@@ -92,4 +92,4 @@ Evitar: [o que destoa da marca]
 - [ ] Meta Ads
 - [ ] Slack
 
-*(Marcar conforme for instalando os MCPs)*
+*(o `/conectar` marca aqui, com data e nome da variável, depois do teste passar)*

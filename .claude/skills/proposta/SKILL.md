@@ -97,6 +97,7 @@ Pra enviar:
 1. Abrir no navegador e conferir
 2. Pra PDF: `node scripts/gerar-pdf.js propostas/<arquivo>.html` (ou Imprimir → Salvar como PDF no navegador)
 3. Pra link: publicar (Cloudflare Pages, Netlify Drop) ou anexar o PDF
+4. Cliente pediu em Word? `node scripts/gerar-docx.js propostas/<arquivo>.html --cabecalho "<negócio>"` (`/word`)
 
 Quer que eu escreva o email de envio? (/email-profissional)
 ```

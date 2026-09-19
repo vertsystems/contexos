@@ -28,10 +28,19 @@ MeuNegocio/
 ├── materiais/             e-books e apostilas do /documento
 ├── apresentacoes/         decks do /apresentacao
 ├── propostas/             propostas do /proposta
+├── lancamentos/           plano e calendário de cada lançamento (/lancamento)
+├── eventos/               plano, roteiro e checklist de cada evento (/evento)
+├── parcerias/             ações com outro negócio ou criador local (/parcerias)
+├── cursos/                estrutura e roteiro de aula do /curso
 ├── oferta/                desenho da oferta e estudo de preço (/oferta, /preco)
-├── vendas/                roteiros de venda (/vender), pos-venda/ e whatsapp/
+├── vendas/                roteiros de venda (/vender), pos-venda/, whatsapp/, sequencias/ (/sequencia), prospeccao/ (/prospeccao) e indicacao.md (/indicacao)
 ├── avaliacoes-google/     histórico de respostas do /responder-avaliacoes (só se pedir registro)
-├── financeiro/            fechamento do mês e custos fixos (/caixa)
+├── financeiro/            fechamento do mês e custos fixos (/caixa), projecao-<AAAA-MM>.md (/projecao) e obrigacoes.md (/obrigacoes)
+├── medicao/               plano de medição, convenção de UTM e leitura do mês por canal (/medir)
+├── experimentos/          uma folha por teste A/B (/teste-ab)
+├── planilhas/             .xlsx avulsos do /planilha (os que têm dono vão na pasta dele)
+├── reunioes/              ata, decisões e transcrição de cada reunião (/reuniao)
+├── decisoes/              decisão grande escrita em uma página, com data de revisão (/decidir)
 ├── contratos/             contratos de prestação de serviço (/contrato)
 ├── imprensa/              pautas, contatos e clipping (/imprensa)
 ├── seo/                   os 8 arquivos do /seo
@@ -39,15 +48,21 @@ MeuNegocio/
 ├── analises/              saídas do /analisar-dados
 ├── emails/                rascunhos longos do /email-profissional
 ├── revisoes/              fechamentos do /revisao-semanal
-├── sistemas/              o que o /escopo decide e o /backend constrói
+├── sistemas/              o que o /escopo decide, o /quebrar ordena (ENTREGAS.md) e o /backend constrói
 ├── dados/                 drop zone: arquivo que você joga aqui pra ser lido
 ├── scripts/               utilitários e o Playwright (ver templates/scripts.md)
 ├── biblioteca.md          índice de ativos reutilizáveis
 ├── tarefas.md             pipeline
+├── rotinas.md             o que repete, agendado (/rotina)
 │
 ```
 
-> As pastas `design/` e `copy/` são as **bibliotecas de referência**: conhecimento
+E dois arquivos que não são pasta de trabalho: `_memoria/sessao.md` guarda onde
+o trabalho parou (/pausar) e o `/abrir` retoma de lá; `site/` recebe tanto a
+página única do /landing quanto as várias páginas do /site.
+
+> As pastas `design/`, `copy/`, `backend/`, `software/`, `crescimento/`,
+> `financeiro/` e `operacao/` de `templates/` são as **bibliotecas de referência**: conhecimento
 > que várias skills consultam, mantido num lugar só. Editar lá muda o
 > comportamento de todas as skills que dependem daquilo — é o jeito de calibrar
 > o sistema inteiro sem tocar em 51 arquivos.
@@ -74,7 +89,10 @@ Aplicada aos perfis **freelancer** e **agência**. O trabalho é organizado por 
 │       ├── materiais/
 │       ├── apresentacoes/
 │       ├── propostas/
-│       └── sistemas/
+│       ├── sistemas/
+│       ├── lancamentos/   eventos/  parcerias/  cursos/
+│       ├── reunioes/      decisoes/  experimentos/
+│       └── vendas/        sequencias/ e prospeccao/ feitas pro cliente
 │
 ├── propostas/             prospects que ainda não são clientes
 ├── conteudo/              conteúdo próprio da agência

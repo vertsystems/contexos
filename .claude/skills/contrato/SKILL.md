@@ -116,6 +116,9 @@ node scripts/verificar.js html contratos/<cliente>-<data>/contrato.html
 node scripts/gerar-pdf.js contratos/<cliente>-<data>/contrato.html
 ```
 
+Cliente pediu em Word pra marcar alterações? `node scripts/gerar-docx.js contratos/<cliente>-<data>/contrato.html`
+gera o `.docx` ao lado, e `--comparar` mostra o que ele mudou quando devolver (`/word`).
+
 O verificador acusa placeholder esquecido: em contrato, um `[NOME DO CLIENTE]` que
 sobrou é constrangimento na frente de quem vai assinar.
 

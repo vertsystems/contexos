@@ -103,4 +103,4 @@ Evitar: [o que destoa]
 - [ ] Meta Ads
 - [ ] Google Ads
 
-*(Marcar conforme for instalando os MCPs)*
+*(o `/conectar` marca aqui, com data e nome da variável, depois do teste passar)*

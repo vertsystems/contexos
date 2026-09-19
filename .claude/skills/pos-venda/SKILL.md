@@ -69,6 +69,9 @@ Pedido de depoimento que funciona é o que dá o trabalho pronto:
 > Se ajudar, pode responder só isso: **qual era o problema, o que mudou, e
 > se você indicaria pra alguém.**"
 
+Se o negócio tem programa de indicação (`/indicacao`), o convite pra indicar entra na mesma
+conversa ou no dia seguinte, com o texto pronto pra encaminhar.
+
 Depoimento genérico ("excelente profissional") não vende. O que vende tem antes/depois e
 número. Se vier genérico, perguntar uma coisa específica de volta.
 

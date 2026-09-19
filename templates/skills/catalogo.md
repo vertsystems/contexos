@@ -3,7 +3,7 @@
 <!-- ia:inicio -->
 Skills de terceiros e nativas que valem conhecer. Use como referência ao criar skills novas com `/mapear-rotinas`, ou instale as que fizerem sentido pro seu negócio.
 
-> **Nada nesta página vem instalado com o Contex OS.** As 55 skills do Contex OS
+> **Nada nesta página vem instalado com o Contex OS.** As 75 skills do Contex OS
 > ficam na pasta de skills do projeto — a lista completa está no fim deste arquivo.
 > O que está aqui embaixo é catálogo externo: umas já vêm no Claude Code,
 > outras você instala por fora.
@@ -180,6 +180,26 @@ Antes de criar skill, conferir se um desses já cobre:
 | Auditar código que já existe: sintoma, custo, conserto, consertar ou refazer | `/revisar-codigo` |
 | Toda vez que mexem quebra outra coisa: por onde começar a testar | `/testar` |
 | O sistema já está no ar: o que virou uso, o que entra agora, o que desligar | `/evoluir` |
+| Vou lançar curso, turma, produto, promoção de época ou inaugurar: plano em três fases com datas conferidas e meta em número | `/lancamento` |
+| Série de e-mails ou WhatsApp com gatilho e intervalo: boas-vindas, nutrição, orçamento parado, reativação, pós-compra, lista de espera | `/sequencia` |
+| Cliente novo do zero: perfil ideal, lista pontuada, mensagem fria por canal, follow-up e rotina da semana | `/prospeccao` |
+| Quero que meu cliente traga cliente: programa de indicação, recompensa, afiliado e a conta | `/indicacao` |
+| Parceria com outro negócio ou criador local: quem, o formato, a conta, a proposta e o contrato mínimo | `/parcerias` |
+| Live, workshop, aula aberta ou evento na loja: meta com número, roteiro minuto a minuto, lembretes em data certa e a colheita depois | `/evento` |
+| De onde vem meu cliente: instalar GA4 e pixel, link com UTM, pergunta no atendimento e a leitura do mês por canal | `/medir` |
+| Testar duas versões (página, anúncio, preço) e saber se a diferença é real ou sorte | `/teste-ab` |
+| Planilha Excel de verdade, com fórmula que recalcula: orçamento, estoque, pedidos, fluxo de caixa, prospecção; ou abrir e consertar a que já existe | `/planilha` |
+| Cliente pediu em Word: proposta, contrato ou documento em .docx editável, e comparar o que ele devolveu | `/word` |
+| Quero um site de verdade, com várias páginas, pra aparecer no Google e no WhatsApp | `/site` |
+| Quero transformar o que eu sei em curso, treinamento ou mentoria (e saber se é curso ou é e-book) | `/curso` |
+| Gravei a reunião: ata, decisões, quem faz o quê e até quando | `/reuniao` |
+| Vou parar por aqui: guardar onde parei pra retomar amanhã | `/pausar` |
+| Decisão grande (contratar, subir preço, aceitar cliente, abrir frente, mudar de nicho): entrevista até fechar as pontas e decisão escrita em uma página | `/decidir` |
+| O escopo tá aprovado: por onde começo a construir, o que vem primeiro, quanto leva cada parte | `/quebrar` |
+| Ligar uma ferramenta de fora (chave de IA, Instagram, Notion, Gmail, Analytics, Vercel, Supabase, Mailchimp): onde pegar, onde colar, teste que prova | `/conectar` |
+| Toda sexta a revisão, toda segunda os ads, dia 1 o caixa: o que repete, agendado | `/rotina` |
+| Quando vence o DAS, quanto é o MEI esse ano, estourei o teto, preciso de contador? | `/obrigacoes` |
+| Como fica o caixa nos próximos meses: dá pra contratar, aguento janeiro, e se subir o preço | `/projecao` |
 
 ---
 

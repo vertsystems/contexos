@@ -2,7 +2,7 @@
 name: abrir
 description: >
   Abre uma sessão de trabalho carregando a memória do negócio (empresa, preferências, estratégia, identidade)
-  e devolve um resumo curto pro usuário, com o que ficou pendente da última sessão. Use quando o usuário disser
+  e devolve um resumo curto pro usuário, com o que ficou pendente da última sessão (inclusive o que o /pausar guardou). Use quando o usuário disser
   "abrir", "começar o dia", "bom dia", "/abrir" ou no primeiro turno de uma sessão depois do /instalar.
 ---
 
@@ -42,6 +42,16 @@ Curto e direto. O objetivo é carregar contexto e devolver uma síntese enxuta p
    responder e propor o ajuste em uma linha.
 
 3. Checagem rápida de pendências (sem narrar a busca, no máximo 2 itens):
+   - `_memoria/sessao.md` — se existir, é o primeiro item de "Pendente", no
+     formato `Pendente: <Fazendo>, pausado em <DD/MM>. Próxima ação: <Próxima ação>`
+     (é o que o `/pausar` guardou). Se o arquivo tiver "Precisa responder",
+     mostrar a primeira pergunta no lugar de "O que vamos fazer?". Vale também
+     no resumo do uso livre. Pausa com mais de 14 dias: mostrar com a data e
+     perguntar uma vez se ainda vale
+   - `rotinas.md` — se existir na raiz, rodar `node scripts/rotinas.js vencidas`
+     e levar o que estiver vencido pra "Pendente" como "Rotina <nome> vencida
+     desde <DD/MM>" (dentro do teto de 2 itens; se houver mais, o mais antigo e
+     "e mais N rotinas vencidas")
    - `tarefas.md` — itens abertos (se o arquivo existir)
    - Calendário do mês em `conteudo/` — tem peça prevista pra hoje ou pra amanhã?
    - Blog posts com `draft: true` esperando aprovação

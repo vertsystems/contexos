@@ -51,6 +51,8 @@ distribuído entram quando o número aparece, não por precaução.
 
 **Pedido sem tamanho não começa aqui.** "Quero um sistema pra controlar meus pedidos" vai antes
 pro `/escopo`, que corta até a fatia que já resolve e grava as três respostas em `ESCOPO.md`.
+Quando existir `sistemas/<nome>/ENTREGAS.md` (do `/quebrar`), a ordem de construção vem de lá:
+uma entrega por vez, a próxima livre primeiro.
 
 ### Passo 2 — Escolher a stack e registrar por quê
 

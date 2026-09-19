@@ -239,12 +239,22 @@ usabilidade, movimento, acessibilidade, desempenho, e-mail em HTML, página de p
 `copy/` (psicologia da decisão, ganchos, edição, humanização). Skill visual ou de texto consulta
 de lá em vez de improvisar, e é lá que se calibra o padrão do sistema.
 
+Três pastas mais novas seguem a mesma lógica. Em `templates/crescimento/`
+fica o que faz o negócio crescer (lançamento, sequência, prospecção, indicação,
+parceria, evento, medição, experimento, curso), sustentando o `/lancamento`, o
+`/sequencia`, o `/prospeccao`, o `/indicacao`, o `/parcerias`, o `/evento`, o
+`/medir`, o `/teste-ab` e o `/curso`. Dinheiro adiante e obrigações moram em
+`templates/financeiro/`, base do `/projecao` e do `/obrigacoes`. Já
+`templates/operacao/` cuida do uso do próprio sistema, com decisão, reunião,
+planilha, Word, conexões e rotinas, e sustenta o `/decidir`, o `/reuniao`, o
+`/planilha`, o `/word`, o `/conectar` e o `/rotina`.
+
 O mesmo vale pro que é software, e aí são duas pastas com fronteira clara.
 `templates/backend/` é o **código** (stack, dados, consultas, cadastro, API,
 segurança, arquitetura, importação, testes, entrega, incidente, versões, debug,
 revisão de código), e sustenta o `/backend`, o `/testar` e o `/revisar-codigo`.
 `templates/software/` é o que o **dono decide e paga** (validação, escopo, custo,
-manutenção, evolução), e sustenta o `/escopo` e o `/evoluir`. Nada sobre como escrever código entra em
+manutenção, evolução, entregas), e sustenta o `/escopo`, o `/quebrar` e o `/evoluir`. Nada sobre como escrever código entra em
 `software/`; nada sobre orçamento e decisão de negócio entra em `backend/`.
 
 Quando o conteúdo depender de dado (número, comparação, alegação técnica),
@@ -268,6 +278,15 @@ node scripts/verificar.js segredo [pasta]        # chave e senha em arquivo vers
 node scripts/verificar.js migracao [pasta]       # ordem, volta atrás e DROP na migração
 node scripts/verificar.js contraste "#123" "#fff"
 node scripts/gerar-pdf.js <arquivo.html>              # HTML → PDF, com verificação
+node scripts/gerar-planilha.js <spec.json>            # .xlsx com fórmula viva; --ler abre planilha
+node scripts/gerar-docx.js <arquivo.md|html>          # .docx editável, sem npm
+node scripts/utm.js <url> --source x --medium y --campaign z   # link rastreável na convenção
+node scripts/teste-ab.js amostra --taxa 2,5 --efeito 20        # amostra mínima antes de testar
+node scripts/projecao.js <spec.projecao.json>         # caixa dos próximos meses em três cenários
+node scripts/obrigacoes.js <ano> <mei|simples|autonomo>        # calendário fiscal em dia útil
+node scripts/site.js conferir site/                   # site de várias páginas: menu, meta, sitemap
+node scripts/rotinas.js vencidas                      # rotina agendada que passou da hora
+node scripts/conectar.js testar <ferramenta>          # prova que a chave do .env funciona
 node scripts/verificar.js sistema                     # integridade do próprio Contex OS
 ```
 

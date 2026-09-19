@@ -118,6 +118,10 @@ Ponto de equilíbrio: R$ ... (faturamento mínimo pra não dar prejuízo)
 [o que faltou de dado, e o que anotar no mês que vem pra resolver]
 ```
 
+Pra ver os próximos meses em cenários (contratar, reajuste, quantos meses de caixa), o
+fechamento alimenta o `/projecao`. Planilha `.xlsx` que o usuário mandou se lê com
+`node scripts/gerar-planilha.js --ler <arquivo>`.
+
 ### Passo 6 — Comparar com os meses anteriores
 
 Se já existe fechamento anterior em `financeiro/`, ler e comparar. Um mês isolado quase não

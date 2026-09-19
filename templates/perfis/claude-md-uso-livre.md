@@ -137,4 +137,4 @@ Evitar: [o que ele reclamar, quando reclamar]
 - [ ] Notion
 - [ ] Google Analytics
 
-*(Marcar conforme for descobrindo ou instalando)*
+*(o `/conectar` marca aqui, com data e nome da variável, depois do teste passar)*

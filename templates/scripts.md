@@ -18,6 +18,18 @@ Conforme você for ativando skills, isso aqui vai sendo populado. Lista do que c
 | `/documento`, `/apresentacao` | **já vem pronto** em `scripts/gerar-pdf.js` | HTML → PDF, achando o navegador e esperando as fontes |
 | todas que geram número | **já vem pronto** em `scripts/verificar.js` | Confere contagem, soma, data, contraste, peso e HTML |
 | `/publicar-tema` | (nenhum — entrega os arquivos pra você postar) | — |
+| `/lancamento` | **já vem pronto** em `scripts/lancamento.js` | Calendário de marcos com dia da semana e feriado, e a conta da meta em três cenários |
+| `/medir` | **já vem pronto** em `scripts/utm.js` | Link com UTM na convenção, lista em lote, leitura de origem por CSV |
+| `/teste-ab` | **já vem pronto** em `scripts/teste-ab.js` | Amostra mínima, duração e leitura do resultado (ganhou, perdeu, inconclusivo) |
+| `/planilha` | **já vem pronto** em `scripts/gerar-planilha.js` | Escreve .xlsx com fórmula viva a partir de uma spec JSON; `--ler` abre .xlsx e .csv |
+| `/word` | **já vem pronto** em `scripts/gerar-docx.js` | Markdown ou HTML → .docx editável; `--texto` e `--comparar` leem o que o cliente devolveu |
+| `/site` | **já vem pronto** em `scripts/site.js` | Confere menu, title/description, canonical e CSS de todas as páginas; gera o sitemap |
+| `/reuniao` | **já vem pronto** em `scripts/transcrever.js` | Gravação → texto pela OpenAI ou Gemini (chave no `.env`); YouTube via yt-dlp |
+| `/quebrar` | **já vem pronto** em `scripts/entregas.js` | Confere o ENTREGAS.md: bloqueios, ordem, faixa de prazo e a próxima entrega livre |
+| `/conectar` | **já vem pronto** em `scripts/conectar.js` | `status`, `lista` e `testar <ferramenta>`: prova que a chave do `.env` funciona sem mostrar o valor |
+| `/rotina` | **já vem pronto** em `scripts/rotinas.js` | Rotinas vencidas, próxima ocorrência de "toda sexta 17h", registrar e desligar |
+| `/obrigacoes` | **já vem pronto** em `scripts/obrigacoes.js` | Calendário fiscal do ano por enquadramento, ajustado pra dia útil e feriado |
+| `/projecao` | **já vem pronto** em `scripts/projecao.js` | Projeção de 3 a 6 meses em três cenários, com a spec pro gerar-planilha.js |
 
 ## Pré-requisitos comuns
 

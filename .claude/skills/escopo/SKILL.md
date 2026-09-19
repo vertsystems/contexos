@@ -204,7 +204,8 @@ site ou aplicativo, os critérios de aceite, a tabela de custo conferida, o teto
 de quem mantém. Mostre ao dono e peça que ele aponte um item para cortar. Se ele não cortar nada,
 a lista ainda não está longa o bastante para ser real.
 
-Com o arquivo aceito, passe a bola: `/backend` escolhe a stack, desenha os dados e constrói.
+Com o arquivo aceito, passe a bola: o `/quebrar` transforma a lista em entregas pequenas e
+ordenadas (`ENTREGAS.md`), e o `/backend` escolhe a stack, desenha os dados e constrói uma por uma.
 
 ---
 

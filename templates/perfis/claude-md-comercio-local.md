@@ -95,4 +95,4 @@ cliente", "experiência diferenciada", "qualidade ímpar"]
 - [ ] iFood / app de delivery
 - [ ] Sistema de PDV / agenda
 
-*(Marcar conforme for instalando os MCPs)*
+*(o `/conectar` marca aqui, com data e nome da variável, depois do teste passar)*

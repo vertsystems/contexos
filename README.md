@@ -3,7 +3,7 @@
 > O sistema operacional do seu negócio dentro da sua IA de código.
 
 Sua empresa ganha uma memória própria, uma identidade visual aplicada em tudo
-que ela gerar, e 55 skills prontas pra fazer marketing, conteúdo, SEO, ads,
+que ela gerar, e 75 skills prontas pra fazer marketing, conteúdo, SEO, ads,
 oferta, preço, venda, material e operação rodarem com você dirigindo.
 
 E quando o assunto é software, ele não para em escrever código: diz se vale a
@@ -89,13 +89,30 @@ Carrega o contexto antes de cada sessão · faz commit + push no GitHub · varre
 projeto e atualiza a memória · cria pasta isolada pra cada cliente · mantém o
 pipeline do que tá em jogo · fecha a semana e alimenta a próxima · transforma o
 que você repete em skill própria · traz a versão nova do Contex OS sem tocar no
-teu trabalho.
+teu trabalho · guarda onde você parou e retoma de lá · transforma gravação de
+reunião em ata, decisões e tarefas · entrevista até fechar as pontas de uma
+decisão grande · liga ferramenta de fora (chave de IA, Instagram, Notion,
+Vercel) uma tela por vez, com teste no fim · e agenda o que repete: revisão
+toda sexta, ads toda segunda, caixa no dia 1.
 
 **Vender** — o que decide o faturamento
 Desenha o que você vende, com bônus, garantia e motivo pra ser agora · te ajuda
 a chegar no preço, montar faixas e responder "tá caro" · descobre quem compra e
 a dor na palavra dele · prepara a conversa que fecha · diz por que a página não
 converte · monta a proposta comercial em HTML.
+
+**Crescer** — o que traz cliente novo
+Planeja o lançamento em três fases, com datas conferidas e meta em número ·
+desenha a série de e-mails ou WhatsApp com gatilho e intervalo · monta a lista
+de prospects e a abordagem fria com follow-up e fim elegante · programa de
+indicação com a conta de quanto vale · parceria com outro negócio ou criador
+local, do formato ao contrato mínimo · workshop, live ou evento na loja, do
+roteiro à colheita · e transforma o que você sabe em curso ou treinamento.
+
+**Medir** — de onde vem o cliente
+Instala GA4, pixel e a convenção de UTM, lê o mês por canal e responde "de
+onde veio" · desenha teste A/B honesto, com amostra mínima e duração
+calculadas antes de começar (e diz quando o teste não vai fechar).
 
 **Marca** — o rosto do negócio, aplicado em tudo
 Transforma sua identidade em tokens (paleta, tipografia, espaçamento) com
@@ -112,7 +129,9 @@ no mês com mix de funil e formato.
 **Criar** — as peças
 Carrosséis 1080×1350 com a marca aplicada · artigo de blog + carrossel + 3
 legendas amarradas · página de conversão em HTML · e-book, apostila ou guia em
-PDF com qualidade editorial · deck pra reunião e pitch · e transforma o que você
+PDF com qualidade editorial · deck pra reunião e pitch · site institucional de
+várias páginas com sitemap e schema · planilha Excel de verdade, com fórmula
+que recalcula · proposta e contrato em Word editável · e transforma o que você
 já tem (live, artigo, PDF) em 5 peças novas.
 
 **Qualidade** — o filtro antes de sair
@@ -129,8 +148,10 @@ Google · pauta pra imprensa local e do setor.
 
 **Dinheiro** — o que quase nenhum sistema mostra
 Fecha o mês: quanto entrou, quanto sobrou de verdade, quanto vale sua hora, qual
-serviço dá lucro e qual só dá trabalho · e o ponto de equilíbrio, calculado com
-os teus custos fixos, não com média de mercado.
+serviço dá lucro e qual só dá trabalho · o ponto de equilíbrio, calculado com
+os teus custos fixos, não com média de mercado · os próximos meses em três
+cenários (dá pra contratar? aguento janeiro?) · e o calendário fiscal do MEI,
+do Simples e do autônomo, com valor, prazo e fonte oficial.
 
 **Depois do fechou**
 Alinha a expectativa do cliente novo · pede depoimento na hora em que ele está
@@ -145,8 +166,9 @@ primeiros segundos · e e-mail em HTML que chega inteiro na caixa de entrada,
 com descadastro em um clique.
 
 **Software** — quando o negócio precisa de sistema, não de peça
-Servidor, API, banco, login e publicação, com os dados desenhados antes do
-código · o padrão das telas de uso (botão, campo, tabela, painel e os quatro
+Diz o que vale construir e quanto custa, quebra o escopo aprovado em entregas
+pequenas na ordem certa, e aí constrói: servidor, API, banco, login e
+publicação, com os dados desenhados antes do código · o padrão das telas de uso (botão, campo, tabela, painel e os quatro
 estados: cheio, vazio, carregando, erro) · duração e curva das animações · a
 página onde o cliente compara e escolhe, com o botão antes da ficha técnica · e
 o laudo que junta acessibilidade (WCAG 2.2) e velocidade (LCP, INP, CLS) numa

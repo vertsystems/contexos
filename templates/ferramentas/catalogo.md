@@ -8,6 +8,9 @@ Consulte antes de criar skill nova. Ele diz o que já existe.
 
 ---
 
+> Pra ligar qualquer uma dessas com o usuário leigo, uma tela por vez e com o
+> teste que prova no fim: `/conectar`, apoiado em `templates/operacao/conexoes.md`.
+
 ## Criar visuais (HTML pra PNG)
 
 ### Playwright CLI

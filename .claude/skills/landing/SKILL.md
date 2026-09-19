@@ -4,7 +4,8 @@ description: >
   Cria landing page de conversão em HTML único e responsivo, com a identidade da marca, copy
   estruturada em seções de função clara, SEO/OG/schema, checklist de performance e variantes de
   headline. Use quando o usuário pedir "landing page", "página de vendas", "página de captura",
-  "site de uma página", "página pro anúncio", "criar site simples", ou /landing.
+  "site de uma página", "página pro anúncio", "criar site simples", ou /landing. Pra site com
+  várias páginas (home, sobre, serviços, contato), é /site.
 ---
 
 # /landing — Página de conversão

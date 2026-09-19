@@ -32,7 +32,7 @@ Se o contexto estiver óbvio pelo nome do arquivo ou pelo conteúdo, prossegue s
 
 ### Passo 2 — Ler o arquivo
 
-Ler o arquivo fornecido. Se for Excel (.xlsx), ler com as ferramentas disponíveis pra extrair o conteúdo das células.
+Ler o arquivo fornecido. Se for Excel (.xlsx), ler com `node scripts/gerar-planilha.js --ler <arquivo> --json` (abre cada aba sem depender de programa instalado).
 
 ### Passo 3 — Análise
 
