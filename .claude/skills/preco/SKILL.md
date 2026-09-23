@@ -120,6 +120,10 @@ Quase todo negócio pequeno está com preço defasado. Como subir sem quebrar a 
 4. **Algo a mais junto do aumento**, quando possível — mesmo pequeno, muda a conversa de "vou pagar mais" pra "vou receber mais"
 5. **Aceitar perder alguns.** Perder 10% da base com aumento de 25% ainda é mais faturamento com menos trabalho — fazer essa conta na frente dele
 
+O aviso em si sai do `/comunicado`: ele lê o motivo, o percentual, o valor antigo, o novo e a
+data do último aumento deste estudo, calcula o prazo por comando e entrega as três versões, a
+FAQ e o calendário de disparo. Aqui se decide o número; lá se comunica.
+
 **Nunca** subir preço sem avisar, e nunca subir escondido em nota fiscal.
 
 ---

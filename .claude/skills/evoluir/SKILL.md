@@ -143,6 +143,10 @@ desligamento vazia sem justificativa costuma significar que ninguém olhou.
 `MUDANCAS.md`, três colunas: data, o que mudou, o que se esperava. Entram mudanças de código
 e também as que não são código: texto do site, anúncio, preço, horário de atendimento.
 
+Linha do diário que o cliente percebe de fora não para aí: o `/novidades` lê o mesmo intervalo
+no histórico do repositório e escreve o aviso na língua dele, com a mensagem de WhatsApp e o
+bloco pro e-mail.
+
 É o arquivo que explica, no mês seguinte, por que o número se mexeu. Ele é curto de propósito.
 
 ### Passo 8 — Marcar a data da próxima conferência

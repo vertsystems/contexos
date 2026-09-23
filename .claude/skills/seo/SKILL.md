@@ -114,6 +114,7 @@ description: >
    **Posts GMB:**
    - 4 posts iniciais sugeridos
    - Calendário de posts recorrentes
+   - O mês seguinte sai pelo `/posts-perfil-google`, que escreve `conteudo/google-perfil/<AAAA-MM>.md` e confere cada post antes de o dono publicar
 
    **Estratégia de avaliações:**
    - Como pedir avaliações dos clientes atuais

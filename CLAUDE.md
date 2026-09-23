@@ -239,7 +239,7 @@ usabilidade, movimento, acessibilidade, desempenho, e-mail em HTML, página de p
 `copy/` (psicologia da decisão, ganchos, edição, humanização). Skill visual ou de texto consulta
 de lá em vez de improvisar, e é lá que se calibra o padrão do sistema.
 
-Três pastas mais novas seguem a mesma lógica. Em `templates/crescimento/`
+Quatro pastas mais novas seguem a mesma lógica. Em `templates/crescimento/`
 fica o que faz o negócio crescer (lançamento, sequência, prospecção, indicação,
 parceria, evento, medição, experimento, curso), sustentando o `/lancamento`, o
 `/sequencia`, o `/prospeccao`, o `/indicacao`, o `/parcerias`, o `/evento`, o
@@ -247,7 +247,11 @@ parceria, evento, medição, experimento, curso), sustentando o `/lancamento`, o
 `templates/financeiro/`, base do `/projecao` e do `/obrigacoes`. Já
 `templates/operacao/` cuida do uso do próprio sistema, com decisão, reunião,
 planilha, Word, conexões e rotinas, e sustenta o `/decidir`, o `/reuniao`, o
-`/planilha`, o `/word`, o `/conectar` e o `/rotina`.
+`/planilha`, o `/word`, o `/conectar` e o `/rotina`. E `templates/juridico/` guarda o que tem
+lei brasileira em cima (troca e devolução pelo CDC, autorização de imagem, acordo de sócios,
+revisão de contrato, publicidade de profissão regulada), sempre com artigo, fonte oficial e data
+de conferência; é a base do `/troca-devolucao`, do `/autorizacao`, do `/socios`, do
+`/revisar-contrato` e do `/publicidade-regulada`.
 
 O mesmo vale pro que é software, e aí são duas pastas com fronteira clara.
 `templates/backend/` é o **código** (stack, dados, consultas, cadastro, API,
@@ -287,6 +291,12 @@ node scripts/obrigacoes.js <ano> <mei|simples|autonomo>        # calendário fis
 node scripts/site.js conferir site/                   # site de várias páginas: menu, meta, sitemap
 node scripts/rotinas.js vencidas                      # rotina agendada que passou da hora
 node scripts/conectar.js testar <ferramenta>          # prova que a chave do .env funciona
+node scripts/regua.js <parcelas.csv>                  # multa e juro certos, régua em dia útil
+node scripts/conciliar.js <extrato.ofx> --registros <x> # o que o banco tem e você não lançou
+node scripts/custo-funcionario.js --salario 3000      # quanto custa contratar, por regime
+node scripts/prazos.js --compra DD/MM/AAAA            # até quando o cliente pode trocar
+node scripts/estoque.js <vendas.csv> --parametros <x> # o que comprar e o que está encalhado
+node scripts/cadastro-clientes.js <base.csv>          # telefone, CPF/CNPJ e dedupe da base
 node scripts/verificar.js sistema                     # integridade do próprio Contex OS
 ```
 

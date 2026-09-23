@@ -31,6 +31,7 @@ previsível. Esta skill escreve essa previsibilidade em valores fixos.
   - `templates/design/acessibilidade.md` — foco, alvo, formulário, teclado
   - `templates/design/movimento.md` — só a parte de estado de interação
   - `templates/design/anti-generico.md` — conferir antes de entregar
+- **Vocabulário:** `sistemas/<nome>/GLOSSARIO.md` (`/glossario`), quando existir — rótulo de campo, cabeçalho de tabela e texto de botão usam a grafia "Na tela" do glossário
 - **Saída:** `identidade/interface.css` e `identidade/interface.html`
 
 ---

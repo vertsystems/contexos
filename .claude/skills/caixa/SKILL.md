@@ -22,7 +22,14 @@ atender um cliente.
 
 - **Contexto:** `_memoria/empresa.md` — o que o negócio vende, quem é a equipe, o que já se sabe do custo
 - **Preço praticado:** `_memoria/oferta.md` e o estudo do `/preco`, se existirem
+- **Retirada do dono:** `financeiro/retirada.md` (`/pro-labore`), se existir — o pró-labore já fixado e o teto da distribuição isenta entram como número de entrada
+- **Sociedade:** `juridico/acordo-de-socios.md` (`/socios`), quando houver sócio — é lá que está a divisão entre pró-labore e distribuição, e as duas entram como retirada
 - **Entrada de dado:** extrato bancário, planilha ou CSV que o usuário jogar em `dados/`. Se não houver, a conversa do Passo 1 basta
+- **Conciliação do mês:** `financeiro/conciliacao-<AAAA-MM>.md` (`/conciliar`), se existir — de lá saem a tarifa, o imposto e o Pix que o extrato traz e ninguém lançou, e o que foi vendido e ainda não caiu. Fechar sem ela soma o que caiu e chama de faturamento
+- **Despesa com documento:** `financeiro/comprovantes/comprovantes-<AAAA-MM>.csv` (`/comprovantes`), quando existir — já somado nas mesmas categorias, então a nota não é classificada duas vezes
+- **Mercadoria:** `estoque/reposicao.md` (`/estoque`), quando existir — dinheiro parado em produto não é despesa do mês, e é o que explica caixa curto com lucro no papel
+- **Margem por canal de delivery:** `cardapio/delivery-<AAAA-MM>.md` (`/delivery`), quando o negócio vende por aplicativo — o lucro real por canal, já sem comissão, cupom e embalagem
+- **Serviço por atendimento:** `os/indice.csv` (`/ordem-servico`), se existir — a coluna `total` das OS concluídas no mês é receita já discriminada entre mão de obra, peça e deslocamento
 - **Saída:** `financeiro/fechamento-<AAAA-MM>.md` e, quando o usuário quiser manter, `financeiro/custos-fixos.md`
 
 ---
@@ -75,6 +82,10 @@ Quando o usuário vende mais de uma coisa, quebrar por serviço/produto:
 |---|---|---|---|---|---|---|
 | ... | ... | ... | ... | ... | ... | ... |
 
+Negócio que produz comida ou produto físico tem o custo variável por item em
+`precos/cardapio-margem.md`, do `/ficha-tecnica`. Se o arquivo existe, o custo por porção da
+tabela acima vem de lá, não de estimativa.
+
 A coluna de **horas** é a que costuma revelar o problema: o serviço de maior receita
 frequentemente é o de pior retorno por hora. Se o usuário não controla horas, estimar com
 ele, e marcar como estimativa no arquivo.
@@ -118,8 +129,13 @@ Ponto de equilíbrio: R$ ... (faturamento mínimo pra não dar prejuízo)
 [o que faltou de dado, e o que anotar no mês que vem pra resolver]
 ```
 
+A tabela **A receber** alimenta o `/cobranca`: é lá que a parcela vencida ganha valor corrigido
+por comando, régua em dia útil e mensagem pronta.
+
 Pra ver os próximos meses em cenários (contratar, reajuste, quantos meses de caixa), o
-fechamento alimenta o `/projecao`. Planilha `.xlsx` que o usuário mandou se lê com
+fechamento alimenta o `/projecao`. Quem vende hora e chegou por "posso contratar alguém" precisa
+do outro lado da conta: o `/capacidade` mede quantas horas a agenda tem pra vender, quanto está
+vazio e a partir de que ocupação a próxima cadeira se paga. Planilha `.xlsx` que o usuário mandou se lê com
 `node scripts/gerar-planilha.js --ler <arquivo>`.
 
 ### Passo 6 — Comparar com os meses anteriores

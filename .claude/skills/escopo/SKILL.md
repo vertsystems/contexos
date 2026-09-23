@@ -238,5 +238,6 @@ Se a soma divergir, refaça a conta a partir da fatura. Nunca ajuste o número p
 - **Rode `node scripts/verificar.js tabela` antes de mostrar a conta.** Sempre, inclusive na tabela que vai dentro de uma proposta
 - Quem corta é o dono. Mostre as duas listas e deixe ele escolher; escolher por ele e avisar depois é outra coisa
 - **A pasta `sistemas/<nome>/` só nasce com o veredito "vale a pena".** "Não vale" se responde na conversa, sem arquivo e sem pasta
+- **Dúvida sobre o que a pessoa entende é `/prototipo`, não discussão.** "O cliente vai entender que o pedido só fica confirmado depois de pagar?" não se resolve em reunião entre duas pessoas que já sabem como funciona: sai um HTML pra ela clicar, e a decisão volta escrita pro `ESCOPO.md`
 - **Esta skill não escreve código.** Não cria tabela, não escolhe framework, não sobe nada para lugar nenhum. Aprovado o escopo, o trabalho é do `/backend`
 - Lista de recursos do aparelho vazia significa site. Aplicativo entra com a lista escrita e com as contas anuais da loja dentro da coluna mensal

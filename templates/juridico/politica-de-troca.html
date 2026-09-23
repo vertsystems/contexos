@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Política de troca e devolução — {{NOME_DA_LOJA}}</title>
+<meta name="description" content="Como funciona troca, devolução e defeito na {{NOME_DA_LOJA}}: prazos, condições e como pedir.">
+<!--
+  Molde do /troca-devolucao. O assistente copia este arquivo pra juridico/politica-de-troca.html
+  e troca cada chave entre chaves duplas pelo dado da loja.
+
+  PRIMEIRO PASSO NA CÓPIA: apagar este bloco de comentário inteiro. Ele é instrução de
+  montagem, não faz parte da política, e o texto dele atrapalha a conferência de chaves
+  que sobraram (o comando de conferência está no Passo 6 do SKILL.md). Depois disso,
+  `node scripts/verificar.js html` tem que terminar em "Tudo certo.".
+
+  Dado que a loja não souber na hora entra como [a confirmar] no arquivo, nunca inventado:
+  prazo de estorno chutado numa política publicada é promessa que a loja vai descumprir.
+
+  Chaves:
+    NOME_DA_LOJA        nome fantasia
+    DATA_VERSAO         DD/MM/AAAA da versão publicada
+    CANAL_PEDIDO        por onde o cliente pede (WhatsApp, e-mail, formulário)
+    LINK_PEDIDO         href do canal: https://wa.me/55DDDNUMERO ou mailto:contato@loja.com.br
+    HORARIO             horário de atendimento
+    PRAZO_GOSTO         dias corridos da troca por gosto (a política da loja)
+    CONTA_DE            "da compra" (loja) ou "do recebimento" (online)
+    CONDICOES_GOSTO     lista <li> das condições: etiqueta, sem uso, embalagem
+    FORMA_GOSTO         como devolve na troca por gosto: crédito, outro produto, Pix
+    FRETE_GOSTO         quem paga o frete na troca por gosto
+    EXCECOES            lista <li> do que não entra na troca por gosto, com a ressalva do defeito
+    PRAZO_PIX           dias úteis pra devolver por Pix
+    PRAZO_CREDITO       validade do crédito na loja
+    ENDERECO_DEVOLUCAO  onde o produto volta (loja física ou endereço de postagem)
+
+  Seções que saem, e o que sai junto com elas:
+    - Loja só de balcão: apaga <section id="arrependimento">, o <li id="resumo-arrependimento">
+      do resumo e o <span id="ressalva-arrependimento"> da seção de gosto. Deixar o item do
+      resumo promete os 7 dias que a lei não pede no balcão, e promessa publicada obriga
+      (CDC art. 30); deixar a ressalva só confunde quem lê
+    - Loja que não oferece troca por gosto: apaga <section id="gosto">, o
+      <li id="resumo-gosto"> e as chaves PRAZO_GOSTO, CONTA_DE, CONDICOES_GOSTO,
+      FORMA_GOSTO, FRETE_GOSTO, PRAZO_CREDITO e EXCECOES ficam sem uso
+    - Loja que devolve só em dinheiro ou só em produto: apaga o <tr id="linha-credito">
+      e a chave PRAZO_CREDITO
+
+  Tabela nova que o assistente acrescentar: primeira célula em <th scope="row"> (vira a faixa
+  de rótulo no celular) ou, se não houver rótulo de linha, data-rotulo em cada <td>. Sem um
+  dos dois, a tabela empilha sem legenda no celular, porque o <thead> some lá.
+
+  Tokens: se identidade/tokens.css existir, colar o bloco :root dele no lugar do :root abaixo,
+  mantendo os mesmos nomes ou trocando os var() do CSS. Todo var() tem fallback de propósito.
+-->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --cor-fundo: #ffffff;
+    --cor-texto: #1c1c1c;
+    --cor-suave: #5a5a5a;
+    --cor-destaque: #1f4e79;
+    --cor-borda: #dcdcdc;
+    --cor-caixa: #f4f6f8;
+    --fonte: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    --largura: 720px;
+    --raio: 6px;
+  }
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0;
+    background: var(--cor-fundo, #ffffff);
+    color: var(--cor-texto, #1c1c1c);
+    font-family: var(--fonte, system-ui, sans-serif);
+    font-size: 17px;
+    line-height: 1.55;
+  }
+  main { max-width: var(--largura, 720px); margin: 0 auto; padding: 40px 16px 64px; }
+  header { border-bottom: 2px solid var(--cor-destaque, #1f4e79); padding-bottom: 16px; margin-bottom: 32px; }
+  header p.loja { margin: 0 0 4px; font-weight: 600; color: var(--cor-destaque, #1f4e79); letter-spacing: .02em; text-transform: uppercase; font-size: 14px; }
+  h1 { font-size: 30px; line-height: 1.2; margin: 0 0 8px; }
+  h2 { font-size: 21px; margin: 40px 0 12px; color: var(--cor-destaque, #1f4e79); }
+  h3 { font-size: 17px; margin: 24px 0 8px; }
+  p { margin: 0 0 14px; }
+  ul, ol { padding-left: 22px; margin: 0 0 14px; }
+  li { margin-bottom: 6px; }
+  .resumo { background: var(--cor-caixa, #f4f6f8); border-radius: var(--raio, 6px); padding: 18px 20px; margin: 0 0 8px; }
+  .resumo ul { margin: 0; }
+  .prazo { display: inline-block; font-weight: 700; color: var(--cor-destaque, #1f4e79); }
+  .lei { color: var(--cor-suave, #5a5a5a); font-size: 14px; }
+  table { width: 100%; border-collapse: collapse; margin: 8px 0 20px; font-size: 15px; }
+  th, td { border: 1px solid var(--cor-borda, #dcdcdc); padding: 10px 12px; text-align: left; vertical-align: top; }
+  th { background: var(--cor-caixa, #f4f6f8); font-weight: 600; }
+  tbody th[scope="row"] { width: 34%; }
+  a { color: var(--cor-destaque, #1f4e79); }
+  .botao {
+    display: inline-block; min-height: 48px; line-height: 48px; padding: 0 22px;
+    background: var(--cor-destaque, #1f4e79); color: #ffffff; text-decoration: none;
+    border-radius: var(--raio, 6px); font-weight: 600; margin: 8px 0 16px;
+  }
+  footer { margin-top: 48px; padding-top: 16px; border-top: 1px solid var(--cor-borda, #dcdcdc); color: var(--cor-suave, #5a5a5a); font-size: 14px; }
+  @media (pointer: coarse) {
+    /* dedo erra mais que cursor: no toque o botão cresce, nunca encolhe */
+    .botao { min-height: 52px; line-height: 52px; padding: 0 26px; }
+  }
+  @media (max-width: 480px) {
+    body { font-size: 16px; }
+    h1 { font-size: 26px; }
+    /* tabela vira cartão: o rótulo da linha (th) fica na faixa, o valor embaixo */
+    table, thead, tbody, tr, th, td { display: block; }
+    thead { display: none; }
+    tbody tr { border: 1px solid var(--cor-borda, #dcdcdc); border-radius: var(--raio, 6px); margin-bottom: 12px; overflow: hidden; }
+    tbody th, tbody td { border: none; }
+    tbody th[scope="row"] { width: auto; }
+    /* tabela sem th de linha: o rótulo vem do data-rotulo de cada td */
+    td[data-rotulo]::before { content: attr(data-rotulo); display: block; font-weight: 600; font-size: 13px; color: var(--cor-suave, #5a5a5a); margin-bottom: 2px; }
+  }
+  @media print {
+    body { font-size: 12pt; color: #000; background: #fff; }
+    main { max-width: none; padding: 0; }
+    .botao { display: none; }
+    a { color: #000; text-decoration: none; }
+    h2 { break-after: avoid; }
+    table, .resumo { break-inside: avoid; }
+  }
+</style>
+</head>
+<body>
+<main>
+  <header>
+    <p class="loja">{{NOME_DA_LOJA}}</p>
+    <h1>Política de troca e devolução</h1>
+    <p class="lei">Versão de {{DATA_VERSAO}}. Vale pra compras feitas a partir dessa data.</p>
+  </header>
+
+  <div class="resumo">
+    <ul>
+      <li><strong>Veio com defeito?</strong> A gente resolve, em qualquer canal. Até <span class="prazo">30 dias</span> pra produto de consumo rápido e <span class="prazo">90 dias</span> pra produto durável, contados de quando você recebeu.</li>
+      <li id="resumo-arrependimento"><strong>Comprou pelo site ou WhatsApp e se arrependeu?</strong> Até <span class="prazo">7 dias</span> depois de receber, você devolve e o dinheiro volta inteiro.</li>
+      <li id="resumo-gosto"><strong>Não serviu ou não gostou?</strong> Troca por gosto em até <span class="prazo">{{PRAZO_GOSTO}} dias</span> {{CONTA_DE}}, nas condições abaixo.</li>
+    </ul>
+  </div>
+
+  <section id="defeito">
+    <h2>Produto com defeito</h2>
+    <p>Produto que veio com problema, quebrou no uso normal, veio faltando parte ou não faz o que a descrição promete é defeito. Isso vale pra compra na loja e pra compra pela internet.</p>
+    <h3>Prazo pra reclamar</h3>
+    <ul>
+      <li><strong>30 dias</strong> pra produto de consumo rápido (alimento, cosmético, flor, material de uso).</li>
+      <li><strong>90 dias</strong> pra produto durável (roupa, calçado, móvel, eletrônico, acessório).</li>
+      <li>O prazo conta de quando você recebeu o produto. Se o defeito só apareceu depois, conta de quando apareceu.</li>
+    </ul>
+    <h3>O que acontece</h3>
+    <p>A gente conserta ou troca. Se em <strong>30 dias</strong> o problema não estiver resolvido, você escolhe: produto novo, dinheiro de volta corrigido, ou desconto proporcional pra ficar com o produto como está.</p>
+    <p>Frete de ida e volta do produto com defeito é por nossa conta.</p>
+    <p class="lei">Código de Defesa do Consumidor, art. 18 e 26.</p>
+  </section>
+
+  <section id="arrependimento">
+    <h2>Comprou pelo site ou WhatsApp e se arrependeu</h2>
+    <p>Compra feita fora da loja (site, WhatsApp, Instagram, telefone) pode ser desfeita sem motivo em até <strong>7 dias corridos</strong> depois de você receber o produto. Não precisa explicar.</p>
+    <ul>
+      <li>Você pede pelo mesmo canal em que comprou, e a gente confirma na hora que recebeu o seu pedido de devolução.</li>
+      <li>O frete de devolução é por nossa conta: mandamos a etiqueta ou combinamos a coleta.</li>
+      <li>O valor volta inteiro, com o frete que você pagou. Pagamento no cartão: avisamos a operadora no mesmo dia pra estornar; o estorno aparece na fatura conforme o prazo da operadora, em geral até duas faturas. Pix: em até {{PRAZO_PIX}} dias úteis depois de o produto ser postado.</li>
+      <li>Se o sétimo dia cair em fim de semana ou feriado, vale o próximo dia útil.</li>
+    </ul>
+    <p class="lei">Código de Defesa do Consumidor, art. 49, e Decreto 7.962/2013, art. 5º.</p>
+  </section>
+
+  <section id="gosto">
+    <h2>Não serviu, não gostou, ganhou de presente</h2>
+    <p>Troca por gosto não é exigida por lei pra compra no balcão. A gente oferece porque é assim que quer ser tratado. As condições:</p>
+    <table>
+      <thead>
+        <tr><th>Regra</th><th>Como é</th></tr>
+      </thead>
+      <tbody>
+        <tr><th scope="row">Prazo</th><td>{{PRAZO_GOSTO}} dias corridos {{CONTA_DE}}.</td></tr>
+        <tr><th scope="row">Condições</th><td><ul>{{CONDICOES_GOSTO}}</ul></td></tr>
+        <tr><th scope="row">Como devolve</th><td>{{FORMA_GOSTO}}</td></tr>
+        <tr><th scope="row">Frete</th><td>{{FRETE_GOSTO}}</td></tr>
+        <tr id="linha-credito"><th scope="row">Crédito na loja</th><td>Vale por {{PRAZO_CREDITO}} e pode ser usado em qualquer produto.</td></tr>
+      </tbody>
+    </table>
+    <h3>O que não entra na troca por gosto</h3>
+    <ul>{{EXCECOES}}</ul>
+    <p>Nada disso limita o direito de reclamar de defeito<span id="ressalva-arrependimento"> nem, na compra fora da loja, o direito de arrependimento em 7 dias</span>.</p>
+  </section>
+
+  <section id="como-pedir">
+    <h2>Como pedir</h2>
+    <ol>
+      <li>Chame no {{CANAL_PEDIDO}} ({{HORARIO}}) com o número do pedido ou a data da compra e, se for defeito, uma foto.</li>
+      <li>A gente responde com a data-limite do seu caso e o passo seguinte no mesmo dia útil.</li>
+      <li>Produto volta pra {{ENDERECO_DEVOLUCAO}}, com a etiqueta que a gente manda ou em mãos.</li>
+      <li>Conferimos e devolvemos o valor ou enviamos o produto novo no prazo combinado.</li>
+    </ol>
+    <a class="botao" href="{{LINK_PEDIDO}}">Pedir troca ou devolução</a>
+    <p>Não precisa da caixa original nem da nota impressa: extrato, comprovante de Pix ou a conversa da compra servem como prova.</p>
+  </section>
+
+  <footer>
+    <p>{{NOME_DA_LOJA}}. Política de troca e devolução, versão de {{DATA_VERSAO}}. Baseada na Lei 8.078/1990 (Código de Defesa do Consumidor) e no Decreto 7.962/2013.</p>
+  </footer>
+</main>
+</body>
+</html>

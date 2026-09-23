@@ -30,6 +30,50 @@ Conforme você for ativando skills, isso aqui vai sendo populado. Lista do que c
 | `/rotina` | **já vem pronto** em `scripts/rotinas.js` | Rotinas vencidas, próxima ocorrência de "toda sexta 17h", registrar e desligar |
 | `/obrigacoes` | **já vem pronto** em `scripts/obrigacoes.js` | Calendário fiscal do ano por enquadramento, ajustado pra dia útil e feriado |
 | `/projecao` | **já vem pronto** em `scripts/projecao.js` | Projeção de 3 a 6 meses em três cenários, com a spec pro gerar-planilha.js |
+| `/cobranca` | **já vem pronto** em `scripts/regua.js` | Valor corrigido com o juro certo e a régua de cinco toques em dia útil |
+| `/ficha-tecnica` | **já vem pronto** em `scripts/ficha-tecnica.js` | Custo por porção, CMV e ranking do cardápio em .xlsx com fórmula |
+| `/conciliar` | **já vem pronto** em `scripts/conciliar.js` | Extrato OFX/CSV contra os seus registros, com o que sobrou dos dois lados |
+| `/emprestimo` | **já vem pronto** em `scripts/credito.js` | CET real por TIR, tabela de amortização e comparação entre propostas |
+| `/custo-de-funcionario` | **já vem pronto** em `scripts/custo-funcionario.js` | Custo CLT, PJ e MEI rubrica por rubrica, com as exceções do Simples |
+| `/pro-labore` | **já vem pronto** em `scripts/pro-labore.js` | Fator R: o pró-labore que segura a alíquota, com INSS e IRRF |
+| `/projecao` | **já vem pronto** em `scripts/payback.js` | Compra de capital: ponto de equilíbrio, payback em meses e retorno |
+| `/comprovantes` | **já vem pronto** em `scripts/comprovantes.js` | Organiza a pasta de notas e soma o CSV pro contador |
+| `/confirmacao-de-agenda` | **já vem pronto** em `scripts/no-show.js` | Taxa de falta medida e o custo mensal dela em reais |
+| `/capacidade` | **já vem pronto** em `scripts/capacidade.js` | Ocupação da agenda, hora ociosa e quando a próxima cadeira se paga |
+| `/estoque` | **já vem pronto** em `scripts/estoque.js` | Ponto de pedido, cobertura, encalhado e curva ABC |
+| `/procedimento` | **já vem pronto** em `scripts/procedimento.js` | Confere se todo passo da folha tem responsável e critério de pronto |
+| `/cadastro-clientes` | **já vem pronto** em `scripts/cadastro-clientes.js` | Telefone em E.164, CPF/CNPJ validado, dedupe e PF/PJ separados |
+| `/pessoa` | **já vem pronto** em `scripts/pessoas.js` | Índice de quem está no vácuo, com os dias sem contato somados |
+| `/troca-devolucao` | **já vem pronto** em `scripts/prazos.js` | Data limite de arrependimento, garantia e conserto pelo CDC |
+| `/publicidade-regulada` | **já vem pronto** em `scripts/publicidade.js` | Varre a peça contra o léxico do conselho e da plataforma |
+| `/socios` | **já vem pronto** em `scripts/socios.js` | Participações que somam 100%, vesting por data e apuração de haveres |
+| `/ordem-servico` | **já vem pronto** em `scripts/ordem-servico.js` | OS numerada, validade do orçamento e o índice por status |
+| `/revisar-contrato` | **já vem pronto** em `scripts/revisar-contrato.js` | Varre multa, prazo, foro, cessão e exclusividade antes da leitura |
+| `/autorizacao` | **já vem pronto** em `scripts/autorizacao.js` | Termo de imagem, depoimento ou aceite, pronto pra assinar |
+| `/case` | **já vem pronto** em `scripts/case.js` | Recalcula a variação antes → depois e confere número contra fonte |
+| `/retencao` | **já vem pronto** em `scripts/retencao.js` | Churn, retenção e receita em risco por script |
+| `/nps` | **já vem pronto** em `scripts/nps.js` | NPS de verdade (promotores − detratores) com aviso de amostra pequena |
+| `/combos` | **já vem pronto** em `scripts/combos.js` | Pares que saem juntos (coocorrência e lift) e margem do combo |
+| `/delivery` | **já vem pronto** em `scripts/delivery.js` | Margem por prato e por canal, já sem taxa, cupom e embalagem |
+| `/marketplace` | **já vem pronto** em `scripts/marketplace.js` | Confere título, atributo obrigatório e palavra vetada por plataforma |
+| `/posts-perfil-google` | **já vem pronto** em `scripts/perfil-google.js` | Valida cada post contra o que o Google reprova |
+| `/relatorio-cliente` | **já vem pronto** em `scripts/relatorio-cliente.js` | Consolida o mês do cliente a partir dos arquivos, sem estimar |
+| `/briefing` | **já vem pronto** em `scripts/briefing.js` | Diz quais campos do briefing estão vazios e gera só essas perguntas |
+| `/briefing-reuniao` | **já vem pronto** em `scripts/briefing-reuniao.js` | Cruza ata, tarefas, proposta e contrato e conta os dias sem contato |
+| `/comunicado` | **já vem pronto** em `scripts/comunicado.js` | Prazo de aviso em dia útil e consistência de fato entre as peças |
+| `/ensaiar` | **já vem pronto** em `scripts/ensaiar.js` | Mede o ensaio: proporção de fala, implicações feitas e concessões |
+| `/leitor-frio` | **já vem pronto** em `scripts/leitor-frio.js` | Palavras até o primeiro CTA, posição do preço e tempo de leitura |
+| `/impressao` | **já vem pronto** em `scripts/impressao.js` | Confere o PDF da gráfica em milímetros: tamanho, sangria e corte |
+| `/assinatura-email` | **já vem pronto** em `scripts/assinatura-email.js` | Assinatura que não quebra: peso, largura e links respondendo 200 |
+| `/blindar` | **já vem pronto** em `scripts/auditar-rls.js` e `scripts/vazamento.js` | Tabela sem RLS, política aberta e segredo no bundle publicado |
+| `/prototipo` | **já vem pronto** em `scripts/prototipo.js` | Fluxo clicável: alcançabilidade, beco sem saída e ação sem destino |
+| `/glossario` | **já vem pronto** em `scripts/glossario.js` | Onde o mesmo conceito aparece com nome diferente no código |
+| `/manual-do-sistema` | **já vem pronto** em `scripts/manual-sistema.js` | Inventário do repositório: custo mensal, vencimentos e acessos |
+| `/novidades` | **já vem pronto** em `scripts/novidades.js` | Filtra commit interno e agrupa em Novo, Melhorado e Corrigido |
+| `/roteiro-longo` | **já vem pronto** em `scripts/tempo.js` | Duração pelo ritmo de fala e bloco sem troca de cena |
+| `/publicar-video` | **já vem pronto** em `scripts/publicar-video.js` | Valida capítulo em 00:00, mínimo de três e limite de título |
+| `/retencao-de-video` | **já vem pronto** em `scripts/retencao-video.js` | Classifica a curva de retenção e acha o segundo de cada queda |
+| todas as que lidam com data, CPF/CNPJ ou dinheiro | **já vem pronto** em `scripts/br.js` | Módulo compartilhado: feriado, dia útil, CNPJ alfanumérico, E.164 |
 
 ## Pré-requisitos comuns
 

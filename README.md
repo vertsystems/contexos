@@ -3,7 +3,7 @@
 > O sistema operacional do seu negócio dentro da sua IA de código.
 
 Sua empresa ganha uma memória própria, uma identidade visual aplicada em tudo
-que ela gerar, e 75 skills prontas pra fazer marketing, conteúdo, SEO, ads,
+que ela gerar, e 117 skills prontas pra fazer marketing, conteúdo, SEO, ads,
 oferta, preço, venda, material e operação rodarem com você dirigindo.
 
 E quando o assunto é software, ele não para em escrever código: diz se vale a
@@ -101,13 +101,38 @@ a chegar no preço, montar faixas e responder "tá caro" · descobre quem compra
 a dor na palavra dele · prepara a conversa que fecha · diz por que a página não
 converte · monta a proposta comercial em HTML.
 
+**Cobrar, receber e conferir** — o dinheiro que já é seu
+Quem cobrar hoje, com multa e juro calculados pela cláusula ou pelo teto do CDC, e a régua em
+dia útil · o extrato do banco conciliado com o que você registrou, achando tarifa, imposto e Pix
+que ninguém lançou · a pasta de notas organizada e somada pro contador · quanto custa contratar
+em CLT, PJ ou MEI, rubrica por rubrica · o pró-labore que segura a alíquota pelo Fator R · o CET
+real do empréstimo e da antecipação da maquininha · quem paga mensalidade e está prestes a
+cancelar.
+
+**Preço que sai do insumo, não do chute**
+Ficha técnica do prato com fator de correção, perda e embalagem, em planilha com fórmula que
+recalcula o cardápio inteiro quando o ovo sobe · a margem real por canal de delivery, já sem
+comissão, cupom e entrega · os pares que saem juntos no seu arquivo de pedidos, com o combo
+precificado · o que comprar essa semana e o que está encalhado com o dinheiro parado em reais.
+
+**O que a lei obriga, com artigo e data**
+Até quando o cliente pode trocar, devolver ou exigir conserto, calculado pelo CDC · o termo de
+autorização de imagem e de depoimento, que faltava pra usar o que você já tem · o acordo de
+sócios escrito pelos cenários ruins · o contrato que mandaram pra você assinar, cláusula por
+cláusula, com redação alternativa · e se aquele post pode ir ao ar, pela regra do seu conselho
+de classe e da plataforma.
+
 **Crescer** — o que traz cliente novo
 Planeja o lançamento em três fases, com datas conferidas e meta em número ·
 desenha a série de e-mails ou WhatsApp com gatilho e intervalo · monta a lista
 de prospects e a abordagem fria com follow-up e fim elegante · programa de
 indicação com a conta de quanto vale · parceria com outro negócio ou criador
 local, do formato ao contrato mínimo · workshop, live ou evento na loja, do
-roteiro à colheita · e transforma o que você sabe em curso ou treinamento.
+roteiro à colheita · transforma o que você sabe em curso ou treinamento · mede a
+falta na agenda e quanto ela custa por mês · alimenta o Perfil do Google, que é
+o canal que traz cliente de graça · anuncia no Mercado Livre e na Shopee na régua
+de cada casa · e ensaia a conversa difícil antes dela acontecer, com o assistente
+fazendo o cliente sem facilitar.
 
 **Medir** — de onde vem o cliente
 Instala GA4, pixel e a convenção de UTM, lê o mês por canal e responde "de
@@ -177,7 +202,10 @@ auditoria só.
 **Apoio**
 Cataloga seus ativos reutilizáveis (depoimento, foto, dado, case) · lê
 CSV/XLSX/PDF e devolve resumo executivo · rascunha e-mail a partir de contexto
-livre.
+livre · limpa e valida a base de clientes (telefone, CPF, CNPJ alfanumérico) ·
+guarda a ficha de quem tem relação com você e avisa quem ficou no vácuo · escreve
+o procedimento da tarefa que só você sabe fazer · e prepara a reunião de amanhã
+com o que você prometeu e ainda não entregou.
 
 O sistema **produz e entrega os arquivos**: imagens numeradas, legenda pronta
 pra copiar e um `como-postar.md` com o passo a passo. Quando e onde publicar é

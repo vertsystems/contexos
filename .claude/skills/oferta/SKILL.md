@@ -146,7 +146,7 @@ E atualizar `_memoria/oferta.md` com o resumo da **oferta ativa**: é o que `/ca
 
 > "Oferta desenhada. Pra colocar no mundo:
 > `/preco` se ainda tem dúvida no valor · `/landing` pra página que apresenta ·
-> `/proposta` pra proposta escrita · `/carrossel` pra falar dela nas redes ·
+> `/combos` quando o combo tem que sair do arquivo de pedidos, com par medido e margem conferida · `/proposta` pra proposta escrita · `/carrossel` pra falar dela nas redes ·
 > `/vender` pra conversa de fechamento."
 
 ---

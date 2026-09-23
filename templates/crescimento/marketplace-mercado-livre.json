@@ -1,0 +1,210 @@
+{
+  "plataforma": "mercado-livre",
+  "nome": "Mercado Livre",
+  "apelidos": ["ml", "meli", "mercadolivre", "mercado livre", "mercado-livre", "mlb"],
+  "versao": "2026-09-22",
+  "aviso": "Regras fixas do Mercado Livre lidas por scripts/marketplace.js. Só entra aqui o que tem fonte oficial e data de conferência: limite de campo, estrutura de título recomendada pela própria plataforma e prática que o guia oficial manda evitar. Fator de ranqueamento, campanha de data comemorativa e nota de reputação NÃO entram: mudam sem aviso e viram dado inventado. Os padrões casam contra o texto em minúsculas e sem acento.",
+  "limites": {
+    "titulo_maximo": {
+      "valor": 60,
+      "fonte": "https://api.mercadolibre.com/categories/MLB1055 (campo settings.max_title_length; o mesmo valor em MLB1132 e nas demais categorias conferidas)",
+      "conferido_em": "2026-09-22",
+      "reconferir": "node scripts/marketplace.js limites MLB1055"
+    },
+    "titulo_minimo_recomendado": {
+      "valor": 30,
+      "status": "recomendacao",
+      "motivo": "título muito curto desperdiça espaço de busca; não é limite da plataforma, é régua do molde",
+      "fonte": "templates/crescimento/marketplace.md",
+      "conferido_em": "2026-09-22"
+    },
+    "subtitulo_maximo": {
+      "valor": 70,
+      "fonte": "https://api.mercadolibre.com/categories/MLB1055 (campo settings.max_sub_title_length)",
+      "conferido_em": "2026-09-22"
+    },
+    "descricao_maxima": {
+      "valor": 50000,
+      "fonte": "https://api.mercadolibre.com/categories/MLB1055 (campo settings.max_description_length)",
+      "conferido_em": "2026-09-22"
+    },
+    "fotos_maximo": {
+      "valor": 12,
+      "nota": "10 quando o anúncio tem variação (settings.max_pictures_per_item_var)",
+      "fonte": "https://api.mercadolibre.com/categories/MLB1055 (campo settings.max_pictures_per_item)",
+      "conferido_em": "2026-09-22"
+    }
+  },
+  "titulo": {
+    "estrutura": ["produto", "marca", "modelo", "especificação que identifica o produto"],
+    "exemplo": "Tênis Adidas Superstar Couro Ecológico",
+    "termo_no_comeco": false,
+    "texto_da_regra": "\"A estrutura deve ser simples: produto + marca + modelo + algumas especificações que ajudam a identificar o produto.\"",
+    "fonte": "https://vendedores.mercadolivre.com.br/nota/como-criar-um-titulo-atrativo",
+    "fontes_extra": ["https://vendedores.mercadolivre.com.br/nota/como-criar-anuncios-eficientes-no-mercado-livre"],
+    "conferido_em": "2026-09-22"
+  },
+  "atributos_minimos": [
+    {
+      "nome": "Marca",
+      "status": "obrigatorio",
+      "nota": "a marca original, ou a indicação de que é genérico",
+      "fonte": "https://vendedores.mercadolivre.com.br/nota/como-criar-um-titulo-atrativo",
+      "conferido_em": "2026-09-22"
+    },
+    {
+      "nome": "Modelo",
+      "status": "obrigatorio",
+      "nota": "entra no título e na ficha",
+      "fonte": "https://vendedores.mercadolivre.com.br/nota/como-criar-anuncios-eficientes-no-mercado-livre",
+      "conferido_em": "2026-09-22"
+    },
+    {
+      "nome": "Condição",
+      "status": "obrigatorio",
+      "nota": "novo, usado ou recondicionado. Vai no campo, nunca no título",
+      "fonte": "https://vendedores.mercadolivre.com.br/nota/como-criar-um-titulo-atrativo",
+      "conferido_em": "2026-09-22"
+    },
+    {
+      "nome": "Código universal",
+      "status": "varia_por_categoria",
+      "nota": "GTIN/EAN. O ML pede o código universal do produto; a lista exata de obrigatórios sai por comando",
+      "fonte": "https://api.mercadolibre.com/categories/MLB1055/attributes (tags.required)",
+      "conferido_em": "2026-09-22"
+    }
+  ],
+  "regras": [
+    {
+      "id": "ml-promocional",
+      "tipo": "texto",
+      "onde": ["titulo"],
+      "termo": "palavra promocional no título",
+      "padrao": "promoc(ao|oes)|\\boferta(s|o)?\\b|liquidac(ao|oes)|\\bdesconto\\b|imperdivel|\\bbarat(o|a|issimo|issima)\\b|\\bsuper promo\\b",
+      "gravidade": "alta",
+      "motivo": "o ML diz que mencionar promoção no título não melhora posição, e que o desconto é destacado pela própria plataforma. Palavra promocional no título entra na fila de moderação",
+      "correcao": "tirar a palavra e usar o espaço pra um atributo que identifica o produto",
+      "fonte": "https://vendedores.mercadolivre.com.br/nota/como-criar-um-titulo-atrativo",
+      "conferido_em": "2026-09-22"
+    },
+    {
+      "id": "ml-servico",
+      "tipo": "texto",
+      "onde": ["titulo"],
+      "termo": "informação de frete, parcelamento ou devolução no título",
+      "padrao": "frete gratis|\\bfrete\\b|parcelament|sem juros|\\d+x\\b|devoluc(ao|oes)|troca gratis|entrega gratis",
+      "gravidade": "media",
+      "motivo": "o ML preenche frete, parcelamento e devolução em outro lugar do anúncio e pede pra não repetir no título",
+      "correcao": "apagar do título; esses dados já aparecem pro comprador antes de ele abrir o anúncio",
+      "fonte": "https://vendedores.mercadolivre.com.br/nota/como-criar-um-titulo-atrativo",
+      "conferido_em": "2026-09-22"
+    },
+    {
+      "id": "ml-condicao-no-titulo",
+      "tipo": "texto",
+      "onde": ["titulo"],
+      "termo": "condição do produto no título",
+      "padrao": "\\busado\\b|\\busada\\b|semi ?nov(o|a)|recondicionad(o|a)",
+      "gravidade": "media",
+      "motivo": "a condição já foi informada no campo do anúncio e é exibida em outro lugar; repetir no título gasta caractere e é prática que o guia pede pra evitar",
+      "correcao": "deixar a condição só no campo",
+      "fonte": "https://vendedores.mercadolivre.com.br/nota/como-criar-um-titulo-atrativo",
+      "conferido_em": "2026-09-22"
+    },
+    {
+      "id": "ml-cor-tamanho",
+      "tipo": "texto",
+      "onde": ["titulo"],
+      "termo": "cor ou tamanho no título",
+      "padrao": "\\bpret(o|a)\\b|\\bbranc(o|a)\\b|\\bazul\\b|\\bvermelh(o|a)\\b|\\bverde\\b|\\bamarel(o|a)\\b|\\bros(a|e)\\b|\\bcinza\\b|\\bbege\\b|\\bmarrom\\b|\\bdourad(o|a)\\b|\\bpratead(o|a)\\b|tamanho \\d+|\\btam\\.? ?\\d+\\b",
+      "gravidade": "aviso",
+      "motivo": "quando o mesmo produto existe em cores ou tamanhos diferentes, o ML manda criar variação em vez de colocar no título. Se o produto só existe nessa cor, o aviso se ignora",
+      "correcao": "mover pra variação, ou confirmar que o produto só existe nessa versão",
+      "fonte": "https://vendedores.mercadolivre.com.br/nota/como-criar-um-titulo-atrativo",
+      "conferido_em": "2026-09-22"
+    },
+    {
+      "id": "ml-marca-de-terceiro",
+      "tipo": "texto",
+      "onde": ["titulo"],
+      "termo": "marca de outro fabricante pendurada no título",
+      "padrao": "\\btipo [a-z]|\\bestilo [a-z]|similar a|inspirad(o|a) (em|no|na)|igual (ao|a) [a-z]|\\breplica\\b",
+      "gravidade": "media",
+      "motivo": "quando o produto é compatível com outra marca, o ML manda escrever \"para\" ou \"compatível com\"; pendurar a marca alheia de outro jeito é denúncia de propriedade intelectual",
+      "correcao": "trocar por \"para <marca> <modelo>\" ou \"compatível com <marca>\", e declarar a marca real do produto (ou genérico) na ficha",
+      "fonte": "https://vendedores.mercadolivre.com.br/nota/como-criar-um-titulo-atrativo",
+      "conferido_em": "2026-09-22"
+    },
+    {
+      "id": "ml-pontuacao",
+      "tipo": "texto",
+      "onde": ["titulo"],
+      "termo": "pontuação desnecessária, símbolo ou hashtag no título",
+      "padrao": "[!*|~^{}<>]|#[a-z0-9]+|\\.{3,}|\\?{2,}",
+      "gravidade": "aviso",
+      "motivo": "o guia de criação de anúncio lista \"pontuação desnecessária\" entre as coisas a evitar no título",
+      "correcao": "trocar símbolo por espaço; separar termos com espaço simples",
+      "fonte": "https://vendedores.mercadolivre.com.br/nota/como-criar-anuncios-eficientes-no-mercado-livre",
+      "conferido_em": "2026-09-22"
+    },
+    {
+      "id": "ml-contato",
+      "tipo": "texto",
+      "onde": ["titulo", "descricao"],
+      "termo": "contato ou link fora da plataforma",
+      "padrao": "whatsapp|wa\\.me|\\bzap\\b|chama no|https?://|www\\.|\\.com\\.br|instagram|telegram|\\(?\\d{2}\\)? ?9\\d{4}[- ]?\\d{4}|[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,}",
+      "gravidade": "alta",
+      "motivo": "tirar a negociação de dentro da plataforma é a violação que derruba anúncio e conta mais rápido, nos dois marketplaces",
+      "correcao": "apagar telefone, e-mail, link e rede social do anúncio inteiro. A conversa acontece no chat da plataforma",
+      "fonte": "https://help.shopee.com.br/portal/4/article/76225",
+      "fonte_nota": "regra escrita literalmente no guia da Shopee; no ML ela aparece como prática de moderação — conferir em vendedores.mercadolivre.com.br antes de citar artigo",
+      "conferido_em": "2026-09-22"
+    },
+    {
+      "id": "ml-superlativo",
+      "tipo": "texto",
+      "onde": ["titulo", "descricao"],
+      "termo": "superlativo sem prova",
+      "padrao": "melhor (do|da) (brasil|mercado|mundo|pais)|o mais barato|mais barato do|imbativel|numero 1 (do|em)|\\bn.?1 do\\b|unico no brasil",
+      "gravidade": "media",
+      "motivo": "afirmação publicitária precisa ser verdadeira e verificável: informação capaz de induzir o consumidor a erro é publicidade enganosa (CDC, art. 37, § 1º), e a informação da oferta tem de ser correta, clara e precisa (art. 31)",
+      "correcao": "trocar pela característica que sustenta a frase (\"garantia de 12 meses\", \"envio no mesmo dia\"), ou apagar",
+      "fonte": "https://www.planalto.gov.br/ccivil_03/leis/l8078compilado.htm",
+      "conferido_em": "2026-09-22"
+    },
+    {
+      "id": "ml-promessa-de-saude",
+      "tipo": "texto",
+      "onde": ["titulo", "descricao"],
+      "termo": "promessa de resultado de saúde ou estética",
+      "padrao": "\\bcura\\b|\\bcurar\\b|emagrece|elimina (a )?celulite|trata (a )?doenca|100% eficaz|resultado garantido|efeito imediato",
+      "gravidade": "aviso",
+      "motivo": "produto de saúde, estética ou suplemento tem regra própria de publicidade além do CDC; anúncio com promessa de resultado é o que a fiscalização olha primeiro",
+      "correcao": "descrever o que o produto é e o que ele contém; a alegação de efeito passa pelo `/publicidade-regulada` antes de ir pro ar",
+      "fonte": "https://www.planalto.gov.br/ccivil_03/leis/l8078compilado.htm",
+      "conferido_em": "2026-09-22"
+    },
+    {
+      "id": "ml-repeticao",
+      "tipo": "repeticao",
+      "onde": ["titulo"],
+      "termo": "palavra repetida no título",
+      "minimo": 3,
+      "gravidade": "aviso",
+      "motivo": "o ML pede pra evitar repetição e informação duplicada no título: repetir não melhora posição e confunde o comprador",
+      "correcao": "deixar uma ocorrência e usar o espaço livre pra outro atributo",
+      "fonte": "https://vendedores.mercadolivre.com.br/nota/como-criar-um-titulo-atrativo",
+      "conferido_em": "2026-09-22"
+    },
+    {
+      "id": "ml-variacao-declarada",
+      "tipo": "declaracao",
+      "chave": "Variações",
+      "termo": "variação não declarada",
+      "gravidade": "pendencia",
+      "pergunta": "esse produto existe em outra cor, tamanho ou voltagem? Se existir, vira variação do mesmo anúncio, não anúncio novo",
+      "fonte": "https://vendedores.mercadolivre.com.br/nota/como-criar-um-titulo-atrativo",
+      "conferido_em": "2026-09-22"
+    }
+  ]
+}

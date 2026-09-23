@@ -64,7 +64,7 @@ O que mais custa tempo não é criar. É recriar o que já existia e ninguém ac
 
 O usuário chega com um print, uma frase, um arquivo, um dado. Registrar na tabela certa. Preencher o que der e perguntar **só o essencial**:
 
-- Depoimento → "Posso citar o nome dele?" (essa coluna evita problema depois)
+- Depoimento → "Posso citar o nome dele?" Sem termo, a coluna fica `pendente`, e o `/autorizacao` preenche depois com a data e o caminho do termo (essa coluna evita problema depois)
 - Foto → "É foto sua ou de banco/terceiro?" (direitos)
 - Dado → fonte e data, sempre
 - Case → "Pode citar o nome do cliente ou fica anônimo?"

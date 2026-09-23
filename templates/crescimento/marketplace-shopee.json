@@ -1,0 +1,197 @@
+{
+  "plataforma": "shopee",
+  "nome": "Shopee",
+  "apelidos": ["shopee", "shoppe", "shope", "xopi"],
+  "versao": "2026-09-22",
+  "aviso": "Regras fixas da Shopee lidas por scripts/marketplace.js. Só entra aqui o que está escrito no Guia de Violação de Anúncio e na Política de Produtos Proibidos, com data de conferência. Limite de caractere de campo não está publicado em página aberta: fica como a_confirmar, e o Seller Centre é a fonte da verdade. Fator de ranqueamento, cota de anúncio por loja e campanha de data (9.9, 11.11) NÃO entram aqui: mudam por temporada. Os padrões casam contra o texto em minúsculas e sem acento.",
+  "limites": {
+    "titulo_maximo": {
+      "valor": null,
+      "status": "a_confirmar",
+      "onde_conferir": "o campo \"Nome do produto\" no Seller Centre corta no limite vigente; é a régua definitiva",
+      "fonte": "https://seller.shopee.com.br/edu/article/15312/boas-praticas-para-criar-bons-anuncios-na-shopee",
+      "conferido_em": "2026-09-22"
+    },
+    "titulo_recomendado": {
+      "minimo": 40,
+      "maximo": 120,
+      "status": "recomendacao",
+      "motivo": "régua do molde, não regra da plataforma: na grade de busca do aplicativo o título aparece cortado, e título muito longo aumenta a chance de cair em \"termos excessivos\" do Guia de Violação",
+      "fonte": "templates/crescimento/marketplace.md",
+      "conferido_em": "2026-09-22"
+    },
+    "descricao_maxima": {
+      "valor": null,
+      "status": "a_confirmar",
+      "onde_conferir": "campo de descrição no Seller Centre",
+      "fonte": "https://seller.shopee.com.br/edu/article/15312/boas-praticas-para-criar-bons-anuncios-na-shopee",
+      "conferido_em": "2026-09-22"
+    },
+    "fotos_maximo": {
+      "valor": null,
+      "status": "a_confirmar",
+      "onde_conferir": "o cadastro do anúncio mostra quantos espaços de foto existem",
+      "fonte": "https://seller.shopee.com.br/edu/article/15312/boas-praticas-para-criar-bons-anuncios-na-shopee",
+      "conferido_em": "2026-09-22"
+    }
+  },
+  "titulo": {
+    "estrutura": ["termo mais buscado", "produto", "marca", "atributo que diferencia"],
+    "exemplo": "Caneca Térmica 500ml Inox Parede Dupla Tampa Rosqueável",
+    "termo_no_comeco": true,
+    "texto_da_regra": "\"Verifique se não há termos de pesquisa irrelevantes ou excessivos no título ou na descrição do anúncio\" (Guia de Violação de Anúncio, item 3)",
+    "fonte": "https://help.shopee.com.br/portal/4/article/76225",
+    "fontes_extra": ["https://seller.shopee.com.br/edu/article/15312/boas-praticas-para-criar-bons-anuncios-na-shopee"],
+    "conferido_em": "2026-09-22"
+  },
+  "atributos_minimos": [
+    {
+      "nome": "Marca",
+      "status": "obrigatorio",
+      "nota": "quando o produto não tem marca, declarar sem marca em vez de inventar uma",
+      "fonte": "https://help.shopee.com.br/portal/4/article/76225",
+      "conferido_em": "2026-09-22"
+    },
+    {
+      "nome": "Categoria",
+      "status": "obrigatorio",
+      "nota": "categoria errada é item de anúncio que a Shopee trata como informação inconsistente",
+      "fonte": "https://help.shopee.com.br/portal/4/article/76225",
+      "conferido_em": "2026-09-22"
+    },
+    {
+      "nome": "Peso do pacote",
+      "status": "a_confirmar",
+      "nota": "o frete é calculado em cima dele; conferir a obrigatoriedade no cadastro do Seller Centre",
+      "fonte": "https://seller.shopee.com.br/edu/article/15312/boas-praticas-para-criar-bons-anuncios-na-shopee",
+      "conferido_em": "2026-09-22"
+    },
+    {
+      "nome": "Dimensões do pacote",
+      "status": "a_confirmar",
+      "nota": "altura, largura e comprimento da embalagem fechada",
+      "fonte": "https://seller.shopee.com.br/edu/article/15312/boas-praticas-para-criar-bons-anuncios-na-shopee",
+      "conferido_em": "2026-09-22"
+    }
+  ],
+  "regras": [
+    {
+      "id": "sh-contato",
+      "tipo": "texto",
+      "onde": ["titulo", "descricao"],
+      "termo": "contato ou link fora da plataforma",
+      "padrao": "whatsapp|wa\\.me|\\bzap\\b|chama no|https?://|www\\.|\\.com\\.br|instagram|telegram|\\(?\\d{2}\\)? ?9\\d{4}[- ]?\\d{4}|[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,}",
+      "gravidade": "alta",
+      "motivo": "\"É estritamente proibida qualquer tentativa de desviar as vendas fora da Shopee\": pedir contato por canal de terceiro ou incluir link externo está no item 2 do Guia de Violação",
+      "correcao": "apagar telefone, e-mail, link e rede social do anúncio inteiro. A conversa acontece no chat da Shopee",
+      "fonte": "https://help.shopee.com.br/portal/4/article/76225",
+      "conferido_em": "2026-09-22"
+    },
+    {
+      "id": "sh-termo-irrelevante",
+      "tipo": "texto",
+      "onde": ["titulo"],
+      "termo": "termo de busca irrelevante (marca de terceiro no título)",
+      "padrao": "\\btipo [a-z]|\\bestilo [a-z]|similar a|inspirad(o|a) (em|no|na)|igual (ao|a) [a-z]|\\breplica\\b|\\bpremium tipo\\b",
+      "gravidade": "media",
+      "motivo": "pendurar o produto na marca de outro é manipulação de resultado de busca (item 3) e liga o alerta de falsificação e propriedade intelectual (item 2)",
+      "correcao": "descrever o produto pelo que ele é; a marca que aparece no título é a do produto anunciado",
+      "fonte": "https://help.shopee.com.br/portal/4/article/76225",
+      "conferido_em": "2026-09-22"
+    },
+    {
+      "id": "sh-repeticao",
+      "tipo": "repeticao",
+      "onde": ["titulo"],
+      "termo": "palavra repetida no título",
+      "minimo": 3,
+      "gravidade": "media",
+      "motivo": "\"termos de pesquisa irrelevantes ou excessivos no título ou na descrição\" é o que a Shopee chama de spam, e spam excluído gera ponto de penalidade",
+      "correcao": "deixar uma ocorrência do termo e usar o resto do título pra atributo de verdade",
+      "fonte": "https://help.shopee.com.br/portal/4/article/76225",
+      "conferido_em": "2026-09-22"
+    },
+    {
+      "id": "sh-frete-no-titulo",
+      "tipo": "texto",
+      "onde": ["titulo"],
+      "termo": "informação de frete ou promoção no título",
+      "padrao": "frete gratis|frete gratuito|\\bpromoc(ao|oes)\\b|liquidac(ao|oes)|\\bdesconto\\b|menor preco|\\bcupom\\b",
+      "gravidade": "aviso",
+      "motivo": "frete e desconto mudam por programa, por região e por campanha; no título viram informação que pode ficar imprecisa, e o item 2 exige informação precisa e consistente",
+      "correcao": "tirar do título. Frete e cupom aparecem pro comprador no próprio anúncio",
+      "fonte": "https://help.shopee.com.br/portal/4/article/76225",
+      "conferido_em": "2026-09-22"
+    },
+    {
+      "id": "sh-original",
+      "tipo": "texto",
+      "onde": ["titulo", "descricao"],
+      "termo": "afirmação de originalidade",
+      "padrao": "100% original|original garantid|autentic(o|a) garantid|\\bproduto original\\b|\\blacrad(o|a) original\\b",
+      "gravidade": "aviso",
+      "motivo": "afirmar originalidade é permitido quando é verdade e há como provar. Falsificação e violação de propriedade intelectual é o tipo 2 de violação, e a prova pedida é a nota fiscal ou a autorização da marca",
+      "correcao": "manter só se você tem nota fiscal de compra da marca ou do distribuidor autorizado, e guardar o documento",
+      "fonte": "https://help.shopee.com.br/portal/4/article/76225",
+      "conferido_em": "2026-09-22"
+    },
+    {
+      "id": "sh-superlativo",
+      "tipo": "texto",
+      "onde": ["titulo", "descricao"],
+      "termo": "superlativo sem prova",
+      "padrao": "melhor (do|da) (brasil|mercado|mundo|pais)|o mais barato|mais barato do|imbativel|numero 1 (do|em)|\\bn.?1 do\\b|unico no brasil",
+      "gravidade": "media",
+      "motivo": "informação capaz de induzir o consumidor a erro é publicidade enganosa (CDC, art. 37, § 1º), e a oferta precisa de informação correta, clara e precisa (art. 31). Na Shopee isso também cai no item 2 do Guia de Violação",
+      "correcao": "trocar pela característica que sustenta a frase, com número, ou apagar",
+      "fonte": "https://www.planalto.gov.br/ccivil_03/leis/l8078compilado.htm",
+      "fontes_extra": ["https://help.shopee.com.br/portal/4/article/76225"],
+      "conferido_em": "2026-09-22"
+    },
+    {
+      "id": "sh-promessa-de-saude",
+      "tipo": "texto",
+      "onde": ["titulo", "descricao"],
+      "termo": "promessa de resultado de saúde ou estética",
+      "padrao": "\\bcura\\b|\\bcurar\\b|emagrece|elimina (a )?celulite|trata (a )?doenca|100% eficaz|resultado garantido|efeito imediato",
+      "gravidade": "aviso",
+      "motivo": "produto de saúde, suplemento e cosmético tem regra própria além do CDC, e a Shopee mantém lista de produto proibido e restrito que inclui itens com exigência de licença",
+      "correcao": "descrever o que o produto é e o que contém; alegação de efeito passa pelo `/publicidade-regulada` antes de publicar",
+      "fonte": "https://help.shopee.com.br/portal/4/article/76226",
+      "fontes_extra": ["https://www.planalto.gov.br/ccivil_03/leis/l8078compilado.htm"],
+      "conferido_em": "2026-09-22"
+    },
+    {
+      "id": "sh-termo-no-comeco",
+      "tipo": "termo_comeco",
+      "onde": ["titulo"],
+      "termo": "termo mais buscado fora do começo do título",
+      "tolerancia": 20,
+      "gravidade": "aviso",
+      "motivo": "na grade de busca do aplicativo o título aparece cortado: o que está depois do corte o comprador não lê. Régua do molde, não regra publicada",
+      "correcao": "começar o título pelo termo que o comprador digita, e só depois marca e atributo",
+      "fonte": "templates/crescimento/marketplace.md",
+      "conferido_em": "2026-09-22"
+    },
+    {
+      "id": "sh-variacao-declarada",
+      "tipo": "declaracao",
+      "chave": "Variações",
+      "termo": "variação não declarada",
+      "gravidade": "pendencia",
+      "pergunta": "esse produto existe em outra cor, tamanho ou sabor? \"Se você tiver anúncios altamente semelhantes, considere colocá-los como variações\" — anúncio duplicado é spam",
+      "fonte": "https://help.shopee.com.br/portal/4/article/76225",
+      "conferido_em": "2026-09-22"
+    },
+    {
+      "id": "sh-proibido-declarado",
+      "tipo": "declaracao",
+      "chave": "Restrição",
+      "termo": "lista de produto proibido e restrito não conferida",
+      "gravidade": "pendencia",
+      "pergunta": "esse produto precisa de licença, registro (Anvisa, Inmetro) ou está em categoria restrita? A Política de Produtos Proibidos e Restritos é conferida antes de publicar, não depois",
+      "fonte": "https://help.shopee.com.br/portal/4/article/76226",
+      "conferido_em": "2026-09-22"
+    }
+  ]
+}

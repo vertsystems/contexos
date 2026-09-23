@@ -155,4 +155,5 @@ Ele acusa CSS local externo, `var()` sem fallback, `@page` inválido, placeholde
 - Se `tokens.css` existir, usar; a versão impressa pode precisar de ajuste de contraste — declarar isso no `@media print`
 - CTA no fechamento, discreto. Material que é anúncio disfarçado não é guardado
 - Se o conteúdo é técnico/regulado, marcar que precisa de revisão profissional antes de distribuir
+- Peça que a gráfica corta (cartão, flyer, tag, adesivo, ímã) é `/impressao`: ela nasce com sangria, marca de corte e área de segurança, que o PDF de leitura daqui não tem
 - Documento com dado de cliente dentro não vai pro repositório público — avisar

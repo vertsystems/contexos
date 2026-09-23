@@ -1,0 +1,116 @@
+{
+  "versao": "2026-09-23",
+  "aviso": "Léxico do /glossario, lido por scripts/glossario.js. Serve de palpite inicial: são os conceitos que mais aparecem com dois ou três nomes no mesmo sistema de pequeno negócio brasileiro. A autoridade é o GLOSSARIO.md do projeto, nunca esta lista. O campo canonico_sugerido é sugestão, e o dono do sistema pode escolher outra palavra desde que escolha UMA. Cada entrada traz a fonte do vocabulário em inglês (schema.org, que define os tipos e as listas de estado usadas em dado estruturado) e a data em que a fonte foi conferida. O casamento no código é feito por token, com a palavra sem acento e em minúsculas, e variante com menos de 3 letras é ignorada de propósito: sigla de duas letras (OS, NF) casa com qualquer coisa e só gera ruído. Palavra de ligação do nome (de, do, da) não entra na busca: 'ordem de serviço' é procurado como ordem+servico, que é o que o código escreve. Quem usa cada campo: campos_de_estado diz em que linha o `conferir` vai procurar valor de estado; nomes_vagos é a lista que o `varrer` marca no código, com arquivo e linha; conceitos é o palpite de sinônimo, e quando o glossário do projeto declara duas variantes como termos diferentes (cliente e contato, por exemplo) o `conferir` respeita o glossário e não acusa nenhuma das duas.",
+  "campos_de_estado": ["status", "estado", "situacao", "state", "fase", "etapa", "stage", "condicao"],
+  "nomes_vagos": ["dados", "info", "informacao", "aux", "temp", "tmp", "flag", "obj", "objeto", "campo", "valor", "coisa", "misc", "outros", "generico", "item1", "status1", "status2", "tipo1", "teste"],
+  "conceitos": [
+    {
+      "conceito": "orçamento",
+      "canonico_sugerido": "orcamento",
+      "variantes": ["orcamento", "proposta", "cotacao", "quote", "estimate", "estimativa", "budget"],
+      "estados_conhecidos": ["rascunho", "enviado", "visto", "aceito", "recusado", "expirado", "parado"],
+      "nota": "É a oferta ANTES do sim do cliente. Em schema.org isso é Offer, e o que existe depois do sim é Order, definido como 'a confirmation of a transaction (a receipt)': duas coisas, dois nomes, nunca o mesmo campo.",
+      "fonte": "https://schema.org/Offer",
+      "conferido_em": "2026-09-23"
+    },
+    {
+      "conceito": "pedido",
+      "canonico_sugerido": "pedido",
+      "variantes": ["pedido", "order", "venda", "sale", "comanda", "compra", "ordem"],
+      "estados_conhecidos": ["aguardando_pagamento", "pago", "em_producao", "em_transito", "pronto_para_retirada", "entregue", "cancelado", "devolvido", "com_problema"],
+      "nota": "schema.org define Order como 'a confirmation of a transaction (a receipt)': o pedido nasce quando o cliente aceita a oferta. A lista OrderStatus tem oito estados (OrderPaymentDue, OrderProcessing, OrderInTransit, OrderPickupAvailable, OrderDelivered, OrderProblem, OrderReturned, OrderCancelled) e serve de checklist do que ninguém lembra de modelar.",
+      "fonte": "https://schema.org/OrderStatus",
+      "conferido_em": "2026-09-23"
+    },
+    {
+      "conceito": "item do pedido",
+      "canonico_sugerido": "item",
+      "variantes": ["item", "linha", "line_item", "produto_pedido", "pedido_produto", "detalhe", "elemento"],
+      "estados_conhecidos": [],
+      "nota": "Confundir item com produto é o erro de modelagem mais comum: produto é o que existe no catálogo, item é aquele produto dentro de um pedido, com quantidade e preço congelados no dia.",
+      "fonte": "https://schema.org/OrderItem",
+      "conferido_em": "2026-09-22"
+    },
+    {
+      "conceito": "reserva",
+      "canonico_sugerido": "reserva",
+      "variantes": ["reserva", "reservation", "booking", "agendamento", "horario", "appointment", "marcacao", "agenda"],
+      "estados_conhecidos": ["pendente", "confirmada", "em_espera", "cancelada", "compareceu", "faltou"],
+      "nota": "A lista ReservationStatusType de schema.org tem quatro estados: ReservationPending, ReservationConfirmed, ReservationHold, ReservationCancelled. Falta o que o negócio brasileiro mais precisa, o não comparecimento, e por isso ele entra na mão.",
+      "fonte": "https://schema.org/ReservationStatusType",
+      "conferido_em": "2026-09-23"
+    },
+    {
+      "conceito": "cliente",
+      "canonico_sugerido": "cliente",
+      "variantes": ["cliente", "customer", "client", "comprador", "consumidor", "usuario", "user", "contato", "contact", "lead", "prospect", "interessado"],
+      "estados_conhecidos": ["ativo", "parado", "perdido", "bloqueado"],
+      "nota": "Quem comprou e quem só deixou o telefone não são a mesma coisa, e misturar os dois estraga qualquer conta de conversão. Quem entra no sistema pra trabalhar é outra terceira coisa (usuário), e nem sempre é gente: pode ser um robô de integração.",
+      "fonte": "https://schema.org/customer",
+      "conferido_em": "2026-09-22"
+    },
+    {
+      "conceito": "produto",
+      "canonico_sugerido": "produto",
+      "variantes": ["produto", "product", "servico", "service", "sku", "mercadoria", "artigo", "catalogo"],
+      "estados_conhecidos": ["ativo", "inativo", "esgotado", "descontinuado"],
+      "nota": "Se o negócio vende produto e serviço na mesma tela, escolher um nome guarda-chuva antes de escrever a primeira tabela evita a gambiarra de 'produto com tipo = servico' aparecendo em quinze consultas.",
+      "fonte": "https://schema.org/Product",
+      "conferido_em": "2026-09-22"
+    },
+    {
+      "conceito": "pagamento",
+      "canonico_sugerido": "pagamento",
+      "variantes": ["pagamento", "payment", "cobranca", "charge", "recebimento", "transacao", "transaction", "fatura", "invoice", "boleto"],
+      "estados_conhecidos": ["aguardando", "aprovado", "recusado", "estornado", "expirado", "em_disputa"],
+      "nota": "Cobrança é o que se pede, pagamento é o que entra, fatura é o documento. Estorno não é cancelamento: o dinheiro volta e o pedido pode continuar existindo.",
+      "fonte": "https://schema.org/Invoice",
+      "conferido_em": "2026-09-22"
+    },
+    {
+      "conceito": "entrega",
+      "canonico_sugerido": "entrega",
+      "variantes": ["entrega", "delivery", "shipment", "envio", "frete", "shipping", "remessa", "expedicao"],
+      "estados_conhecidos": ["a_despachar", "em_rota", "entregue", "tentativa_falhou", "devolvida"],
+      "nota": "Frete é o preço do transporte, entrega é o transporte. Cobrar 'frete' numa coluna e chamar a mesma coisa de 'delivery' na tela é o par que mais aparece em sistema de restaurante.",
+      "fonte": "https://schema.org/ParcelDelivery",
+      "conferido_em": "2026-09-22"
+    },
+    {
+      "conceito": "estoque",
+      "canonico_sugerido": "estoque",
+      "variantes": ["estoque", "stock", "inventory", "inventario", "saldo", "quantidade", "disponivel", "availability"],
+      "estados_conhecidos": ["disponivel", "reservado", "esgotado", "em_falta", "sob_encomenda"],
+      "nota": "Quantidade em estoque e quantidade disponível pra venda são números diferentes quando existe reserva. Sistema que usa a mesma coluna pras duas coisas vende o que não tem.",
+      "fonte": "https://schema.org/ItemAvailability",
+      "conferido_em": "2026-09-22"
+    },
+    {
+      "conceito": "desconto",
+      "canonico_sugerido": "desconto",
+      "variantes": ["desconto", "discount", "cupom", "coupon", "promocao", "promo", "abatimento", "voucher"],
+      "estados_conhecidos": ["ativo", "expirado", "esgotado", "cancelado"],
+      "nota": "Desconto em valor e desconto em porcentagem no mesmo campo é a origem clássica de total negativo em pedido pequeno.",
+      "fonte": "https://schema.org/Offer",
+      "conferido_em": "2026-09-22"
+    },
+    {
+      "conceito": "avaliação",
+      "canonico_sugerido": "avaliacao",
+      "variantes": ["avaliacao", "review", "rating", "nota", "feedback", "comentario", "depoimento"],
+      "estados_conhecidos": ["pendente", "publicada", "recusada", "respondida"],
+      "nota": "Nota (número) e avaliação (texto) costumam nascer no mesmo campo e depois precisam ser separadas na marra pra calcular média.",
+      "fonte": "https://schema.org/Review",
+      "conferido_em": "2026-09-22"
+    },
+    {
+      "conceito": "funcionário",
+      "canonico_sugerido": "funcionario",
+      "variantes": ["funcionario", "employee", "colaborador", "staff", "atendente", "operador", "vendedor", "profissional", "prestador"],
+      "estados_conhecidos": ["ativo", "afastado", "desligado"],
+      "nota": "Quem atende o cliente e quem tem login no sistema podem ser a mesma pessoa e ainda assim são dois conceitos: um é da folha, o outro é da permissão.",
+      "fonte": "https://schema.org/employee",
+      "conferido_em": "2026-09-22"
+    }
+  ]
+}

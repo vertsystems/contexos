@@ -16,6 +16,8 @@ description: >
 
 - **Tom de voz:** `_memoria/preferencias.md`
 - **Cliente real:** `_memoria/publico.md` se existir (`/publico`) — a dor na palavra dele, e as objeções
+- **Regra de atendimento:** `operacao/procedimentos/`, se existir (`/procedimento`) — a folha de atender reclamação diz o que pode ser prometido na resposta pública e o que sobe pro dono
+- **Reclamação de troca:** `juridico/respostas-de-troca.md`, se existir (`/troca-devolucao`) — a resposta pública é curta; a solução com data vai por dentro
 - **Contexto do negócio:** `_memoria/empresa.md`
 - **Referências de copy:**
   - `templates/copy/edicao.md` — lista negra de clichê, gordura e regras de estilo

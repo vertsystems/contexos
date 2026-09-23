@@ -140,6 +140,7 @@ Erros: **190** é o token de 24 h que venceu; **400/404** é ID do número troca
 3. `.env`: `NOTION_TOKEN=ntn_...`
 4. Instalar o conector, lendo a chave do `.env` sem colar no chat:
    ```bash
+   # o comando lê a chave do .env, não escreve chave nenhuma aqui: contexos:segredo-ok
    claude mcp add notion -e NOTION_TOKEN="$(grep '^NOTION_TOKEN=' .env | cut -d= -f2-)" -- npx -y @notionhq/notion-mcp-server
    ```
    O conector guarda a chave na configuração do Claude Code, na pasta do usuário (fora do

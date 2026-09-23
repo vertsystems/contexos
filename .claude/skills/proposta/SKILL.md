@@ -47,7 +47,10 @@ Se o usuário não deu o contexto, perguntar uma por vez:
 4. "Investimento e forma de pagamento?"
 5. "Prazo de entrega e validade da proposta?"
 
-Se já existe pasta do cliente com `briefing.md`, ler antes e só perguntar o que falta.
+Se já existe pasta do cliente com `briefing.md`, ler antes e só perguntar o que falta. O que
+falta se mede por comando: `node scripts/briefing.js campos "clientes/<Nome>/briefing.md"`. Se
+orçamento, prazo ou decisor estiverem vazios e o usuário também não souber, o `/briefing` monta
+as perguntas pra mandar pro cliente antes de a proposta sair com número chutado.
 
 **Se o usuário não souber quanto cobrar:** não inventar preço. Perguntar quanto tempo ele estima e qual valor-hora/valor-projeto ele pratica, ou puxar de proposta anterior parecida em `propostas/`.
 

@@ -33,6 +33,7 @@ data marcada e dizer se foi boa.
 - **A conta:** `financeiro/fechamento-<AAAA-MM>.md` e `financeiro/custos-fixos.md`, se existirem (`/caixa`). É de lá que sai o custo da hora do dono e quanto sobra por mês
 - **Decisões anteriores:** `decisoes/`, pra não decidir a mesma coisa duas vezes e pra ler o que se aprendeu
 - **Molde:** `templates/operacao/decisao.md` — as perguntas por família, os oito ramos, o teste de reversibilidade, os vieses e a pergunta que desarma cada um
+- **Compra de capital:** `scripts/payback.js` e `templates/financeiro/payback.md`, quando a decisão é uma máquina, uma obra, uma segunda unidade ou um estoque grande
 - **Referência de apoio:** `templates/software/validacao.md`, só quando a decisão é sobre construir sistema
 - **Saída:** `decisoes/<AAAA-MM-DD>-<slug>.md`, e a data de revisão em `tarefas.md`
 
@@ -205,6 +206,24 @@ node -e 'const casos=[[8,14],[4,7]], hoje=8; const f=casos.reduce((a,[e,r])=>a+r
 
 O prazo entra na página nas duas versões: estimado e corrigido pelo histórico. Sem
 histórico, o fator fica `[a confirmar]` e o prazo entra como teto, não como promessa.
+
+**Compra de capital tem script próprio.** Quando a decisão é comprar uma máquina, fazer uma
+obra, abrir a segunda unidade ou encher o estoque, a conta que falta não é a de custo: é a
+de quanto precisa vender por mês pra aquilo se pagar, em quantos meses o dinheiro volta e a
+partir de que ponto o certo é desistir.
+
+```bash
+node scripts/payback.js --exemplo financeiro/<slug>.payback.json   # editar com o que ele disse
+node scripts/payback.js financeiro/<slug>.payback.json --md        # grava decisoes/<AAAA-MM-DD>-<slug>.md
+```
+
+O script lê fixos, variáveis, retirada, caixa e sazonalidade do último
+`financeiro/projecao-*.projecao.json`, quando existe, e escreve a página já nesta convenção,
+com o ponto de equilíbrio em vendas por mês, o payback nos três cenários, o retorno em 12 e
+24 meses e o gatilho de desistir. "A decisão", "Por quê", "O que ficou de fora", "O risco
+que mata" e as três linhas da revisão ficam em branco: são os Passos 6 e 7, feitos com ele.
+A conta por trás está em `templates/financeiro/payback.md`, e o custo do dinheiro, se a
+compra for financiada, é do `/emprestimo`.
 
 ### Passo 6 — Opinar, e dizer o que mudaria a opinião
 

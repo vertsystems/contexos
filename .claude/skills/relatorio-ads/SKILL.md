@@ -152,7 +152,10 @@ canais: [google-ads, meta-ads]
 ---
 ```
 
-Esse frontmatter facilita comparações futuras com scripts e a leitura de longo prazo.
+Esse frontmatter facilita comparações futuras com scripts e a leitura de longo prazo. É também
+o contrato que o `/relatorio-cliente` lê pra fechar o mês: ele soma `investimento_total` e
+`conversoes_total` dos relatórios cujo `periodo_fim` cai no mês, então preencher os três campos
+com número (sem "R$", sem "~") é o que evita retrabalho no dia 2.
 
 ### Passo 8 — Entrega
 

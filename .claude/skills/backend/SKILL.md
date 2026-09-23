@@ -219,4 +219,6 @@ e o defeito volta na próxima.
 - **Código que o usuário vai manter sozinho é escrito pra ser lido**, não pra impressionar. Nome que explica, função curta, sem esperteza
 - **Toda dependência nova é um compromisso.** Antes de instalar biblioteca: ela é mantida? resolve algo que dá trabalho de verdade? Trinta linhas próprias costumam custar menos que uma dependência abandonada
 - **Quem contrata quase nunca é quem usa.** O dono descreve o sistema pela rotina dele; quem digita o dia inteiro é o balconista ou a recepcionista. Falar uma vez com essa pessoa antes de modelar faz parte da entrega, não é extra: sistema entregue certo e usado errado nasce aí
+- **Vocabulário antes do banco.** Quando existir `sistemas/<nome>/GLOSSARIO.md` (`/glossario`), ler ANTES de criar tabela, coluna, rota ou valor de estado. Nome que não está lá entra primeiro no glossário
+- **Sistema no ar sem dossiê deixa o dono refém.** Publicou e tem gente usando: o documento permanente de quem fica (acesso pelo nome do cofre, custo mensal somado, vencimentos e o "se X faça Y" com o comando que existe no repositório) é o `/manual-do-sistema`
 - Explicar a decisão técnica em português pro usuário. Ele decide o que aceita — o custo de manter é dele

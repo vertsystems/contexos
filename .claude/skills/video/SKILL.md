@@ -23,6 +23,7 @@ decide o resultado não é a edição: são os primeiros segundos e o motivo de 
 - **Cliente real:** `_memoria/publico.md`, se existir — a primeira frase precisa ser a dor na palavra dele
 - **Dado:** `pesquisa/` e `biblioteca.md`, quando o vídeo afirma número
 - **Referências de copy:** `templates/copy/ganchos.md` (estrutura gancho → conteúdo → fechamento) e `templates/copy/edicao.md` (o que cortar)
+- **O que a retenção já ensinou:** `conteudo/retencao/regras.md`, se existir (`/retencao-de-video`) — as regras que saíram da curva dos vídeos longos valem pro gancho do curto
 - **Saída:** `conteudo/video-<tema>-<data>/roteiro.md` e `legenda.md`
 
 ---
@@ -122,6 +123,8 @@ vídeo que performou é a melhor matéria-prima do `/reaproveitar`.
 
 - **O gancho é o vídeo.** Se ele não parar o dedo, o resto não existe. Gastar o esforço ali
 - **Nada de "oi gente, tudo bem".** Nem apresentação, nem agradecimento antes do conteúdo
+- **Profissão regulada muda a lista de formatos.** Médico, dentista, advogado, psicólogo e corretor têm regra de conselho, e "antes e depois", "processo" e "bastidor" são os três que mais caem em infração. Antes de gravar, passar o roteiro pelo `/publicidade-regulada`, que diz o artigo e devolve a versão que pode ir ao ar
+- **Acima de 6 minutos é outra skill.** Vídeo longo horizontal, com blocos e loops, é o `/roteiro-longo`
 - **Uma ideia por vídeo**, um CTA por vídeo
 - **Escrever falando.** Roteiro que só funciona lido vira leitura de teleprompter — e todo mundo percebe
 - **Não prometer no gancho o que o vídeo não entrega.** Isso derruba retenção e a conta perde alcance no próximo

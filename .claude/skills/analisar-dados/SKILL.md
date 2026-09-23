@@ -137,4 +137,5 @@ Regras que evitam gráfico ruim:
 - **Formato numérico brasileiro:** vírgula é decimal e ponto é milhar (`1.234,56`). Normalizar antes de somar ou comparar, e conferir se o total faz sentido na ordem de grandeza
 - Correlação não é causa. Ao apontar padrão, dizer que é padrão observado — não afirmar que uma coisa causou a outra
 - Se o arquivo tiver dado pessoal de terceiro (nome + CPF, telefone de cliente, e-mail de lista), avisar e não reproduzir esses dados no resumo. Trabalhar com agregado
+- Se o arquivo for relatório de vendas de PDV e a pergunta for o que comprar, em quantos dias o estoque acaba ou o que está encalhado, chamar o `/estoque`: aqui sai resumo do arquivo, lá sai ponto de pedido, cobertura e dinheiro parado calculados por comando
 - Tom conforme `_memoria/preferencias.md`

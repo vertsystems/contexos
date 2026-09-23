@@ -34,6 +34,7 @@ com a premissa escrita, pra ser conferida no próximo fechamento.
 - **Meta do lançamento:** `lancamentos/<slug>-<AAAA-MM>/plano.md` (do `/lancamento`), quando o otimista depende de um lançamento
 - **Molde:** `templates/financeiro/projecao.md` — premissa por cenário, sazonalidade por comando, margem de contribuição, a conta da contratação e a do reajuste, o erro do crescimento linear
 - **Script:** `scripts/projecao.js` — lê a spec com as premissas e gera a projeção em markdown (e, se pedir, a spec de planilha). É ele quem faz a conta
+- **Compra isolada:** `scripts/payback.js` e `templates/financeiro/payback.md` — quando a pergunta é sobre uma máquina, uma obra, uma segunda unidade ou um estoque grande, e não sobre o caixa inteiro
 - **Conferência:** `scripts/verificar.js` (`tabela`, `texto`)
 - **Planilha (opcional):** `scripts/gerar-planilha.js`, pelo fluxo do `/planilha`
 - **Saída:** `financeiro/projecao-<AAAA-MM>.md`, em que `AAAA-MM` é o primeiro mês projetado. A spec fica ao lado: `financeiro/projecao-<AAAA-MM>.projecao.json`
@@ -112,7 +113,7 @@ Se o otimista depende de um lançamento que já tem plano no `/lancamento`, a me
 A reserva ("quantos meses se parar de entrar") sai sempre. As outras duas entram quando
 ele pede, e o pedido geralmente veio na primeira frase ("se eu contratar alguém a 3 mil"):
 
-- Contratar: custo mensal total. Se ele disser o salário e não o custo, avisar que CLT tem encargos e provisões em cima do salário e que o valor exato é do contador; entrar com `[a confirmar com o contador]` na descrição e usar o número que ele der
+- Contratar: custo mensal total, calculado pelo `/custo-de-funcionario` (`node scripts/custo-funcionario.js --salario X --regime <o da empresa>`), que devolve o bloco pronto com encargos e provisões em vez de `[a confirmar com o contador]`. Se ele disser o salário e não o custo, avisar que CLT tem encargos e provisões em cima do salário e que o valor exato é do contador; entrar com `[a confirmar com o contador]` na descrição e usar o número que ele der
 - Reajuste: aumento em % e a perda de clientes que ele teme, em %. Se não tiver ideia da perda, rodar com 10% e dizer qual perda empata a conta
 
 Uma pergunta por vez, e só sobre o que falta. Quando ele já deu tudo, pular pro Passo 5.
@@ -289,6 +290,29 @@ Registrar em `tarefas.md`: "revisar projeção no fechamento de <mês>". Projeç
 Se já existe `financeiro/projecao-*.md` anterior, comparar em duas linhas: qual cenário
 o mês real ficou mais perto, e qual premissa errou. É a informação que faz a próxima
 projeção ser melhor que esta.
+
+### Passo 10 — Quando a pergunta é uma compra, não o caixa inteiro
+
+"Vale a pena comprar o forno?" não se responde com a projeção do negócio: uma compra de
+capital tem desembolso de uma vez, custo novo que fica e venda que passa a existir por causa
+dela. Isso é conta separada, e é `scripts/payback.js` quem faz:
+
+```bash
+node scripts/payback.js --exemplo financeiro/<slug>.payback.json
+# editar a spec com o desembolso, o custo mensal novo, o preço e a margem da venda nova,
+# e a venda extra por mês em cada um dos três cenários
+node scripts/payback.js financeiro/<slug>.payback.json --md
+```
+
+O script puxa fixos, variáveis, retirada, caixa e sazonalidade da própria
+`financeiro/projecao-*.projecao.json` que você acabou de escrever, então nada disso se
+pergunta de novo. Ele devolve o ponto de equilíbrio em vendas por mês, o payback em meses
+nos três cenários, o retorno em 12 e 24 meses e o gatilho de desistir, gravados em
+`decisoes/<AAAA-MM-DD>-<slug>.md`, na convenção do `/decidir`. A referência da conta é
+`templates/financeiro/payback.md`.
+
+Contratar continua sendo o Passo 4 daqui. Se a compra for financiada, a parcela entra como
+custo mensal novo e o custo do dinheiro é conta do `/emprestimo`.
 
 ---
 

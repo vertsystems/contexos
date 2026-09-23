@@ -20,8 +20,9 @@ MeuNegocio/
 ├── _memoria/              empresa, preferencias, estrategia, publico, oferta
 ├── .claude/skills/        as skills instaladas
 │
-├── identidade/            marca — design-guide, tokens.css, marca.md, logo
-├── conteudo/              pautas.md, calendario-<AAAA-MM>.md, indice.md
+├── identidade/            marca — design-guide, tokens.css, marca.md, logo, assinatura-email/ (/assinatura-email)
+├── conteudo/              pautas.md, calendario-<AAAA-MM>.md, indice.md, google-perfil/ (/posts-perfil-google),
+│                       novidades/ (/novidades), retencao/ (/retencao-de-video), youtube-*/ (/publicar-video)
 │   └── <tipo>-<tema>-<AAAA-MM-DD>/    peças do /carrossel e /publicar-tema
 ├── pesquisa/              dossiês do /pesquisa
 ├── site/                  páginas do /landing
@@ -33,25 +34,46 @@ MeuNegocio/
 ├── parcerias/             ações com outro negócio ou criador local (/parcerias)
 ├── cursos/                estrutura e roteiro de aula do /curso
 ├── oferta/                desenho da oferta e estudo de preço (/oferta, /preco)
-├── vendas/                roteiros de venda (/vender), pos-venda/, whatsapp/, sequencias/ (/sequencia), prospeccao/ (/prospeccao) e indicacao.md (/indicacao)
+├── vendas/                roteiros (/vender), pos-venda/, whatsapp/, sequencias/ (/sequencia),
+│                       prospeccao/ (/prospeccao), indicacao.md (/indicacao), retencao/ (/retencao),
+│                       ensaios/ (/ensaiar) e combos-<mês>.md (/combos)
 ├── avaliacoes-google/     histórico de respostas do /responder-avaliacoes (só se pedir registro)
-├── financeiro/            fechamento do mês e custos fixos (/caixa), projecao-<AAAA-MM>.md (/projecao) e obrigacoes.md (/obrigacoes)
+├── financeiro/            fechamento e custos fixos (/caixa), projecao-<AAAA-MM>.md (/projecao),
+│                       obrigacoes.md (/obrigacoes), cobranca-<AAAA-MM>.md (/cobranca),
+│                       conciliacao-<AAAA-MM>.md (/conciliar), retirada.md (/pro-labore),
+│                       credito-<data>.xlsx (/emprestimo) e comprovantes/ (/comprovantes)
+├── precos/                ficha técnica, planilha e ranking de margem (/ficha-tecnica)
+├── cardapio/              margem por canal de delivery (/delivery)
+├── estoque/               reposição, encalhado e curva ABC (/estoque)
+├── produtos/              anúncio por marketplace (/marketplace)
+├── agenda/                taxa de falta, política e régua de confirmação (/confirmacao-de-agenda)
+├── operacao/              procedimentos/ com uma folha por tarefa (/procedimento) e capacidade.md (/capacidade)
+├── pessoas/               ficha de quem tem relação e indice.md (/pessoa)
+├── os/                    ordens de serviço e indice.csv (/ordem-servico)
+├── juridico/              acordo de sócios, política de troca e respostas (/socios, /troca-devolucao)
+├── impressos/             PDF pra gráfica, com sangria e marca de corte (/impressao)
+├── briefings/             questionário pro cliente responder (/briefing)
+├── comunicacao/           aviso difícil em três versões, com FAQ (/comunicado)
+├── relatorios/            fechamento mensal por cliente (/relatorio-cliente)
 ├── medicao/               plano de medição, convenção de UTM e leitura do mês por canal (/medir)
 ├── experimentos/          uma folha por teste A/B (/teste-ab)
 ├── planilhas/             .xlsx avulsos do /planilha (os que têm dono vão na pasta dele)
 ├── reunioes/              ata, decisões e transcrição de cada reunião (/reuniao)
 ├── decisoes/              decisão grande escrita em uma página, com data de revisão (/decidir)
-├── contratos/             contratos de prestação de serviço (/contrato)
+├── contratos/             contratos (/contrato), termos/ (/autorizacao) e revisao-<cliente>.md (/revisar-contrato)
 ├── imprensa/              pautas, contatos e clipping (/imprensa)
 ├── seo/                   os 8 arquivos do /seo
 ├── campanhas/             CSVs do /anuncio-google + relatorios/ do /relatorio-ads
 ├── analises/              saídas do /analisar-dados
 ├── emails/                rascunhos longos do /email-profissional
 ├── revisoes/              fechamentos do /revisao-semanal
-├── sistemas/              o que o /escopo decide, o /quebrar ordena (ENTREGAS.md) e o /backend constrói
+├── sistemas/              o que o /escopo decide, o /quebrar ordena (ENTREGAS.md) e o /backend constrói;
+│                       GLOSSARIO.md (/glossario), docs/MANUAL.md (/manual-do-sistema),
+│                       blindagem-*.md (/blindar) e prototipo/ (/prototipo)
 ├── dados/                 drop zone: arquivo que você joga aqui pra ser lido
 ├── scripts/               utilitários e o Playwright (ver templates/scripts.md)
 ├── biblioteca.md          índice de ativos reutilizáveis
+├── biblioteca/cases/      case de cliente com número provado e termo (/case)
 ├── tarefas.md             pipeline
 ├── rotinas.md             o que repete, agendado (/rotina)
 │

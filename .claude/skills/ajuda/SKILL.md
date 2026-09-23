@@ -9,7 +9,7 @@ description: >
 
 # /ajuda — Qual skill usar agora
 
-O Contex OS tem 75 skills. Ninguém decora isso, e ninguém precisa: o usuário fala o que quer em português e a skill certa roda sozinha. Essa aqui responde a outra pergunta: **o que faz sentido fazer agora.**
+O Contex OS tem 117 skills. Ninguém decora isso, e ninguém precisa: o usuário fala o que quer em português e a skill certa roda sozinha. Essa aqui responde a outra pergunta: **o que faz sentido fazer agora.**
 
 Ao recomendar, falar pelo resultado, não pelo comando: "eu monto o banco de pautas" em vez de "roda /ideias". O nome da skill entra entre parênteses, no máximo, nunca como exigência.
 

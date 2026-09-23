@@ -25,6 +25,8 @@ todo pequeno negócio deixa acontecer por acaso.
 - **Cliente real:** `_memoria/publico.md`, se existir — a palavra que ele usa
 - **Oferta:** `_memoria/oferta.md` — o que estava prometido, e o prazo. É contra isso que a expectativa é alinhada
 - **Onde o depoimento vai parar:** `biblioteca.md` (`/biblioteca`)
+- **Quem está parado, contado:** `pessoas/indice.md` (`/pessoa`), seção "No vácuo" filtrada por `papel: cliente` — os dias sem contato vêm somados por script, não de memória
+- **Base de clientes:** `dados/clientes.csv` (`/cadastro-clientes`), se existir — a lista sai filtrada por `situacao = parado`, ordenada por `valor_total`, pulando quem tem `nao_contatar = sim`
 - **Saída:** `vendas/pos-venda/<situacao>-<AAAA-MM-DD>.md`
 
 ---
@@ -75,7 +77,13 @@ conversa ou no dia seguinte, com o texto pronto pra encaminhar.
 Depoimento genérico ("excelente profissional") não vende. O que vende tem antes/depois e
 número. Se vier genérico, perguntar uma coisa específica de volta.
 
+Quando o depoimento vier com número ("caiu de 12% pra 3%"), não para aqui: o `/case` colhe a
+fonte de cada número, calcula a variação por comando, preenche o termo e cataloga. Depoimento
+com número e sem autorização é prova que não pode ser usada.
+
 **Cliente parado**: ordenar por quem comprou mais e há mais tempo não volta:
+- Se `pessoas/indice.md` existir, a lista já vem pronta e contada: `node scripts/pessoas.js indice` regenera, e a seção "No vácuo" traz os dias sem contato calculados
+- Se o negócio cobra mensalidade, plano ou assinatura, quem cuida é o `/retencao`: lá o churn e a receita em risco saem por script. Aqui fica o serviço avulso
 - Motivo concreto pra voltar (novidade, época do ano, algo que mudou no negócio dele)
 - Nunca "sentimos sua falta" solto — isso pede algo sem oferecer nada
 - Reconhecer o tempo sem constranger: "faz um tempo que a gente não se fala"
@@ -120,7 +128,9 @@ Marcar os retornos em `tarefas.md`: follow-up que depende de memória não acont
 
 Depoimento que chegou vai pro `biblioteca.md` com nome, contexto e data: é o que a
 `/landing`, a `/proposta` e o `/carrossel` vão usar depois. Depoimento guardado em conversa
-de WhatsApp não existe pro sistema.
+de WhatsApp não existe pro sistema. E depoimento sem autorização não sai de casa: a mensagem
+seguinte é o pedido do `/autorizacao`, que gera o termo, manda a versão curta e grava o sim na
+coluna Autorizado da biblioteca.
 
 ---
 
@@ -133,4 +143,5 @@ de WhatsApp não existe pro sistema.
 - **Não usar escassez falsa** ("última vaga", "só hoje") com quem já é cliente. É onde a confiança quebra mais rápido
 - **Atraso se avisa antes.** Se o usuário está atrasado, a primeira mensagem é sobre isso — não sobre venda nova
 - Base de cliente é dado pessoal: não mandar lista pra ferramenta externa sem autorização, e respeitar quem pediu pra não receber mensagem (LGPD)
+- **Parcela vencida não é follow-up.** Cliente com mensalidade ou parcela em aberto vai pro `/cobranca`, que calcula o valor corrigido por comando e data a régua em dia útil; aqui fica quem sumiu sem dívida e o orçamento que ficou sem resposta
 - Se o cliente reclamou, a skill vira resolução de problema. Vender pra cliente insatisfeito é o caminho mais curto pra avaliação de uma estrela — nesse caso, `/responder-avaliacoes` cuida da parte pública

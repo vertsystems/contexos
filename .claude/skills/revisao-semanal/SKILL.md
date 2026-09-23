@@ -14,6 +14,7 @@ O ciclo que fecha o loop: produzir sem revisar é o que a tese do Contex OS cham
 ## Dependências
 
 - **Pipeline:** `tarefas.md`
+- **Quem ficou no vácuo:** `pessoas/indice.md`, se existir (`/pessoa`); rodar `node scripts/pessoas.js indice` antes de ler. Promessa vencida é a primeira lista da semana
 - **Produção da semana:** `conteudo/indice.md`, `campanhas/relatorios/`, `propostas/`, `vendas/prospeccao/` (contatos e respostas da semana)
 - **Decisões com revisão marcada:** `decisoes/*.md` (tabela "Revisão", do `/decidir`)
 - **Estratégia:** `_memoria/estrategia.md`

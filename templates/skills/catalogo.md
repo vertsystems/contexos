@@ -3,7 +3,7 @@
 <!-- ia:inicio -->
 Skills de terceiros e nativas que valem conhecer. Use como referência ao criar skills novas com `/mapear-rotinas`, ou instale as que fizerem sentido pro seu negócio.
 
-> **Nada nesta página vem instalado com o Contex OS.** As 75 skills do Contex OS
+> **Nada nesta página vem instalado com o Contex OS.** As 117 skills do Contex OS
 > ficam na pasta de skills do projeto — a lista completa está no fim deste arquivo.
 > O que está aqui embaixo é catálogo externo: umas já vêm no Claude Code,
 > outras você instala por fora.
@@ -200,6 +200,48 @@ Antes de criar skill, conferir se um desses já cobre:
 | Toda sexta a revisão, toda segunda os ads, dia 1 o caixa: o que repete, agendado | `/rotina` |
 | Quando vence o DAS, quanto é o MEI esse ano, estourei o teto, preciso de contador? | `/obrigacoes` |
 | Como fica o caixa nos próximos meses: dá pra contratar, aguento janeiro, e se subir o preço | `/projecao` |
+| Tem cliente me devendo: quem cobrar hoje, quanto com o juro certo, e a mensagem pronta | `/cobranca` |
+| Quanto custa cada fatia do meu bolo, e qual item do cardápio está dando prejuízo? | `/ficha-tecnica` |
+| Contratei alguém e preciso ensinar como se faz, ou vou tirar férias e nada funciona sem mim | `/procedimento` |
+| O cliente marca, não vem, e eu não sei quanto isso me custa por mês | `/confirmacao-de-agenda` |
+| Transformar o resultado que você conseguiu pro cliente em case com número provado e autorização | `/case` |
+| Cliente quer trocar ou devolver: sou obrigado, até quando, e o que eu respondo | `/troca-devolucao` |
+| Meu banco tá aberto? Quem tem o link lê os dados dos clientes, e a chave secreta foi parar no site: laudo com prova, migration de correção e o diff | `/blindar` |
+| Posso postar isso? Regra do conselho (CRM, CRO, OAB, CRP, CRECI) e da Meta na peça, com artigo e reescrita | `/publicidade-regulada` |
+| Minha planilha de clientes tá uma bagunça: tem gente repetida, telefone que não disca e CPF errado | `/cadastro-clientes` |
+| O banco me ofereceu um empréstimo, vale a pena?" · "antecipar as vendas da maquininha compensa?" · "12 vezes sem juros ou à vista com desconto?" · "quanto vou pagar no total?" · "a parcela cabe no meu caixa? | `/emprestimo` |
+| Meus alunos estão cancelando, quantos clientes eu perdi esse mês e quem está em risco de sair | `/retencao` |
+| Preciso que o cliente autorize usar a foto ou o depoimento dele, ou assine que recebeu o trabalho | `/autorizacao` |
+| Quanto custa de verdade contratar alguém, e se compensa mais CLT, PJ ou MEI | `/custo-de-funcionario` |
+| Meu perfil do Google tá parado e eu não sei o que postar esse mês | `/posts-perfil-google` |
+| Bater o extrato do banco com o que eu vendi e cobrei, e saber quem não me pagou | `/conciliar` |
+| Fechar o mês do cliente e mandar o relatório com o que foi feito, o que mudou e o que ele precisa aprovar | `/relatorio-cliente` |
+| Tenho reunião com um cliente e não lembro onde a gente parou | `/briefing-reuniao` |
+| O dev saiu e ninguém sabe onde o sistema mora: manual em português, acessos pelo cofre, custo do mês somado, vencimentos e o que fazer quando cai | `/manual-do-sistema` |
+| Ficha de quem importa: quem eu deixei sem resposta, o que combinei com cada um, aniversário e renovação chegando | `/pessoa` |
+| O cliente não mandou o briefing e eu preciso das respostas dele pra fechar a proposta | `/briefing` |
+| Quanto sobra de cada prato no iFood, Rappi e 99Food, e o que tirar do app | `/delivery` |
+| Minha agenda tem buraco e eu não sei quanto consigo atender por mês nem se vale contratar mais um | `/capacidade` |
+| Acordo de sócios: o que acontece se um sai, morre ou para de trabalhar | `/socios` |
+| Preciso mandar imprimir cartão de visita, flyer ou adesivo e não sei preparar o arquivo pra gráfica | `/impressao` |
+| Não sei o que comprar essa semana e tenho dinheiro parado em produto encalhado | `/estoque` |
+| Avisar do reajuste, da mudança de regra ou do fechamento, com FAQ e calendário de disparo | `/comunicado` |
+| Tenho reunião de venda amanhã (ou preciso cobrar um cliente) e quero treinar antes com alguém fazendo o cliente difícil, e depois ver onde eu errei | `/ensaiar` |
+| Pasta de notas, comprovantes de Pix, boletos e recibos bagunçada: organizar por mês e sair com o CSV do contador | `/comprovantes` |
+| Vou subir esse vídeo no YouTube e não sei o que escrever no título, na descrição e nos capítulos | `/publicar-video` |
+| Avisar os clientes do que mudou no sistema essa semana, sem eles precisarem entender de código | `/novidades` |
+| Será que o cliente entende minha proposta? Quero que alguém que nunca viu leia e diga onde travou | `/leitor-frio` |
+| Quero ver se o cliente entende esse fluxo antes de mandar construir | `/prototipo` |
+| O cliente trouxe o aparelho pra consertar: OS numerada, orçamento discriminado com validade e aprovação por escrito | `/ordem-servico` |
+| Contrato que o cliente mandou pra assinar: risco, cláusula por cláusula e redação alternativa | `/revisar-contrato` |
+| Não sei quanto tirar de pró-labore por mês e meu contador falou em Fator R | `/pro-labore` |
+| Assinatura de e-mail: a sua ou a da equipe, sem quebrar no Outlook | `/assinatura-email` |
+| Roteiro de vídeo de 6 a 20 minutos: gancho de 30s, loops, timecode calculado e CTA no ponto certo | `/roteiro-longo` |
+| Cada parte do sistema chama a mesma coisa de um nome diferente: um nome por conceito, a grafia do banco, da tela e do WhatsApp, e a lista fechada de estados com os casos de borda respondidos | `/glossario` |
+| Por que as pessoas param de ver meu vídeo: a curva, o segundo da queda e o que consertar | `/retencao-de-video` |
+| Quero saber se os clientes estão satisfeitos: a nota de 0 a 10, a conta certa e quem contatar essa semana | `/nps` |
+| Anunciar um produto no Mercado Livre ou na Shopee: título na régua da casa, ficha técnica, descrição e o checklist de chat, envio e devolução | `/marketplace` |
+| Descobrir quais produtos meus clientes levam juntos e montar combo com preço e margem que fecham | `/combos` |
 
 ---
 

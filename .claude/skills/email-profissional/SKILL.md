@@ -113,6 +113,7 @@ O quarto e-mail é o que mais gera resposta, e encerrar com dignidade preserva a
 - Assunto do email deve ser específico e descritivo, não vago ("Seguimento", "Proposta")
 - Se for um email de cobrança, ser direto mas sem agressividade
 - Se for resposta a algo, citar o contexto na primeira linha
+- Se existir `identidade/assinatura-email/<pessoa>/assinatura.txt` (`/assinatura-email`), usar esse texto como assinatura do rascunho, sem reescrever
 - Assinatura vem de `_memoria/empresa.md` (nome, cargo, telefone, site). Não inventar cargo nem inventar dado de contato
 - Em e-mail longo ou delicado (proposta, cobrança, recusa), passar pelos passes do `/revisar` antes de entregar
 - Nunca prometer prazo, valor ou condição que o usuário não disse. Se faltar, deixar `[confirmar prazo]` visível no rascunho em vez de escolher um número

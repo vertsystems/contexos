@@ -17,6 +17,7 @@ Todo negócio já produziu mais conteúdo do que usou: live que ninguém reassis
 - **Tom e marca:** `_memoria/preferencias.md`, `identidade/`
 - **Histórico:** `conteudo/indice.md` (pra não republicar igual)
 - **Se for vídeo do YouTube:** `yt-dlp` pra transcrição (ver `templates/ferramentas/catalogo.md`)
+- **Se o vídeo longo já tem pacote de publicação:** `conteudo/youtube-<tema>-<AAAA-MM-DD>/upload.md` (`/publicar-video`) já traz a transcrição em capítulos e os minutos marcados — começar por ali em vez de reler o vídeo inteiro
 - **Referências de copy:**
   - `templates/copy/ganchos.md` — estrutura gancho → conteúdo → fechamento e a régua de qualidade
 

@@ -195,6 +195,9 @@ node scripts/verificar.js segredo <pasta-do-sistema>
 
 # migração de banco fora de ordem, sem volta atrás, ou com DROP junto de adição
 node scripts/verificar.js migracao <pasta-do-sistema>
+# banco aberto pra chave pública e segredo no que está PUBLICADO (não só versionado): é o /blindar
+node scripts/auditar-rls.js <pasta-do-sistema>
+node scripts/vazamento.js <pasta-do-sistema>
 
 # dependência com falha conhecida: a porta mais usada e a mais fácil de fechar
 npm audit                    # ou: pip-audit, composer audit, bundle audit

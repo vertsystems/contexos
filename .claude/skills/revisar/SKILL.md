@@ -16,6 +16,7 @@ Não reescreve o texto: **corta o que não é do usuário e conserta o que atrap
 
 - **Tom de voz:** `_memoria/preferencias.md` — inclusive o exemplo de escrita real, que é a régua
 - **Cliente real:** `_memoria/publico.md` se existir (`/publico`) — a dor na palavra dele, e as objeções
+- **Leitura fria, se existir:** `revisoes/leitura-fria-<slug>-<AAAA-MM-DD>.md` (`/leitor-frio`) — os pontos em que dois ou mais leitores pararam, com a frase citada. Consertar esses antes de mexer em estilo
 - **Contexto:** `_memoria/empresa.md` (pra saber se um termo técnico é jargão ou vocabulário do público)
 - **Referências de copy:**
   - `templates/copy/edicao.md` — lista negra de clichê, gordura e regras de estilo

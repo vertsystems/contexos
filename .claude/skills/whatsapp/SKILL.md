@@ -19,6 +19,9 @@ Pra maioria dos pequenos negócios brasileiros, o WhatsApp **é** a loja: é lá
 
 ## Dependências
 
+- **Regra de atendimento:** `operacao/procedimentos/`, quando a pasta existe (`/procedimento`) — a folha da tarefa diz o que quem atende responde sozinha e quando para e chama o dono
+- **Troca e devolução:** `juridico/respostas-de-troca.md`, se existir (`/troca-devolucao`) — a resposta pra "posso trocar?" e "quero o dinheiro de volta" vem de lá, com a data calculada; esta skill não decide o que a lei obriga
+- **Vocabulário do sistema:** `sistemas/<nome>/GLOSSARIO.md` (`/glossario`), quando existir — a mensagem usa a grafia "No WhatsApp" do glossário, não uma palavra nova
 - **Contexto e contato:** `_memoria/empresa.md` — número, horário de atendimento, o que se vende
 - **Tom:** `_memoria/preferencias.md` — mensagem de WhatsApp é a mais pessoal de todas; tom errado aqui é imediato
 - **Cliente real:** `_memoria/publico.md`, se existir — a dor e as objeções na palavra dele
