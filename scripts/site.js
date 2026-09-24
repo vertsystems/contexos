@@ -90,9 +90,12 @@ function texto(html) {
     .replace(/<[^>]+>/g, " ").replace(/\s+/g, " ").trim();
 }
 
+// Arquivo que começa com "_" é fonte, não página publicada: o gerador da imagem de
+// compartilhamento, um pedaço reaproveitado, um rascunho. Conferir esses como página
+// acusa "sem title" e "sem nav" em coisa que nunca vai ao ar.
 function paginasDe(pasta) {
   return fs.readdirSync(pasta)
-    .filter((f) => /\.html?$/i.test(f) && fs.statSync(path.join(pasta, f)).isFile())
+    .filter((f) => /\.html?$/i.test(f) && !f.startsWith("_") && fs.statSync(path.join(pasta, f)).isFile())
     .sort((a, b) => (a === "index.html" ? -1 : b === "index.html" ? 1 : a.localeCompare(b)));
 }
 
@@ -201,32 +204,45 @@ function conferir(pasta, opts) {
   console.log(`  ${paginas.length} página(s): ${paginas.join(", ")}`);
 
   // ── CSS compartilhado ──
-  const cssPath = path.join(pasta, "css", "site.css");
-  const temCSS = fs.existsSync(cssPath);
+  // O nome padrão é css/site.css, que é o que a skill gera. Site que veio de fora usa
+  // outro (style.css, main.css): vale o maior arquivo de css/, porque o que importa é
+  // existir UMA folha pro site inteiro, não como ela se chama.
+  const dirCSS = path.join(pasta, "css");
+  const candidatos = fs.existsSync(dirCSS)
+    ? fs.readdirSync(dirCSS).filter((f) => /\.css$/i.test(f)).map((f) => path.join(dirCSS, f))
+    : [];
+  const cssPath = candidatos.find((f) => /site\.css$/i.test(f))
+    || candidatos.sort((a, b) => fs.statSync(b).size - fs.statSync(a).size)[0];
+  const temCSS = !!cssPath && fs.existsSync(cssPath);
   const css = temCSS ? fs.readFileSync(cssPath, "utf8") : "";
+  const nomeCSS = temCSS ? path.relative(pasta, cssPath) : "css/site.css";
   console.log("\nCSS compartilhado");
-  if (!temCSS) erro("css/site.css não existe — cada página com CSS próprio vira cinco versões da marca em um mês");
+  if (!temCSS) erro("nenhuma folha em css/ — cada página com CSS próprio vira cinco versões da marca em um mês");
   else {
-    ok(`css/site.css (${css.split("\n").length} linhas)`);
-    if (!/:root\s*\{/.test(css)) erro("site.css sem bloco :root — os tokens da marca precisam estar declarados nele");
+    ok(`${nomeCSS} (${css.split("\n").length} linhas)`);
+    if (!/:root\s*\{/.test(css)) erro(`${nomeCSS} sem bloco :root — os tokens da marca precisam estar declarados nele`);
     if (!/@media[^{]*max-width[^{]*\{[\s\S]*?(min-height|min-block-size)\s*:\s*(4[4-9]|[5-9]\d)px/i.test(css) &&
         !/@media[^{]*(pointer:\s*coarse|hover:\s*none)[^{]*\{[\s\S]*?(min-height|min-block-size)\s*:\s*(4[4-9]|[5-9]\d)px/i.test(css))
-      erro("site.css não sobe o alvo clicável pra 44px no toque (@media (pointer: coarse) ou max-width com min-height: 44px)");
+      erro(`${nomeCSS} não sobe o alvo clicável pra 44px no toque (@media (pointer: coarse) ou max-width com min-height: 44px)`);
     if (!/prefers-reduced-motion/i.test(css) && /transition|animation/i.test(css))
-      erro("site.css tem transição ou animação e não respeita prefers-reduced-motion");
-    if (!/:focus-visible/i.test(css)) erro("site.css sem :focus-visible — quem navega por teclado não vê onde está");
+      erro(`${nomeCSS} tem transição ou animação e não respeita prefers-reduced-motion`);
+    if (!/:focus-visible/i.test(css)) erro(`${nomeCSS} sem :focus-visible — quem navega por teclado não vê onde está`);
     verContrasteCSS(css);
   }
 
   // ── por página ──
-  const titulos = new Map(), descricoes = new Map(), menus = new Map();
+  const titulos = new Map(), descricoes = new Map(), menus = new Map(), cssPorPagina = new Map();
   let temForm = false, temWa = false, temPrivacidade = paginas.some((p) => /^privacidade\.html?$/i.test(p));
   const rastreadores = new Set();
   const tmpDir = fs.mkdtempSync(path.join(os.tmpdir(), "contexos-site-"));
 
   for (const nome of paginas) {
     const arq = path.join(pasta, nome);
-    const html = fs.readFileSync(arq, "utf8");
+    // Comentário não é página: o HTML de uma landing costuma trazer exemplo comentado
+    // ("troque por <img src=…>"), e contar isso como <h1> a mais ou imagem quebrada
+    // é acusação falsa. Some antes de qualquer conferência, preservando as quebras de
+    // linha pra que o número da linha continue batendo com o arquivo.
+    const html = fs.readFileSync(arq, "utf8").replace(/<!--[\s\S]*?-->/g, (m) => m.replace(/[^\n]/g, " "));
     console.log(`\n${nome}`);
 
     if (!/<html[^>]*\blang\s*=\s*["']pt-BR["']/i.test(html)) erro('<html> sem lang="pt-BR"');
@@ -313,8 +329,11 @@ function conferir(pasta, opts) {
     // CSS da página
     const linksCSS = [...html.matchAll(/<link\b([^>]*)>/gi)].map((m) => atributos(m[1]))
       .filter((a) => (a.rel || "").toLowerCase().includes("stylesheet")).map((a) => a.href || "");
-    const usaCompartilhado = linksCSS.some((h) => /(^|\/)css\/site\.css$/.test(h));
-    if (!usaCompartilhado) erro("não carrega css/site.css");
+    // A regra é uma folha só pro site inteiro, não o nome dela: site que veio de fora
+    // usa style.css, main.css. O que não pode é cada página com a sua.
+    const folhasLocais = linksCSS.filter((h) => h && !/^https?:|^\/\//i.test(h));
+    if (!folhasLocais.length) erro("nenhuma folha de estilo local — o visual precisa morar num arquivo, não dentro da página");
+    else cssPorPagina.set(nome, folhasLocais.slice().sort().join(" | "));
     const estilosInline = [...html.matchAll(/<style[^>]*>([\s\S]*?)<\/style>/gi)];
     const linhasInline = estilosInline.reduce((n, m) => n + m[1].split("\n").length, 0);
     if (linhasInline > 40) erro(`${linhasInline} linhas de CSS dentro da página — o lugar é css/site.css`);
@@ -356,9 +375,19 @@ function conferir(pasta, opts) {
       if (re.test(html)) rastreadores.add(nome);
     if (/^contato\.html?$/i.test(nome) && !/wa\.me\/\d{10,}/i.test(html)) erro("página de contato sem link wa.me com número — é o canal que o cliente brasileiro usa");
 
-    // verificar.js html e alvo, sobre a cópia com o CSS embutido
+    // verificar.js html e alvo, sobre a cópia com o CSS embutido.
+    // Embute TODA folha local que a página carrega, não só a css/site.css: um site
+    // que veio de outro lugar usa outro nome de arquivo, e verificar sem o CSS acusa
+    // "sem min-height" em botão que tem min-height, que é pior que não verificar.
     let inlined = html;
-    if (temCSS) inlined = html.replace(/<link\b[^>]*href\s*=\s*["'][^"']*css\/site\.css["'][^>]*>/i, `<style>\n${css}\n</style>`);
+    for (const href of linksCSS) {
+      if (/^https?:|^\/\//i.test(href)) continue;
+      const alvoCSS = path.resolve(path.dirname(arq), href.split("?")[0]);
+      if (!alvoCSS.startsWith(pasta) || !fs.existsSync(alvoCSS)) continue;
+      const conteudo = fs.readFileSync(alvoCSS, "utf8");
+      const tag = new RegExp(`<link\\b[^>]*href\\s*=\\s*["']${href.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}["'][^>]*>`, "i");
+      inlined = inlined.replace(tag, `<style>\n${conteudo}\n</style>`);
+    }
     const tmp = path.join(tmpDir, nome);
     fs.writeFileSync(tmp, inlined);
     for (const cmd of ["html", "alvo"]) {
@@ -380,6 +409,13 @@ function conferir(pasta, opts) {
     for (const [p, k] of menus) (grupos[k] = grupos[k] || []).push(p);
     erro(`menu diferente entre páginas: ${Object.values(grupos).map((g) => g.join("+")).join(" vs ")}`);
   } else if (chaves.length === 1) ok("o mesmo menu, na mesma ordem, em toda página");
+
+  const folhas = [...new Set(cssPorPagina.values())];
+  if (folhas.length > 1) {
+    const grupos = {};
+    for (const [pag, k] of cssPorPagina) (grupos[k] = grupos[k] || []).push(pag);
+    erro(`folha de estilo diferente entre páginas (${Object.entries(grupos).map(([k, g]) => `${g.join("+")} usa ${k}`).join("; ")}) — vira cinco versões da marca em um mês`);
+  } else if (folhas.length === 1 && cssPorPagina.size > 1) ok(`uma folha só pro site inteiro (${folhas[0]})`);
 
   if (rastreadores.size) info(`rastreador encontrado: ${[...rastreadores].join(", ")} — precisa estar citado na privacidade.html`);
   if (temForm && !temPrivacidade) erro("há formulário e não existe privacidade.html — a LGPD exige quando o site coleta dado");
@@ -404,12 +440,21 @@ function conferir(pasta, opts) {
     if (opts.dominio && locs.some((u) => !u.startsWith(opts.dominio))) erro("sitemap.xml com URL fora do domínio informado");
     if (!faltam.length && !sobram.length) ok(`sitemap.xml lista as ${locs.length} páginas indexáveis`);
   }
-  const robotsPath = path.join(pasta, "robots.txt");
-  if (!fs.existsSync(robotsPath)) erro("robots.txt não existe");
-  else if (!/^Sitemap:\s*https?:\/\//im.test(fs.readFileSync(robotsPath, "utf8"))) erro("robots.txt sem a linha Sitemap: com a URL completa");
-  else ok("robots.txt aponta pro sitemap");
+  // Site que mora numa subpasta do domínio (exemplo.com/produto/) não manda no robots.txt
+  // nem na página de erro: os dois só valem na raiz. Nesse caso eles ficam em _raiz/,
+  // e quem publica copia pra lá. A convenção existe pra o aviso não virar ruído eterno.
+  const emRaiz = path.join(pasta, "_raiz");
+  const robotsPath = [path.join(pasta, "robots.txt"), path.join(emRaiz, "robots.txt")].find((f) => fs.existsSync(f));
+  if (!robotsPath) erro("robots.txt não existe (na raiz do domínio; em site publicado numa subpasta, ponha em _raiz/ e copie no deploy)");
+  else {
+    if (!/^Sitemap:\s*https?:\/\//im.test(fs.readFileSync(robotsPath, "utf8"))) erro("robots.txt sem a linha Sitemap: com a URL completa");
+    if (robotsPath.startsWith(emRaiz)) info("robots.txt em _raiz/: confira que o deploy copia pra raiz do domínio");
+    else ok("robots.txt aponta pro sitemap");
+  }
 
-  if (!paginas.some((p) => /^404\.html?$/i.test(p))) info("sem 404.html — Netlify, Cloudflare Pages e Vercel usam esse nome pra página de erro");
+  if (paginas.some((p) => /^404\.html?$/i.test(p))) ok("404.html existe");
+  else if (fs.existsSync(path.join(emRaiz, "404.html"))) info("404.html em _raiz/: confira que o deploy copia pra raiz do domínio");
+  else info("sem 404.html — Netlify, Cloudflare Pages e Vercel usam esse nome pra página de erro");
 
   console.log(problemas ? `\n${problemas} problema(s). Corrigir antes de publicar.\n` : "\nTudo certo. Pode publicar.\n");
   process.exit(problemas ? 1 : 0);
