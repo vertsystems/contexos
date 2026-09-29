@@ -61,6 +61,8 @@ Só fonte pública, e cada dado com data e link:
 - **Avaliações do Google:** nota, volume, e **a reclamação que se repete**
 - **Presença na busca:** aparece pra quais termos (o `/seo` cobre isso a fundo)
 - **Frequência de conteúdo:** postou quando pela última vez
+- **Anúncios ativos:** a Biblioteca de Anúncios da Meta (facebook.com/ads/library) mostra, sem login, os anúncios que cada página está rodando e desde quando. Anúncio que roda há meses tende a estar dando resultado, e o conjunto mostra o ângulo que o mercado inteiro já usa (é o que o `/anuncio-meta` evita repetir)
+- **Reclame Aqui:** reclamações da categoria e de cada concorrente, com a linguagem de quem se sentiu enganado
 
 **As avaliações de 2 e 3 estrelas são o material mais valioso da análise.** É onde o
 cliente diz, com as palavras dele, o que faltou, e o que falta em todos costuma ser o

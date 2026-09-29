@@ -28,6 +28,8 @@ Transforma briefing em proposta que fecha venda. Escopo claro, investimento sem 
   - `templates/design/qualidade-visual.md` — tipografia, cor, layout, acabamento
   - `templates/design/anti-generico.md` — conferir antes de entregar
 - **Referências de copy:**
+  - `templates/copy/metodo.md` — diagnóstico antes de escrever: função, consciência, pilar, motor, barreira
+  - `templates/copy/formatos.md` — seção 14, a ordem da proposta: problema na palavra do cliente, resultado, o que fica de fora, prova, preço, próximo passo
   - `templates/copy/psicologia.md` — atalhos de decisão e o limite ético de cada um
   - `templates/copy/edicao.md` — lista negra de clichê, gordura e regras de estilo
 

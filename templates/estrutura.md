@@ -63,7 +63,8 @@ MeuNegocio/
 ├── contratos/             contratos (/contrato), termos/ (/autorizacao) e revisao-<cliente>.md (/revisar-contrato)
 ├── imprensa/              pautas, contatos e clipping (/imprensa)
 ├── seo/                   os 8 arquivos do /seo
-├── campanhas/             CSVs do /anuncio-google + relatorios/ do /relatorio-ads
+├── campanhas/             CSVs do /anuncio-google, anúncios do /anuncio-meta (meta-<campanha>-<data>/)
+│                       + relatorios/ do /relatorio-ads
 ├── analises/              saídas do /analisar-dados
 ├── emails/                rascunhos longos do /email-profissional
 ├── revisoes/              fechamentos do /revisao-semanal

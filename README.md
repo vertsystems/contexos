@@ -3,7 +3,7 @@
 > O sistema operacional do seu negócio dentro da sua IA de código.
 
 Sua empresa ganha uma memória própria, uma identidade visual aplicada em tudo
-que ela gerar, e 117 skills prontas pra fazer marketing, conteúdo, SEO, ads,
+que ela gerar, e 118 skills prontas pra fazer marketing, conteúdo, SEO, ads,
 oferta, preço, venda, material e operação rodarem com você dirigindo.
 
 E quando o assunto é software, ele não para em escrever código: diz se vale a
@@ -168,6 +168,8 @@ quanto do texto é genérico, e reescreve com a sua voz, sem inventar fato.
 **Distribuição e retorno**
 Fluxo de SEO em 8 passos (demanda, concorrência, GMB, on-page, conteúdo, ads,
 monitoramento, GEO) · campanha de Google Ads em CSV pronto pro Editor ·
+anúncio pro Instagram e Facebook com ideias de fato diferentes e texto no limite que
+a Meta mostra ·
 relatório semanal de mídia paga com alertas · respostas humanas pras reviews do
 Google · pauta pra imprensa local e do setor.
 

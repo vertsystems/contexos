@@ -19,7 +19,8 @@ Todo negócio já produziu mais conteúdo do que usou: live que ninguém reassis
 - **Se for vídeo do YouTube:** `yt-dlp` pra transcrição (ver `templates/ferramentas/catalogo.md`)
 - **Se o vídeo longo já tem pacote de publicação:** `conteudo/youtube-<tema>-<AAAA-MM-DD>/upload.md` (`/publicar-video`) já traz a transcrição em capítulos e os minutos marcados — começar por ali em vez de reler o vídeo inteiro
 - **Referências de copy:**
-  - `templates/copy/ganchos.md` — estrutura gancho → conteúdo → fechamento e a régua de qualidade
+  - `templates/copy/metodo.md` — diagnóstico antes de escrever: função, consciência, pilar, motor, barreira
+  - `templates/copy/ganchos.md` — os quatro tempos (gancho, exposição, virada, solução), onde o gancho começa e a régua de qualidade
 
 ---
 

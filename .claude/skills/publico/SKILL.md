@@ -70,6 +70,7 @@ Escolher as fontes conforme o tipo de negócio:
 2. **Avaliação de 4 estrelas** (não 5) — elogia, mas diz o que faltou. É o mapa da oportunidade
 3. **Pergunta repetida em grupo** — quando três pessoas perguntam o mesmo, é pauta e é objeção
 4. **Comentário longo em post do nicho** — quem escreve muito está muito incomodado
+5. **Reclame Aqui da categoria** — a dor de quem se sentiu enganado, com as palavras de quem está bravo. Mostra a objeção que o concorrente deixou nascer
 
 Usar as buscas do Google no idioma e na região do público. Copiar as frases **literalmente**, com a fonte.
 

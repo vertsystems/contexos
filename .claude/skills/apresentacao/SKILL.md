@@ -26,7 +26,8 @@ Slide não é documento projetado. Se dá pra ler tudo na tela, não precisava d
   - `templates/design/qualidade-visual.md` — tipografia, cor, layout, acabamento
   - `templates/design/anti-generico.md` — conferir antes de entregar
 - **Referências de copy:**
-  - `templates/copy/ganchos.md` — estrutura gancho → conteúdo → fechamento e a régua de qualidade
+  - `templates/copy/metodo.md` — diagnóstico antes de escrever: função, consciência, pilar, motor, barreira
+  - `templates/copy/ganchos.md` — os quatro tempos (gancho, exposição, virada, solução), onde o gancho começa e a régua de qualidade
 
 ---
 

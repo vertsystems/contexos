@@ -26,6 +26,8 @@ Skill que monta a campanha inteira em CSV pronto pra importar no Google Ads Edit
 - **Pesquisa SEO (se existir):** `seo/01-pesquisa-demanda.md`, `06-google-ads.md` — usar como insumo
 - **Outputs vão em:** `campanhas/google-ads-<YYYY-MM-DD>/`
 - **Referências de copy:**
+  - `templates/copy/metodo.md` — diagnóstico antes de escrever: função, consciência, pilar, motor, barreira
+  - `templates/copy/formatos.md` — seção 3, anúncio de busca
   - `templates/copy/psicologia.md` — atalhos de decisão e o limite ético de cada um
   - `templates/copy/edicao.md` — lista negra de clichê, gordura e regras de estilo
 

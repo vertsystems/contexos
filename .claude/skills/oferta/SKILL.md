@@ -22,6 +22,7 @@ Antes de qualquer carrossel, anúncio ou proposta, existe uma pergunta mais impo
 - **Tom:** `_memoria/preferencias.md`
 - **Saídas:** `oferta/<nome>-<AAAA-MM-DD>.md` e um resumo da oferta ativa em `_memoria/oferta.md` (as outras skills leem esse resumo)
 - **Referências de copy:**
+  - `templates/copy/metodo.md` — diagnóstico antes de escrever: função, consciência, pilar, motor, barreira
   - `templates/copy/psicologia.md` — atalhos de decisão e o limite ético de cada um
 
 ---

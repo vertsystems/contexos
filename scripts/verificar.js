@@ -7,7 +7,7 @@
  * roda a verificação aqui antes de entregar.
  *
  * Uso:
- *   node scripts/verificar.js csv <arquivo.csv> [--ads]
+ *   node scripts/verificar.js csv <arquivo.csv> [--ads | --meta]
  *   node scripts/verificar.js datas <arquivo.md>
  *   node scripts/verificar.js tabela <arquivo.md>
  *   node scripts/verificar.js contraste "#0E1116" "#F7F5F1"
@@ -30,7 +30,8 @@ const info = (m) => console.log(`  · ${m}`);
 
 // ─────────────────────────── CSV ───────────────────────────
 // Detecta: campo com vírgula não escapada (linha com nº de colunas diferente),
-// e limites do Google Ads (headline 30, description 90, path 15).
+// e limites do Google Ads (headline 30, description 90, path 15) ou do anúncio
+// da Meta (texto principal 125, título 40, descrição 25).
 
 function parseCSVLine(linha) {
   const campos = [];
@@ -53,7 +54,16 @@ const LIMITES_ADS = [
   { re: /^path/i, max: 15, nome: "Path" },
 ];
 
-function verCSV(arquivo, ads) {
+// Na Meta o texto passa do limite e é cortado com "ver mais", sem rejeição. Por
+// isso o texto principal longo é aviso: o que se confere é se o gancho cabe no
+// que aparece. Título e descrição cortados no meio perdem a frase, e aí é erro.
+const LIMITES_META = [
+  { re: /^texto principal/i, max: 125, nome: "Texto principal", corta: true },
+  { re: /^t[íi]tulo/i, max: 40, nome: "Título" },
+  { re: /^descri[çc][ãa]o/i, max: 25, nome: "Descrição" },
+];
+
+function verCSV(arquivo, ads, meta) {
   console.log(`\nCSV: ${arquivo}`);
   const linhas = fs.readFileSync(arquivo, "utf8").split(/\r?\n/).filter((l) => l.trim());
   if (!linhas.length) return erro("arquivo vazio");
@@ -92,6 +102,31 @@ function verCSV(arquivo, ads) {
     });
     if (!estouros && idx.length) ok(`todos os campos dentro do limite (${idx.length} colunas checadas)`);
     if (!idx.length) info("nenhuma coluna Headline/Description/Path encontrada — pulei o limite");
+  }
+
+  // 3. limites (anúncio da Meta)
+  if (meta) {
+    let estouros = 0, cortados = 0;
+    const idx = cab.map((c, i) => ({ i, c: c.trim(), lim: LIMITES_META.find((L) => L.re.test(c.trim())) })).filter((x) => x.lim);
+    linhas.forEach((l, li) => {
+      if (li === 0) return;
+      const campos = parseCSVLine(l);
+      idx.forEach(({ i, c, lim }) => {
+        const v = (campos[i] || "").trim();
+        const n = [...v].length;   // emoji e acento contam como um, igual à tela
+        if (n <= lim.max) return;
+        if (lim.corta) {
+          cortados++;
+          info(`linha ${li + 1}, ${c}: ${n} caracteres; a tela mostra até ~${lim.max} antes do "ver mais" → "${[...v].slice(0, lim.max).join("")}…"`);
+        } else {
+          estouros++;
+          erro(`linha ${li + 1}, ${c}: ${n} caracteres (recomendado até ${lim.max}, o resto some em boa parte dos posicionamentos) → "${v}"`);
+        }
+      });
+    });
+    if (cortados) info(`    ${cortados} texto(s) principal(is) passam do corte: conferir se o gancho fecha no trecho acima`);
+    if (!estouros && idx.length) ok(`título e descrição dentro do recomendado (${idx.length} colunas checadas)`);
+    if (!idx.length) info('nenhuma coluna "Texto principal", "Título" ou "Descrição" encontrada — pulei o limite');
   }
 }
 
@@ -350,6 +385,36 @@ const CLICHES = [
   [/\bé (essencial|fundamental|recomend[áa]vel) que\b/gi, '"é essencial que"'],
   [/\bfica(r)? por dentro\b/gi, '"ficar por dentro"'],
   [/\bponta do iceberg\b/gi, '"ponta do iceberg"'],
+  [/\bpr[óo]ximo n[íi]vel\b/gi, '"próximo nível"'],
+  [/\btransformar vidas\b/gi, '"transformar vidas"'],
+  [/voc[êe] j[áa] se perguntou/gi, '"você já se perguntou"'],
+  [/\bisso muda tudo\b/gi, '"isso muda tudo"'],
+  [/\bno fim das contas, o que importa\b/gi, '"no fim das contas, o que importa"'],
+];
+
+// Estruturas de efeito: a forma da frase denuncia, com qualquer palavra dentro.
+// `\b` do JavaScript não enxerga letra acentuada, então a fronteira aqui é
+// escrita à mão (INI): sem ela, "não é" colado em pontuação passaria direto.
+const INI = "(?<![A-Za-zÀ-ÿ])";
+const FIM = "(?![A-Za-zÀ-ÿ])";
+const ESTRUTURAS = [
+  // "não é X, é Y" · "Não é X. É Y." · "não está pronto; está em revisão"
+  [new RegExp(`${INI}não (é|são|foi|era|está|estão) [^.!?\\n]{1,80}?[,;.]\\s*(é|são|foi|era|está|estão)${FIM}`, "gi"), "construção contrastiva"],
+  [new RegExp(`${INI}não [^.!?\\n]{1,80}?,? (mas sim|e sim)${FIM}`, "gi"), "construção contrastiva"],
+  [new RegExp(`${INI}não se trata de${FIM}`, "gi"), "construção contrastiva"],
+  [new RegExp(`${INI}mais do que [^.!?\\n]{1,50}?, (é|são)${FIM}`, "gi"), "construção contrastiva"],
+  [new RegExp(`${INI}menos [^.!?\\n,]{1,30}, mais${FIM}`, "gi"), "construção contrastiva"],
+  // "O resultado? Dobrou." · "Sabe o que acontece?"
+  [new RegExp(`${INI}(o resultado|a resposta|o motivo|o segredo|a diferença)\\?`, "gi"), "pergunta retórica com a resposta em seguida"],
+  [new RegExp(`(?:^|[.!?]\\s+)(sabe o que acontece|e sabe por quê|sabe por quê|adivinha)\\?`, "gim"), "pergunta retórica com a resposta em seguida"],
+  // "Spoiler:" · "E o melhor:" · "A verdade é uma só:"
+  [new RegExp(`${INI}(spoiler|plot twist|e o melhor|a verdade é uma só|o segredo é)\\s*:`, "gi"), "dois-pontos de revelação"],
+  // "Ponto." e "Simples assim." sozinhos na linha
+  [/(?:^|\n)\s*(ponto|simples assim|e tudo bem|pense nisso|só isso|fim)\.\s*(?=\n|$)/gi, "fragmento dramático"],
+  // "Simples. Rápido. Eficiente."
+  [/(?:^|[.!?]\s+)[A-Za-zÀ-ÿ]+\.\s+[A-Za-zÀ-ÿ]+\.\s+[A-Za-zÀ-ÿ]+\./g, "trinca de impacto"],
+  [/!{2,}/g, "exclamação em série"],
+  [new RegExp(`${INI}(sub(ir|iu|a) (pra|para) cima|desc(er|eu|a) (pra|para) baixo|elo de ligação|surpresa inesperada|grátis e sem custo|planejar antecipadamente|encarar de frente|há \\d+ anos atrás|certeza absoluta|repetir de novo|outra alternativa|acabamento final|conviver junto)${FIM}`, "gi"), "pleonasmo"],
 ];
 
 /** Tira o que não é prosa: frontmatter, código, tabela, URL, marcação. */
@@ -461,7 +526,9 @@ function verTexto(arquivo) {
   //   · linha com "·" repetido enumera termos (é o formato da `edicao.md`)
   //   · termo entre aspas está sendo citado, não usado
   //   · linha em que caem 3+ clichês distintos é enumeração didática, não prosa
-  const linhas = prosa.split("\n").map((l) => l.replace(/["“][^"”\n]{2,60}["”]/g, " "));
+  // A citação vira "…" e não espaço: sem marca no lugar, o que vem antes e o que vem
+  // depois das aspas grudam e formam uma frase que ninguém escreveu.
+  const linhas = prosa.split("\n").map((l) => l.replace(/["“][^"”\n]{2,60}["”]/g, " … "));
   // Enumeração didática tem RÓTULO ("Verbos e aberturas:", "Advérbio que não muda nada:").
   // Sem exigir o rótulo, um parágrafo promocional que amontoa clichês seria perdoado
   // justamente por ser pior — foi o que aconteceu na primeira versão desta regra.
@@ -484,6 +551,26 @@ function verTexto(arquivo) {
   if (achados.length) {
     erro(`${achados.length} clichê(s) de IA: ${achados.slice(0, 10).join(" · ")}${achados.length > 10 ? ` (+${achados.length - 10})` : ""}`);
   } else ok("nenhum clichê da lista");
+
+  // ── estrutura de efeito ──
+  // Mesmos filtros do clichê: citação entre aspas e enumeração didática saem.
+  // Duas regras que casam o mesmo trecho contam uma vez só.
+  const vistos = [];
+  const porTipo = new Map();
+  for (const [re, nome] of ESTRUTURAS) {
+    for (const m of semListas.matchAll(re)) {
+      if (vistos.some((v) => v.nome === nome && Math.abs(v.pos - m.index) < 40)) continue;
+      vistos.push({ nome, pos: m.index });
+      if (!porTipo.has(nome)) porTipo.set(nome, []);
+      porTipo.get(nome).push(m[0].replace(/\s+/g, " ").trim().slice(0, 70));
+    }
+  }
+  if (porTipo.size) {
+    const soma = [...porTipo.values()].reduce((a, v) => a + v.length, 0);
+    erro(`${soma} estrutura(s) de efeito: ${[...porTipo].map(([n, v]) => (v.length > 1 ? `${n} (${v.length}×)` : n)).join(" · ")}`);
+    for (const [n, v] of porTipo) info(`    ${n}: "${v[0]}"`);
+    info("    a ideia fica; a frase volta para a forma afirmativa, com sujeito, verbo e cena");
+  } else ok("nenhuma estrutura de efeito (contraste, revelação, fragmento, trinca)");
 
   // ── advérbio em -mente ──
   const MENTE_MAX = 8;
@@ -795,7 +882,7 @@ function verTudo(pasta) {
       const full = path.join(p, f);
       const st = fs.statSync(full);
       if (st.isDirectory()) anda(full, prof + 1);
-      else if (/\.csv$/i.test(f)) verCSV(full, /ads|anuncio|google/i.test(f));
+      else if (/\.csv$/i.test(f)) verCSV(full, /ads|anuncio|google/i.test(f) && !/meta/i.test(full), /meta/i.test(full));
       else if (/\.html$/i.test(f)) { verHTML(full); verAlvo(full); }
       else if (/\.md$/i.test(f)) { verDatas(full); verTabela(full); }
     }
@@ -1347,7 +1434,7 @@ function verMigracao(alvo) {
 const [cmd, ...args] = process.argv.slice(2);
 const AJUDA = `Contex OS — verificar.js
 
-  csv <arquivo> [--ads]     campos desalinhados e limites do Google Ads
+  csv <arquivo> [--ads|--meta]  campos desalinhados e limites do Google Ads ou da Meta
   datas <arquivo.md>        dia da semana declarado vs data real
   tabela <arquivo.md>       soma das colunas vs total declarado, e "N× R$ X = R$ Y"
   contraste <cor1> <cor2>   razão WCAG
@@ -1363,7 +1450,7 @@ const AJUDA = `Contex OS — verificar.js
 
 try {
   if (!cmd || cmd === "-h" || cmd === "--help") { console.log(AJUDA); process.exit(0); }
-  if (cmd === "csv") verCSV(args[0], args.includes("--ads"));
+  if (cmd === "csv") verCSV(args[0], args.includes("--ads"), args.includes("--meta"));
   else if (cmd === "datas") verDatas(args[0]);
   else if (cmd === "tabela") verTabela(args[0]);
   else if (cmd === "contraste") verContraste(args[0], args[1]);

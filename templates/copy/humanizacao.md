@@ -4,21 +4,39 @@ Referência do `/humanizar`, consultada por toda skill que escreve.
 
 A `edicao.md` lista as **palavras** que denunciam texto gerado. Este arquivo trata do
 que sobra depois que elas saem: o texto sem nenhum clichê, gramaticalmente perfeito, e
-que mesmo assim soa como máquina. O problema aí não é vocabulário. É ritmo, estrutura e
-ausência de quem escreveu.
+que mesmo assim soa como máquina. O que falta aí mora no ritmo, na estrutura e na
+presença de quem escreveu.
 
 ---
 
 ## O que isso não é
 
-**Não é sobre enganar detector de IA.** Esses detectores erram nas duas direções: acusam
+**Enganar detector de IA fica fora do objetivo.** Esses detectores erram nas duas direções: acusam
 texto humano bem escrito e liberam texto gerado com pequenos ajustes. Nenhum deles
 publica taxa de erro que sobreviva a teste independente. Prometer aprovação em detector
 é vender o que ninguém controla.
 
-O objetivo é outro, e esse dá para entregar: **texto que uma pessoa reconheça como
-escrito por alguém.** Se o resultado passar em algum detector, ótimo. É consequência,
-não meta.
+O objetivo que dá para entregar é outro: **texto que uma pessoa reconheça como
+escrito por alguém.** Se o resultado passar em algum detector, ótimo, como consequência.
+
+---
+
+## Por que isso vai além de gosto
+
+- **Texto com jeito de fala é mais lembrado.** Frases de post espontâneo foram lembradas cerca de uma vez e meia mais do que frases de livro editado (Mickes e colegas, 2013)
+- **Palavra difícil sem necessidade faz o autor parecer menos inteligente** (Oppenheimer, 2006)
+- **O que é fácil de ler parece mais verdadeiro.** A mesma afirmação, apresentada de forma fácil de processar, foi julgada mais verdadeira (Reber e Schwarz, 1999)
+- **Fórmula reconhecida ativa a defesa.** Quando o leitor percebe a técnica, ele desconta a mensagem (Friestad e Wright, 1994), e o padrão do texto gerado virou uma das fórmulas mais reconhecíveis do feed
+- **Autoria virou diferencial.** No fim de 2025, o chefe do Instagram, Adam Mosseri, escreveu que a autenticidade ficou reproduzível pela IA e que o público vai prestar mais atenção em quem está falando do que no acabamento
+
+## Surpresa na ideia, palavra simples
+
+Perplexidade é o nome técnico pra quanto a próxima palavra de um texto é previsível. Modelo de linguagem escolhe a mais provável, e o texto sai liso. A régua útil pra quem escreve:
+
+- **Na ideia:** dizer o que o concorrente não diria, com um ângulo ou uma comparação que fuja da primeira que vem à cabeça
+- **No detalhe:** "uma planilha com 43 abas" no lugar de "processos desorganizados"
+- **Na estrutura:** fugir do formato que o nicho inteiro usa, desde que o leitor não se perca
+- **Nas palavras, nenhuma.** A surpresa fica na ideia e no detalhe; as palavras continuam simples. Se o leitor precisa reler pra entender, reescrever
 
 ---
 
@@ -149,6 +167,16 @@ nenhum modelo tem, e é o que faz o leitor lembrar de quem leu.
 
 ---
 
+## Cringe
+
+Vergonha alheia aparece quando a marca tenta parecer o que ela não é: gíria de um grupo do qual ela não faz parte, humor forçado, intimidade que ela não conquistou, empolgação maior do que o assunto, promessa maior do que a prova. Teste: um cliente real, lendo o texto em voz alta pra um amigo, sentiria vergonha?
+
+## O teste da frase
+
+Se você pensou "que frase boa", desconfie: costuma ser frase de efeito. Se pensou "é isso mesmo", mantenha. E ler em voz alta: se soar como locutor de anúncio, reescrever.
+
+---
+
 ## O que não se humaniza
 
 Nem todo texto quer voz. Manter seco e padronizado:
@@ -169,7 +197,9 @@ node scripts/verificar.js texto <arquivo>
 ```
 
 O comando conta clichê, mede o ritmo e a proporção de frases curtas, e aponta travessão
-em excesso e bullet em negrito. Ele não lê sentido: texto pode passar em tudo e ainda
+em excesso, bullet em negrito e as estruturas de efeito da `edicao.md` (construção
+contrastiva, pergunta retórica com resposta, dois-pontos de revelação, fragmento
+dramático, trinca de impacto, pleonasmo). Ele não lê sentido: texto pode passar em tudo e ainda
 estar sem graça. O que ele garante é que os sinais mecânicos saíram.
 
 E a pergunta final, que nenhum comando responde: **tem alguma coisa aqui que só essa

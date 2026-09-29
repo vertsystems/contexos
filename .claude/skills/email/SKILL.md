@@ -28,6 +28,7 @@ com o motor de renderização do Word, e chega com a imagem desligada.
 - **Referências** (ler antes de gerar):
   - `templates/design/email-html.md` — estrutura, botão, modo escuro, preheader, exigências de entrega
   - `templates/copy/ganchos.md` — assunto e primeira linha
+  - `templates/copy/formatos.md` — seção 11: assunto e pré-cabeçalho em dupla, julgar por clique e resposta
   - `templates/design/anti-generico.md` — conferir antes de entregar
 - **Saída:** `emails/<nome>-<AAAA-MM-DD>/index.html` e, no mesmo lugar, `texto.txt` com a versão em texto puro
 

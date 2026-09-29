@@ -3,7 +3,7 @@
 <!-- ia:inicio -->
 Skills de terceiros e nativas que valem conhecer. Use como referência ao criar skills novas com `/mapear-rotinas`, ou instale as que fizerem sentido pro seu negócio.
 
-> **Nada nesta página vem instalado com o Contex OS.** As 117 skills do Contex OS
+> **Nada nesta página vem instalado com o Contex OS.** As 118 skills do Contex OS
 > ficam na pasta de skills do projeto — a lista completa está no fim deste arquivo.
 > O que está aqui embaixo é catálogo externo: umas já vêm no Claude Code,
 > outras você instala por fora.
@@ -156,6 +156,7 @@ Antes de criar skill, conferir se um desses já cobre:
 | Catalogar depoimento, foto, dado, case | `/biblioteca` |
 | Palavra-chave, concorrência, GMB, aparecer em IA | `/seo` |
 | Campanha de Google Ads em CSV | `/anuncio-google` |
+| Anúncio pro Instagram e Facebook: de 3 a 5 ideias diferentes, texto no limite, link por criativo | `/anuncio-meta` |
 | Relatório semanal de mídia paga | `/relatorio-ads` |
 | Resposta pra avaliação do Google | `/responder-avaliacoes` |
 | Análise de CSV/XLSX/PDF | `/analisar-dados` |

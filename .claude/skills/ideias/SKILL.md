@@ -25,7 +25,8 @@ A regra que sustenta a qualidade: nenhuma pauta entra sem dizer de onde veio. Pa
 - **Ferramentas:** WebSearch (perguntas reais do público)
 - **Saída:** `conteudo/pautas.md`
 - **Referências de copy:**
-  - `templates/copy/ganchos.md` — estrutura gancho → conteúdo → fechamento e a régua de qualidade
+  - `templates/copy/metodo.md` — diagnóstico antes de escrever: função, consciência, pilar, motor, barreira
+  - `templates/copy/ganchos.md` — os quatro tempos (gancho, exposição, virada, solução), onde o gancho começa e a régua de qualidade
 
 ---
 

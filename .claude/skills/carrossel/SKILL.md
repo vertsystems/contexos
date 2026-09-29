@@ -40,7 +40,9 @@ Skill central de criação de conteúdo visual. Pega um tema → entrega HTMLs e
   - `templates/design/qualidade-visual.md` — tipografia, cor, layout, acabamento
   - `templates/design/anti-generico.md` — conferir antes de entregar
 - **Referências de copy:**
-  - `templates/copy/ganchos.md` — estrutura gancho → conteúdo → fechamento e a régua de qualidade
+  - `templates/copy/metodo.md` — diagnóstico antes de escrever: função, consciência, pilar, motor, barreira
+  - `templates/copy/ganchos.md` — os quatro tempos (gancho, exposição, virada, solução), onde o gancho começa e a régua de qualidade
+  - `templates/copy/formatos.md` — seções 4 (carrossel), 6 (story), 7 (legenda) e 8 (post único), com o dado de cada formato
   - `templates/copy/edicao.md` — lista negra de clichê, gordura e regras de estilo
 
 ---
@@ -187,10 +189,12 @@ Ao terminar de renderizar os PNGs, gerar **automaticamente** a legenda do post e
 
 Escrever o conteúdo seguindo as regras de tom:
 
-**Pra carrossel (5-10 slides):**
-- Slide 1 (Capa): título impactante, máx 8 palavras. Oferecer 3 opções
-- Slides internos: um insight por slide, frases naturais, sem bullet points
-- Slide final: CTA + logo
+**Pra carrossel (5-10 slides):** os quatro tempos de `templates/copy/ganchos.md` distribuídos nos slides
+- Slide 1 (Capa): o gancho, máx 8 palavras, curto e sem entregar a conclusão. Oferecer 3 opções, uma delas arriscada
+- Slides 2 e 3: a exposição. O 2 aprofunda a tensão da capa e nunca reapresenta o assunto
+- Meio: a virada, a causa real ou o que o leitor não tinha visto
+- Slide final: a solução e uma chamada só (salvar, mandar pra alguém, comentar uma palavra, clicar) + logo
+- Um insight por slide, frases naturais, sem bullet points. Cada slide termina puxando o próximo
 
 **Pra post único:**
 - Frase principal em destaque

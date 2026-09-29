@@ -30,7 +30,8 @@ Skill orquestradora. Pega um tema → entrega artigo no blog + carrossel + 3 leg
 - **Contexto:** `_memoria/empresa.md`; sistema visual em `identidade/tokens.css` (se existir) ou `identidade/design-guide.md`
 - **Insumo opcional:** dossiê em `pesquisa/<tema>.md` (`/pesquisa`) e ângulo escolhido no `/angulos` — é o que separa artigo sólido de artigo genérico
 - **Referências de copy:**
-  - `templates/copy/ganchos.md` — estrutura gancho → conteúdo → fechamento e a régua de qualidade
+  - `templates/copy/metodo.md` — diagnóstico antes de escrever: função, consciência, pilar, motor, barreira
+  - `templates/copy/ganchos.md` — os quatro tempos (gancho, exposição, virada, solução), onde o gancho começa e a régua de qualidade
   - `templates/copy/edicao.md` — lista negra de clichê, gordura e regras de estilo
 
 ---

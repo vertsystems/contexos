@@ -9,7 +9,7 @@ description: >
 
 # /angulos — Dez tratamentos pro mesmo tema
 
-Tema não é conteúdo. "Conservação de alimentos" é assunto; "o erro de geladeira que estraga sua carne em 3 dias" é conteúdo. A diferença é o ângulo, e é por falta dele que todo carrossel sai com a mesma cara.
+Tema e conteúdo são coisas diferentes. "Conservação de alimentos" é assunto; "o erro de geladeira que estraga sua carne em 3 dias" é conteúdo. A diferença é o ângulo, e é por falta dele que todo carrossel sai com a mesma cara.
 
 ## Dependências
 
@@ -18,8 +18,9 @@ Tema não é conteúdo. "Conservação de alimentos" é assunto; "o erro de gela
 - **Público:** `_memoria/empresa.md`
 - **Se existir:** dossiê em `pesquisa/<tema>.md` — ângulo com dado real vence ângulo inventado
 - **Referências de copy:**
+  - `templates/copy/metodo.md` — diagnóstico antes de escrever: função, consciência, pilar, motor, barreira
   - `templates/copy/psicologia.md` — atalhos de decisão e o limite ético de cada um
-  - `templates/copy/ganchos.md` — estrutura gancho → conteúdo → fechamento e a régua de qualidade
+  - `templates/copy/ganchos.md` — os quatro tempos (gancho, exposição, virada, solução), onde o gancho começa e a régua de qualidade
 
 ---
 
@@ -55,9 +56,12 @@ Pra cada um, entregar:
 **Hook:** "Congelar não conserva. Só pausa o problema."
 **Promessa:** por que o congelamento engana e o que ele não resolve
 **Formato:** carrossel 6 slides (o mito, a explicação, o teste, o certo)
+**Pilar e motor:** necessidade · inimigo em comum (a crença errada, com saída)
 **Funciona porque:** é a frase que todo cliente repete no orçamento
 **Precisa de:** confirmar a parte técnica antes de publicar
 ```
+
+Cada tratamento declara também o **pilar** que lidera (necessidade, status ou identidade) e o **motor** que liga (medo com saída, pertencimento, novidade real, inimigo em comum), de `templates/copy/psicologia.md`. Os dez juntos cobrem os três pilares: se todos caírem em necessidade, a lista é de um ângulo só com dez roupas.
 
 O hook tem no máximo 10 palavras e precisa passar em dois testes: **funciona sem a imagem** e **não daria pra usar em qualquer outro nicho** (se dá, é genérico).
 

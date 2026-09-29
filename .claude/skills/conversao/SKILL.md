@@ -21,6 +21,7 @@ Diagnóstico, não redesenho. Aponta o que trava, na ordem do que mais custa din
 - **Oferta:** `_memoria/oferta.md` (`/oferta`)
 - **Marca:** `identidade/tokens.css` ou `design-guide.md`
 - **Referências de copy:**
+  - `templates/copy/metodo.md` — diagnóstico antes de escrever: função, consciência, pilar, motor, barreira
   - `templates/copy/psicologia.md` — atalhos de decisão e o limite ético de cada um
 
 ---

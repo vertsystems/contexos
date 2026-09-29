@@ -50,6 +50,10 @@ Meta: 15-30% mais curto sem perder informação. Se cortar mais que isso, o text
 
 Também derrubar o **paralelismo mecânico**: três frases seguidas com a mesma estrutura rítmica. Denuncia geração automática mais que qualquer palavra isolada.
 
+E as **estruturas de efeito**, que denunciam com qualquer palavra dentro: construção contrastiva ("não é X, é Y" em todas as formas), pergunta retórica seguida da resposta ("O resultado?"), dois-pontos de revelação ("Spoiler:"), fragmento dramático sozinho na linha ("Ponto."), trinca de impacto ("Simples. Rápido. Eficiente.") e pleonasmo. `node scripts/verificar.js texto <arquivo>` acha todas; o conserto é devolver a ideia em forma afirmativa, com sujeito, verbo e cena.
+
+**Se o texto vende** (anúncio, página, post de oferta, proposta), duas perguntas a mais, de `templates/copy/metodo.md`: estamos tirando barreiras suficientes? Estamos colocando incentivos suficientes? Na dúvida, tirar uma barreira rende mais do que somar um incentivo.
+
 ### Passe 3 — Tom vs. preferências
 
 Comparar com `preferencias.md`, especialmente o exemplo de escrita real. Reportar divergência citando o trecho:

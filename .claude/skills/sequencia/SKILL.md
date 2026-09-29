@@ -35,7 +35,7 @@ ordem, com que intervalo, com que gatilho, e o que tira a pessoa dela.
 - **Cliente real:** `_memoria/publico.md` — a dor e as objeções na palavra dele. Cada mensagem de nutrição vira uma objeção
 - **Oferta:** `_memoria/oferta.md` — o que a série vende, a garantia, o prazo. Se não existir, oferecer `/oferta` uma vez e seguir com o que tem
 - **Molde:** `templates/crescimento/sequencias.md` — tipos, intervalos, anatomia da mensagem, regra de uma chamada, saída em um clique, LGPD, regras do WhatsApp, medição
-- **Copy:** `templates/copy/ganchos.md` (assunto e primeira linha) e `templates/copy/humanizacao.md` (o que denuncia máquina)
+- **Copy:** `templates/copy/ganchos.md` (assunto e primeira linha), `templates/copy/formatos.md` (seções 11 e 12, e-mail e WhatsApp) e `templates/copy/humanizacao.md` (o que denuncia máquina)
 - **Depoimentos e casos:** `biblioteca.md`, quando existir — a mensagem de prova usa o que está lá, nunca o que parece plausível
 - **Saída:** `vendas/sequencias/<tipo>-<AAAA-MM-DD>.md` (tipo em `boas-vindas`, `nutricao`, `orcamento-parado`, `carrinho`, `reativacao`, `pos-compra`, `lista-de-espera`)
 

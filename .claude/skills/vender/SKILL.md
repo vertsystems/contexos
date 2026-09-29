@@ -24,6 +24,7 @@ O erro que quase todo negócio pequeno comete: apresentar a solução antes do c
 - **Ensaio anterior:** `vendas/ensaios/` (`/ensaiar`) — se já houve ensaio com esse cliente ou segmento, ler o relatório antes: a pergunta de implicação que não saiu e a concessão fora do piso são o que precisa mudar
 - **Saída:** `vendas/roteiro-<contexto>-<AAAA-MM-DD>.md`; objeções novas voltam pra `_memoria/publico.md`
 - **Referências de copy:**
+  - `templates/copy/metodo.md` — diagnóstico antes de escrever: função, consciência, pilar, motor, barreira
   - `templates/copy/psicologia.md` — atalhos de decisão e o limite ético de cada um
 
 ---

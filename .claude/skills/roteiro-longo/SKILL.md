@@ -32,7 +32,7 @@ e distância entre quebras de padrão são números, não opinião.
 - **Dado:** `pesquisa/` e `biblioteca.md`. Número dito em vídeo circula longe e volta sem fonte
 - **Correção do vídeo anterior:** `conteudo/retencao/regras.md`, quando existir. É o arquivo que o `/retencao-de-video` escreve depois de ler a curva real, e ele manda mais que qualquer régua deste arquivo
 - **Método:** `templates/crescimento/roteiro-longo.md` — ritmo de fala com fonte, anatomia do gancho, loop, quebra de padrão, posição do CTA
-- **Copy:** `templates/copy/ganchos.md` (gancho, conteúdo, fechamento), `templates/copy/edicao.md` (o que cortar), `templates/copy/humanizacao.md` (o que denuncia texto de máquina)
+- **Copy:** `templates/copy/ganchos.md` (os quatro tempos, com a virada antes do produto), `templates/copy/edicao.md` (o que cortar), `templates/copy/humanizacao.md` (o que denuncia texto de máquina)
 - **Scripts:** `scripts/tempo.js` (orçamento, medição, ritmo, molde), `scripts/transcrever.js` (transcrição de vídeo já publicado, pra medir o ritmo real), `scripts/verificar.js texto`
 - **Saída:** `conteudo/roteiro-<tema>-<AAAA-MM-DD>/roteiro.md`
 

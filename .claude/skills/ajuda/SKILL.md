@@ -9,7 +9,7 @@ description: >
 
 # /ajuda — Qual skill usar agora
 
-O Contex OS tem 117 skills. Ninguém decora isso, e ninguém precisa: o usuário fala o que quer em português e a skill certa roda sozinha. Essa aqui responde a outra pergunta: **o que faz sentido fazer agora.**
+O Contex OS tem 118 skills. Ninguém decora isso, e ninguém precisa: o usuário fala o que quer em português e a skill certa roda sozinha. Essa aqui responde a outra pergunta: **o que faz sentido fazer agora.**
 
 Ao recomendar, falar pelo resultado, não pelo comando: "eu monto o banco de pautas" em vez de "roda /ideias". O nome da skill entra entre parênteses, no máximo, nunca como exigência.
 
@@ -51,7 +51,7 @@ Se o pedido já foi concreto ("preciso de um site", "quero postar mais"), pular 
 ### Passo 3 — Recomendar por objetivo
 
 **"Quero aparecer / atrair gente nova"**
-`/seo` (descobrir o que buscam) → `/ideias` (banco de pautas) → `/carrossel` ou `/publicar-tema` (produzir) → `/anuncio-google` (acelerar com pago)
+`/seo` (descobrir o que buscam) → `/ideias` (banco de pautas) → `/carrossel` ou `/publicar-tema` (produzir) → `/anuncio-google` ou `/anuncio-meta` (acelerar com pago)
 
 **"Quero vender pra quem já me conhece"**
 `/oferta` (desenhar o que vende) → `/preco` (quanto cobrar) → `/proposta` → `/vender` (conversa que fecha) → `/landing` · `/apresentacao` (pitch)

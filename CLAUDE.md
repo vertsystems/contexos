@@ -91,6 +91,12 @@ Esses dois são o que separa peça específica de peça genérica. Se a tarefa �
 de venda e eles não existem, vale oferecer `/publico` ou `/oferta` **uma
 vez**, e seguir com o que tem caso o usuário prefira.
 
+Antes da primeira frase de qualquer peça que vende, o diagnóstico de
+`templates/copy/metodo.md`: função, nível de consciência, pilar, motor e
+barreira principal, declarados numa linha. A peça se escreve nos quatro tempos
+de `templates/copy/ganchos.md` (gancho, exposição, virada, solução), com o
+ajuste do canal em `templates/copy/formatos.md`.
+
 Usar essas informações como base pra qualquer resposta ou decisão. Ao
 sugerir prioridades, formatos ou abordagens, considerar o foco atual
 descrito em `estrategia.md`.
@@ -236,7 +242,8 @@ ou movimento, valem também `/interface`, `/movimento` e `/acessivel`.
 As referências que sustentam esses critérios ficam em `templates/`:
 `design/` (leitura do briefing, anti-genérico, qualidade visual, interface,
 usabilidade, movimento, acessibilidade, desempenho, e-mail em HTML, página de produto) e
-`copy/` (psicologia da decisão, ganchos, edição, humanização). Skill visual ou de texto consulta
+`copy/` (método, formatos por canal, psicologia da decisão, ganchos, edição, humanização e
+os termos do mercado com o que deles se sustenta). Skill visual ou de texto consulta
 de lá em vez de improvisar, e é lá que se calibra o padrão do sistema.
 
 Quatro pastas mais novas seguem a mesma lógica. Em `templates/crescimento/`
@@ -271,12 +278,13 @@ Número não se confere lendo. Contagem de caractere, soma de coluna, dia da
 semana, total de parcelas, contraste, peso de arquivo: tudo isso **se roda**:
 
 ```bash
-node scripts/verificar.js csv <arquivo> --ads   # limites e campos desalinhados
+node scripts/verificar.js csv <arquivo> --ads   # limites do Google e campos desalinhados
+node scripts/verificar.js csv <arquivo> --meta  # limites do anúncio da Meta
 node scripts/verificar.js datas <arquivo.md>     # dia da semana vs data real
 node scripts/verificar.js tabela <arquivo.md>    # soma das colunas e "12× R$ 97 = R$ 1.164"
 node scripts/verificar.js html <arquivo.html>    # CSS externo, @page, placeholder, link vazio
 node scripts/verificar.js alvo <arquivo.html>    # tamanho de alvo clicável declarado
-node scripts/verificar.js texto <arquivo>        # sinais de texto gerado: ritmo, clichê
+node scripts/verificar.js texto <arquivo>        # texto gerado: ritmo, clichê, estrutura de efeito
 node scripts/verificar.js peso <pasta>           # imagem acima de 2 MB
 node scripts/verificar.js segredo [pasta]        # chave e senha em arquivo versionado
 node scripts/verificar.js migracao [pasta]       # ordem, volta atrás e DROP na migração

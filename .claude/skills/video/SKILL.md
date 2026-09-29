@@ -22,7 +22,7 @@ decide o resultado não é a edição: são os primeiros segundos e o motivo de 
 - **Voz:** `_memoria/preferencias.md` — roteiro é fala, e fala errada soa decorada na hora de gravar
 - **Cliente real:** `_memoria/publico.md`, se existir — a primeira frase precisa ser a dor na palavra dele
 - **Dado:** `pesquisa/` e `biblioteca.md`, quando o vídeo afirma número
-- **Referências de copy:** `templates/copy/ganchos.md` (estrutura gancho → conteúdo → fechamento) e `templates/copy/edicao.md` (o que cortar)
+- **Referências de copy:** `templates/copy/ganchos.md` (os quatro tempos e onde o gancho começa), `templates/copy/formatos.md` (seção 5, Reels: taxa de pulo, envio e os três sinais do Instagram) e `templates/copy/edicao.md` (o que cortar)
 - **O que a retenção já ensinou:** `conteudo/retencao/regras.md`, se existir (`/retencao-de-video`) — as regras que saíram da curva dos vídeos longos valem pro gancho do curto
 - **Saída:** `conteudo/video-<tema>-<data>/roteiro.md` e `legenda.md`
 

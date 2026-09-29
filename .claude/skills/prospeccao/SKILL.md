@@ -33,7 +33,7 @@ quem, depois onde, só então o quê. Lista primeiro. Mensagem depois.
 - **Prova:** `biblioteca.md` — o caso parecido que entra no segundo follow-up
 - **Exclusão:** `vendas/prospeccao/nao-contatar.md`, se existir — quem pediu pra não receber; nenhuma lista nasce sem ler
 - **Molde:** `templates/crescimento/prospeccao.md` — perfil ideal, pontuação, estrutura da mensagem, LGPD por tipo de contato, limites por canal
-- **Referência de copy:** `templates/copy/humanizacao.md` — o que denuncia texto de máquina numa mensagem de 60 palavras
+- **Referência de copy:** `templates/copy/humanizacao.md` — o que denuncia texto de máquina numa mensagem de 60 palavras; `templates/copy/formatos.md`, seção 12 — mensagem direta e a velocidade da primeira resposta
 - **Verificação:** `node scripts/verificar.js tabela` (cadência), `csv` (a lista), `datas` (a agenda de follow-up), `texto` (as mensagens); a pontuação e a meta reversa têm comando próprio nos Passos 3 e 5
 - **Saída:** `vendas/prospeccao/<segmento>-<AAAA-MM-DD>.md` e, quando o usuário pedir, `vendas/prospeccao/<segmento>-<AAAA-MM-DD>.csv`
 

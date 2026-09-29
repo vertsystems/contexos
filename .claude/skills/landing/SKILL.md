@@ -28,8 +28,10 @@ Uma página com um objetivo. Se ela tenta fazer duas coisas, não faz nenhuma.
   - `templates/design/qualidade-visual.md` — tipografia, cor, layout, acabamento
   - `templates/design/anti-generico.md` — conferir antes de entregar
 - **Referências de copy:**
+  - `templates/copy/metodo.md` — diagnóstico antes de escrever: função, consciência, pilar, motor, barreira
   - `templates/copy/psicologia.md` — atalhos de decisão e o limite ético de cada um
-  - `templates/copy/ganchos.md` — estrutura gancho → conteúdo → fechamento e a régua de qualidade
+  - `templates/copy/ganchos.md` — os quatro tempos (gancho, exposição, virada, solução), onde o gancho começa e a régua de qualidade
+  - `templates/copy/formatos.md` — seção 9: nível de leitura, tamanho pela consciência, mensagem casada com o anúncio
   - `templates/copy/edicao.md` — lista negra de clichê, gordura e regras de estilo
 
 ---
@@ -71,6 +73,10 @@ CTA repetido 3x na página (hero, meio, fim) com o mesmo texto e mesmo destino.
 Seguir `preferencias.md`. Antes de montar o HTML, mostrar a copy em texto e esperar aprovação: errar o texto e descobrir depois de montar a página é retrabalho caro.
 
 Entregar **3 variantes de headline** com ângulos diferentes (benefício direto / problema evitado / prova) pra ele escolher ou testar.
+
+**Nível de leitura de 5º a 7º ano.** No relatório de 2024 da Unbounce (41 mil páginas), páginas assim converteram 11,1%, contra 5,3% das escritas em nível profissional, e palavra difícil foi o fator mais ligado à queda (`templates/copy/formatos.md`, seção 9). Se a página recebe anúncio, a primeira dobra repete a promessa e o vocabulário do anúncio.
+
+**A ordem psicológica dentro das seções** são os quatro tempos de `templates/copy/ganchos.md`: o herói faz o gancho, o problema faz a exposição, a virada (a causa real do problema, o motivo de as outras soluções falharem) entra antes da solução, e oferta, prova e objeções fecham o quarto tempo.
 
 ### Passo 4 — Montar o HTML
 

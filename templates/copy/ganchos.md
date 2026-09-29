@@ -1,20 +1,67 @@
 # Ganchos e estrutura de conteúdo
 
-Referência compartilhada. Lida por `/carrossel`, `/angulos`, `/publicar-tema`, `/reaproveitar` e `/landing`.
+Referência compartilhada. Lida por `/carrossel`, `/angulos`, `/publicar-tema`, `/reaproveitar`, `/landing`, `/anuncio-meta`, `/video` e por toda skill que abre uma peça. O diagnóstico que vem antes (função, consciência, pilar, motor) está em `templates/copy/metodo.md`.
 
 ---
 
-## A estrutura que vale pra qualquer formato
+## Quatro tempos, em qualquer formato
 
 ```
-GANCHO      →  primeiros 3 segundos (ou primeiro slide, ou primeira linha)
-               Se falhar aqui, o resto não existe
-CONTEÚDO    →  cumprir exatamente o que o gancho prometeu
-               Uma ideia só. Quebra de ritmo a cada 3-5 blocos
-FECHAMENTO  →  uma ação, dita de forma direta
+GANCHO      →  para a rolagem e faz querer a próxima linha
+EXPOSIÇÃO   →  mostra que você entende a situação dele melhor do que ele descreveria
+VIRADA      →  a causa real do problema, a que muda a leitura do que ele viveu
+SOLUÇÃO     →  a saída como consequência da virada, com prova e uma chamada só
 ```
 
-Vale pra carrossel, reels, artigo, e-mail e página. O que muda é a duração de cada parte, não a ordem.
+É o desenho do kishōtenketsu, a estrutura de quatro tempos da narrativa chinesa e japonesa (introdução, desenvolvimento, virada, conclusão). A força vem do terceiro tempo, que muda o sentido do que veio antes, sem precisar de conflito inventado. A escala muda com o formato: uma frase por tempo no anúncio curto, alguns slides por tempo no carrossel, seções na página, segundos marcados no roteiro (`templates/copy/formatos.md`).
+
+**1. Gancho.** A decisão de continuar acontece em fração de segundo; no Reels, o Instagram mede quantas pessoas pulam o vídeo nos três primeiros segundos. Curto, convidativo e sem entregar a conclusão. Capa de carrossel longa, que já responde tudo, não faz ninguém arrastar. Curiosidade aberta aqui é dívida: precisa ser paga mais adiante.
+
+**2. Exposição.** Cena concreta, o detalhe que só quem viveu conhece, as palavras de `_memoria/publico.md`. Cada frase é um pequeno sim do leitor ("é isso mesmo"), e é esse acompanhamento que baixa a defesa para o que vem depois. Aqui vale a regra do Barnum (`templates/copy/psicologia.md`): descrição ampla e favorável para a identidade do leitor, cena específica para a dor.
+
+**3. Virada.** A causa real do problema, a verdade incômoda, o inimigo, o motivo de as tentativas anteriores terem falhado. É o mecanismo do problema. Ela tira do leitor a culpa pelo fracasso anterior e reenquadra sem negar o que ele viveu. A saída aparece logo depois: verdade incômoda sem saída à vista faz o leitor fugir da mensagem.
+
+**4. Solução e chamada.** A solução chega como consequência natural da virada. Mecanismo em linguagem simples, prova proporcional à promessa, proposta fácil de aceitar e uma chamada só, dizendo o que acontece depois do clique. O primeiro resultado fica perto no tempo. Se entrar uma cena do futuro ("na próxima viagem, você entra na água com eles"), ela precisa ser fácil de imaginar: cena difícil de visualizar inverte o efeito (Petrova e Cialdini, 2005).
+
+### Onde o gancho começa: o nível de consciência
+
+| O leitor... | O gancho começa por |
+|---|---|
+| não sabe que tem o problema | identidade, história ou curiosidade |
+| sabe do problema | a dor descrita melhor do que ele descreveria |
+| conhece as soluções | por que as outras soluções falham |
+| conhece o produto | prova, diferença e oferta |
+| está pronto pra comprar | a oferta, com preço, condição e prazo |
+
+Os cinco níveis são de Eugene Schwartz (*Breakthrough Advertising*, 1966). Errar o nível é o erro mais caro de copy: oferta com preço pra quem nem sabe do problema soa como empurrão; história longa pra quem já está com o cartão na mão atrasa a compra.
+
+### Que promessa ainda funciona: a sofisticação do mercado
+
+Também de Schwartz. Quanto mais promessas iguais o público já ouviu, menos a promessa direta rende.
+
+| Estágio | O mercado já ouviu | O que funciona |
+|---|---|---|
+| 1 | nada parecido | a promessa direta |
+| 2 | a mesma promessa, de outros | a promessa maior: mais rápido, mais forte, mais barato |
+| 3 | promessas maiores de todo lado | um mecanismo novo, que explica por que esse funciona |
+| 4 | mecanismos de todo lado | o mecanismo mais claro ou mais completo |
+| 5 | e não acredita em mais nada | a identificação: "isso é pra gente como você" |
+
+O mecanismo precisa ser verdadeiro. Mecanismo inventado pra parecer novidade é mentira com nome técnico.
+
+### Os quatro tempos num exemplo
+
+Escola de natação para adultos que nunca aprenderam. Público: 30 a 50 anos, com filhos, que evitam piscina e mar nas viagens. Consciente do problema. Pilares: status e identidade (ser o pai ou a mãe que entra na água). Motores: medo e pertencimento. Barreira: vergonha de aprender adulto.
+
+> **Gancho:** Nas fotos da viagem, você sempre aparece na areia.
+>
+> **Exposição:** As crianças pulam na piscina do hotel e você fica na borda cuidando das toalhas. Alguém pergunta se você não vai entrar, e você diz que a água está gelada, a mesma desculpa que usa há uns vinte anos.
+>
+> **Virada:** A maioria das aulas começa pela braçada. Só que quem tem medo trava antes disso, no segundo em que o rosto encosta na água, e nenhuma técnica de braço resolve esse segundo. Se você já tentou aprender e largou, é bem provável que tenha largado ali.
+>
+> **Solução:** Aqui as quatro primeiras aulas acontecem numa piscina rasa, com um professor só pra você, e ninguém fala de braçada antes de você boiar sozinho. A aula experimental é gratuita e, se preferir, você passa a primeira só olhando. Escolha o horário pelo link.
+
+Por que funciona: o gancho é uma cena com subtexto (ficar de fora da foto de família). Na exposição, o leitor reconhece a própria desculpa. A virada revela o mecanismo do problema e tira dele a culpa pela tentativa anterior. No último tempo saem as três barreiras (profundidade, plateia, compromisso), entra um incentivo sem risco e fica uma ação só. Num negócio real, cada detalhe da escola viria do dono.
 
 ---
 
@@ -61,9 +108,9 @@ Depois do gancho, o que faz a pessoa continuar:
 
 ---
 
-## Fechamento
+## A chamada
 
-Uma ação, com verbo, específica:
+O fim do quarto tempo. Uma ação, com verbo, específica, dizendo o que acontece depois:
 
 | Objetivo | Fechamento que funciona |
 |---|---|
