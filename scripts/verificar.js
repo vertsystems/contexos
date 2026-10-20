@@ -943,6 +943,19 @@ function verSistema(raiz = ".") {
     .readdirSync(dirSkills)
     .filter((f) => fs.statSync(path.join(dirSkills, f)).isDirectory());
   const skills = new Set(pastas);
+
+  // Skill do produto é a que o catálogo cita. Num workspace instalado (tem
+  // _memoria/), skill fora dele é do usuário: nasceu do /mapear-rotinas ou na
+  // mão. Ela tem que carregar como qualquer outra, mas fica fora da contagem e
+  // do catálogo, que são do produto e chegam inteiros a cada versão. No
+  // repositório do produto não existe skill do usuário, e skill fora do
+  // catálogo é esquecimento: o check 4 acusa.
+  const catalogo = path.join(raiz, "templates", "skills", "catalogo.md");
+  const catalogadas = fs.existsSync(catalogo)
+    ? new Set([...fs.readFileSync(catalogo, "utf8").matchAll(/`\/([a-z][a-z0-9-]{2,})`/g)].map((m) => m[1]))
+    : null;
+  const proprias = est.instalado && catalogadas ? pastas.filter((n) => !catalogadas.has(n)) : [];
+  const doProduto = pastas.filter((n) => !proprias.includes(n));
   let skillsOk = 0;
 
   for (const nome of pastas) {
@@ -965,11 +978,14 @@ function verSistema(raiz = ".") {
 
     if (!/^description:/m.test(fm)) {
       erro(`${nome}: frontmatter sem 'description:'`);
-    } else if (!/use quando/i.test(fm)) {
+    } else if (!/use\s+quando/i.test(fm)) { // description em bloco (>) quebra a linha entre as duas palavras
       erro(`${nome}: description sem gatilho ("Use quando o usuário disser…") — sem isso a skill não é acionada pelo que o usuário fala`);
     } else skillsOk++;
   }
-  if (skillsOk === pastas.length) ok(`${pastas.length} skills carregam (frontmatter, nome e gatilho conferidos)`);
+  if (skillsOk === pastas.length) {
+    const quais = proprias.length ? `, ${doProduto.length} do Contex OS e ${proprias.length} do workspace` : "";
+    ok(`${pastas.length} skills carregam (frontmatter, nome e gatilho conferidos${quais})`);
+  }
 
   // ── 2. referências quebradas em todo .md ──────────────────────
   const mds = mdsDe(raiz);
@@ -1017,7 +1033,7 @@ function verSistema(raiz = ".") {
     ok(`${mds.length} arquivos .md sem referência quebrada`);
 
   // ── 3. contagem de skills escrita nos textos ──────────────────
-  const total = pastas.length;
+  const total = doProduto.length;
   let contagensRuins = 0;
   for (const arq of mds) {
     if (path.relative(raiz, arq).startsWith(path.join("templates", "opcional"))) continue;
@@ -1035,14 +1051,12 @@ function verSistema(raiz = ".") {
   if (!contagensRuins) ok(`contagem de skills confere (${total}) em todo texto que a cita`);
 
   // ── 4. skill que ninguém cataloga ─────────────────────────────
-  const catalogo = path.join(raiz, "templates", "skills", "catalogo.md");
-  if (fs.existsSync(catalogo)) {
-    const t = fs.readFileSync(catalogo, "utf8");
-    const citadas = new Set([...t.matchAll(/`\/([a-z][a-z0-9-]{2,})`/g)].map((m) => m[1]));
-    const fora = pastas.filter((n) => !citadas.has(n));
+  if (catalogadas) {
+    const fora = doProduto.filter((n) => !catalogadas.has(n));
     if (fora.length) erro(`skill fora da tabela do catálogo (o usuário nunca descobre): ${fora.join(", ")}`);
-    else ok("toda skill aparece no catálogo");
+    else ok("toda skill do Contex OS aparece no catálogo");
   }
+  if (proprias.length) info(`skills do workspace, fora da contagem e do catálogo: ${proprias.join(", ")}`);
 
   // ── 5. formato da IA: base inteira, visita mínima, nada da outra ──
   // A base é de uma IA só. A outra entra pelo arquivo de visita (gerado pelo

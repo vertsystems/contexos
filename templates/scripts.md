@@ -121,8 +121,10 @@ Ele confere se toda skill tem frontmatter legível (BOM invisível no início do
 arquivo já derrubou três), se o `name:` bate com a pasta, se a `description` tem
 o gatilho que faz a skill ser encontrada, se alguma skill manda rodar script que
 não existe, se a contagem de skills nos textos ainda confere, e se o workspace
-está inteiro no formato de uma IA só. Rode depois de criar skill com o
-`/mapear-rotinas` e depois do `/atualizar-sistema`.
+está inteiro no formato de uma IA só. A skill que você criou passa pela
+conferência de carregar e fica fora da contagem e do catálogo, que são do
+produto. Rode depois de criar skill com o `/mapear-rotinas` e depois do
+`/atualizar-sistema`.
 
 <!-- ia:inicio -->
 E `scripts/ia.js`: deixa o workspace no formato da IA que o usuário usa, Claude

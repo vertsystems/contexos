@@ -311,8 +311,10 @@ node scripts/verificar.js sistema                     # integridade do próprio 
 O `sistema` é o único que não olha o trabalho, e sim o sistema: skill que não
 carrega (frontmatter quebrado, BOM, `name` trocado, gatilho faltando), referência
 a skill ou arquivo que não existe, script que uma skill manda rodar e não está
-lá, contagem desatualizada e skill fora do catálogo. Rodar depois de criar skill,
-depois de atualizar o sistema, e antes de publicar versão nova.
+lá, contagem desatualizada e skill fora do catálogo. Skill que o usuário criou
+passa pela mesma conferência de carregar e fica fora da contagem e do catálogo,
+que são do produto. Rodar depois de criar skill, depois de atualizar o sistema,
+e antes de publicar versão nova.
 
 Isso não é preciosismo: em teste real, o sistema entregou CSV que o Google
 rejeita, calendário com todos os dias da semana errados, tabela cuja soma não
