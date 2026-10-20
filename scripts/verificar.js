@@ -987,17 +987,31 @@ function verSistema(raiz = ".") {
     ok(`${pastas.length} skills carregam (frontmatter, nome e gatilho conferidos${quais})`);
   }
 
-  // ── 2. referências quebradas em todo .md ──────────────────────
-  const mds = mdsDe(raiz);
+  // ── 2. referências quebradas nos .md do sistema ───────────────
+  // Só o que é do sistema: skills (do produto e do usuário), templates/,
+  // scripts/, README e os arquivos de entrada das duas IAs. Pasta de trabalho
+  // do cliente fica fora: rota de app entre crases (`/login`) parece skill
+  // citada, e o que ele escreve em _memoria/, sistemas/ ou site/ não é o
+  // sistema. No arquivo de regras de um workspace instalado, a parte de cima é
+  // do negócio: só conta do bloco de regras pra baixo (sem o marcador, o
+  // arquivo inteiro).
+  const MARCA_REGRAS = "## Duas IAs, uma base";
+  const mds = [
+    ...[base.skills, "templates", "scripts"].map((p) => path.join(raiz, p)).filter((p) => fs.existsSync(p)).flatMap(mdsDe),
+    ...["README.md", ia.IAS.claude.entrada, ia.IAS.codex.entrada].map((f) => path.join(raiz, f)).filter((p) => fs.existsSync(p)),
+  ].map((arq) => {
+    const bruto = fs.readFileSync(arq);
+    let t = bruto.toString("utf8");
+    if (est.instalado && path.relative(raiz, arq) === base.entrada && t.includes(MARCA_REGRAS)) t = t.slice(t.indexOf(MARCA_REGRAS));
+    return { arq, bruto, t };
+  });
   const faltaSkill = new Map();
   const faltaPath = new Map();
   const faltaScript = new Map();
   const comBOM = [];
 
-  for (const arq of mds) {
-    const bruto = fs.readFileSync(arq);
+  for (const { arq, bruto, t } of mds) {
     if (bruto[0] === 0xef && bruto[1] === 0xbb && bruto[2] === 0xbf) comBOM.push(arq);
-    const t = bruto.toString("utf8");
     const rel = path.relative(raiz, arq);
     const opcional = rel.startsWith(path.join("templates", "opcional"));
 
@@ -1030,14 +1044,13 @@ function verSistema(raiz = ".") {
     erro(`skill manda rodar \`${p}\`, que não existe — quebra no meio do fluxo, em: ${[...onde].join(", ")}`);
 
   if (!comBOM.length && !faltaSkill.size && !faltaPath.size && !faltaScript.size)
-    ok(`${mds.length} arquivos .md sem referência quebrada`);
+    ok(`${mds.length} arquivos .md do sistema sem referência quebrada`);
 
   // ── 3. contagem de skills escrita nos textos ──────────────────
   const total = doProduto.length;
   let contagensRuins = 0;
-  for (const arq of mds) {
+  for (const { arq, t } of mds) {
     if (path.relative(raiz, arq).startsWith(path.join("templates", "opcional"))) continue;
-    const t = fs.readFileSync(arq, "utf8");
     for (const m of t.matchAll(/(\d+)\s+skills\b/g)) {
       // "mais de 5 skills por sessão" e "de 3 a 5 skills" não falam do total
       const antes = t.slice(Math.max(0, m.index - 24), m.index);
